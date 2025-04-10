@@ -1,0 +1,8 @@
+H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\obj\Release\gamelauncher.csproj.AssemblyReference.cache
+H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\obj\Release\Views\LoginPage.g.cs
+H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\obj\Release\Views\MainTemplate.g.cs
+H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\obj\Release\Views\RegisterPage.g.cs
+H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\obj\Release\App.g.cs
+H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\obj\Release\GeneratedInternalTypeHelper.g.cs
+H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\obj\Release\gamelauncher_MarkupCompile.cache
+H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\obj\Release\gamelauncher_MarkupCompile.lref

@@ -1,0 +1,90 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="LoginTitle" TargetType="TextBlock">
+        <Setter Property="Text" Value="Вход" />
+    </Style>
+    <Style x:Key="LoginEmailAddress" TargetType="TextBlock">
+        <Setter Property="Text" Value="Адрес электронной почты" />
+    </Style>
+    <Style x:Key="EmailError" TargetType="TextBlock">
+        <Setter Property="Text" Value="Неверный адрес почты" />
+    </Style>
+    <Style x:Key="LoginPassword" TargetType="TextBlock">
+        <Setter Property="Text" Value="Пароль" />
+    </Style>
+    <Style x:Key="ForgotPassword" TargetType="TextBlock">
+        <Setter Property="Text" Value="Забыли пароль?" />
+    </Style>
+    <Style x:Key="LoginButton" TargetType="Button">
+        <Setter Property="Content" Value="Войти" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Padding="5" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="RegisterQA" TargetType="TextBlock">
+        <Setter Property="Text" Value="Еще нет учетной записи?" />
+    </Style>
+    <Style x:Key="CreateAccountButton" TargetType="TextBlock">
+        <Setter Property="Text" Value="Создать учетную запись" />
+    </Style>
+    <Style x:Key="RegisterTitle" TargetType="TextBlock">
+        <Setter Property="Text" Value="Зарегистрироваться" />
+    </Style>
+    <Style x:Key="PasswordRepeat" TargetType="TextBlock">
+        <Setter Property="Text" Value="Повторите пароль" />
+    </Style>
+    <Style x:Key="RegisterButton" TargetType="Button">
+        <Setter Property="Content" Value="Зарегистрироваться" />
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Padding="5" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ReturnButton" TargetType="TextBlock">
+        <Setter Property="Text" Value="Вернуться" />
+    </Style>
+    <Style x:Key="LanguageIMG" TargetType="Image">
+        <Setter Property="Source" Value="/img/russia.png" />
+    </Style>
+    <Style x:Key="PasswordError" TargetType="TextBlock">
+        <Setter Property="Text" Value="Плохой пароль" />
+    </Style>
+    <Style x:Key="RepeatPasswordError" TargetType="TextBlock">
+        <Setter Property="Text" Value="Пароли не совпадают" />
+    </Style>
+    <Style x:Key="PasswordToolTip1" TargetType="TextBlock">
+        <Setter Property="Text" Value="Ваш пароль должен:" />
+    </Style>
+    <Style x:Key="PasswordToolTip2" TargetType="TextBlock">
+        <Setter Property="Text" Value="• Содержать от 8 до 20 символов." />
+    </Style>
+    <Style x:Key="PasswordToolTip3" TargetType="TextBlock">
+        <Setter Property="Text" Value="• Включать хотя бы одну строчную букву (a-z)." />
+    </Style>
+    <Style x:Key="PasswordToolTip4" TargetType="TextBlock">
+        <Setter Property="Text" Value="• Включать хотя бы одну заглавную букву (A-Z)." />
+    </Style>
+    <Style x:Key="PasswordToolTip5" TargetType="TextBlock">
+        <Setter Property="Text" Value="• Включать хотя бы одну цифру (0-9)." />
+    </Style>
+</ResourceDictionary>
