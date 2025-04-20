@@ -20,11 +20,8 @@ namespace gamelauncher.ViewModels
             get => _email;
             set
             {
-                if (_email != value)
-                {
                     _email = value;
                     OnPropertyChanged();
-                }
             }
         }
 

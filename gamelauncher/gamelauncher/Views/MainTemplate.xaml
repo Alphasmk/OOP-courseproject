@@ -1,72 +1,359 @@
-﻿<Window x:Class="gamelauncher.Views.MainTemplate"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:gamelauncher.Views"
-        mc:Ignorable="d"
-                Title="Game Launcher" Height="650" Width="1100"
-        Icon="/img/logo.png"
-        MinWidth="900" MinHeight="700"
-        WindowStyle="None"
-        Background="Transparent">
+﻿<Window
+    x:Class="gamelauncher.Views.MainTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:gamelauncher.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Game Launcher"
+    Width="1100"
+    Height="650"
+    MinWidth="900"
+    MinHeight="700"
+    Background="Transparent"
+    Icon="/img/logo.png"
+    WindowStyle="None"
+    mc:Ignorable="d">
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="5" ResizeBorderThickness="2"/>
+        <WindowChrome CaptionHeight="5" ResizeBorderThickness="2" />
     </WindowChrome.WindowChrome>
     <Grid>
-        <Border Background="#1E1E1E" Height="30" MouseLeftButtonDown="Border_MouseLeftButtonDown" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Background="Transparent" BorderThickness="0" Click="MinimizeButton_Click" Margin="0, 5, 10, 0">
-                    <Image Source="/img/minus-button.png" Width="20" Height="20"/>
+        <Border
+            Height="30"
+            VerticalAlignment="Top"
+            Panel.ZIndex="1"
+            Background="#1E1E1E"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button
+                    Margin="0,5,10,0"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="MinimizeButton_Click">
+                    <Image
+                        Width="20"
+                        Height="20"
+                        Source="/img/minus-button.png" />
                 </Button>
-                <Button Background="Transparent" BorderThickness="0" Click="MaximizeButton_Click" Margin="0, 5, 10, 0">
-                    <Image Source="/img/share.png" Width="20" Height="20"/>
+                <Button
+                    Margin="0,5,10,0"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="MaximizeButton_Click">
+                    <Image
+                        Width="20"
+                        Height="20"
+                        Source="/img/share.png" />
                 </Button>
-                <Button Background="Transparent" BorderThickness="0" Click="CloseButton_Click" Margin="0, 5, 10, 0">
-                    <Image Source="/img/x.png" Width="20" Height="20"/>
+                <Button
+                    Margin="0,5,10,0"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Click="CloseButton_Click">
+                    <Image
+                        Width="20"
+                        Height="20"
+                        Source="/img/x.png" />
                 </Button>
             </StackPanel>
         </Border>
-        <Grid Name="auth" Background="#181818" Margin="0, 30, 0, 0">
+        <Grid
+            Name="auth"
+            Margin="0,30,0,0"
+            Background="#181818">
             <Grid.RowDefinitions>
-                <RowDefinition Height="15*"></RowDefinition>
-                <RowDefinition Height="75*"></RowDefinition>
+                <RowDefinition Height="15*" />
+                <RowDefinition Height="75*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="12*" MaxWidth="150"></ColumnDefinition>
-                <ColumnDefinition Width="88*"></ColumnDefinition>
+                <!--<ColumnDefinition
+                    x:Name="MenuColumn"
+                    Width="auto"
+                    MinWidth="120" />
+                <ColumnDefinition Width="*" />-->
             </Grid.ColumnDefinitions>
-            <Border Background="#1E1E1E" Grid.Column="0">
-                <Image Source="/img/logo.png" Width="70" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 20, 0, 0"/>
-            </Border>
-            <Border Background="#1E1E1E" Grid.Column="0" Grid.Row="1">
-                <Grid>
+            <Border />
+
+            <!--<Border
+                Grid.Column="0"
+                Width="150"
+                HorizontalAlignment="Left"
+                Background="#1E1E1E" />-->
+            <Border
+                x:Name="MenuWrapper"
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Width="150"
+                HorizontalAlignment="Left"
+                Panel.ZIndex="1"
+                Background="#1E1E1E"
+                MouseEnter="MenuPanel_MouseEnter"
+                MouseLeave="MenuPanel_MouseLeave">
+                <Grid x:Name="MenuPanel">
+                    <Grid.Resources />
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                        <!-- Занимает всё доступное пространство -->
-                        <RowDefinition Height="Auto"/>
-                        <!-- Занимает только необходимое пространство -->
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <!--  Занимает всё доступное пространство  -->
+                        <RowDefinition Height="Auto" />
+                        <!--  Занимает только необходимое пространство  -->
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Vertical" Grid.Row="0">
-                    <Border Background="#3E3E3E" Width="65" Height="65" CornerRadius="10" Margin="0, 40, 0, 15">
-                            <Image Source="/img/basket.png" Width="25" Height="25" Opacity="0.7"/>
-                    </Border>
-                    <Border Background="#3E3E3E" Width="65" Height="65" CornerRadius="10" Margin="0, 0, 0, 15">
-                            <Image Source="/img/heart.png" Width="25" Height="25" Opacity="0.7"/>
-                    </Border>
-                    <Border Background="#3E3E3E" Width="65" Height="65" CornerRadius="10" Margin="0, 0, 0, 15">
-                            <Image Source="/img/library.png" Width="25" Height="25" Opacity="0.7"/>
-                    </Border>
-                    <Border Background="#3E3E3E" Width="65" Height="65" CornerRadius="10" Margin="0, 0, 0, 15">
-                            <Image Source="/img/info.png" Width="25" Height="25" Opacity="0.7"/>
-                    </Border>
+                    <StackPanel
+                        Grid.Row="0"
+                        Panel.ZIndex="100"
+                        Orientation="Vertical">
+                        <Image
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Width="80"
+                            Margin="0,0,0,30"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Source="/img/logo.png" />
+                        <Border
+                            x:Name="MenuBorder1"
+                            Width="65"
+                            Height="65"
+                            Margin="0,5,0,15"
+                            Background="#3E3E3E"
+                            CornerRadius="10"
+                            Style="{DynamicResource MenuBorderForButton}">
+                            <Button
+                                x:Name="MenuButton1"
+                                Width="65"
+                                Height="65"
+                                HorizontalAlignment="Center"
+                                Background="Transparent"
+                                BorderThickness="0"
+                                Command="{Binding GoToShop}"
+                                Style="{DynamicResource MenuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image
+                                        Width="25"
+                                        Height="25"
+                                        Opacity="1"
+                                        Source="/img/basket.png">
+                                        <Image.RenderTransform>
+                                            <TranslateTransform x:Name="MenuButton1Transform" />
+                                        </Image.RenderTransform>
+                                    </Image>
+                                    <TextBlock
+                                        x:Name="MenuButtonText1"
+                                        VerticalAlignment="Center"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="20"
+                                        Visibility="Collapsed">
+                                        Магазин
+                                    </TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Border>
+                        <Border
+                            x:Name="MenuBorder2"
+                            Width="65"
+                            Height="65"
+                            Margin="0,0,0,15"
+                            Background="#3E3E3E"
+                            CornerRadius="10"
+                            Style="{DynamicResource MenuBorderForButton}">
+                            <Button
+                                x:Name="MenuButton2"
+                                Command="{Binding GoToLiked}"
+                                Style="{DynamicResource MenuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image
+                                        Width="25"
+                                        Height="25"
+                                        Opacity="1"
+                                        Source="/img/heart.png">
+                                        <Image.RenderTransform>
+                                            <TranslateTransform x:Name="MenuButton2Transform" />
+                                        </Image.RenderTransform>
+                                    </Image>
+                                    <TextBlock
+                                        x:Name="MenuButtonText2"
+                                        VerticalAlignment="Center"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="20"
+                                        Visibility="Collapsed">
+                                        Желаемое
+                                    </TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Border>
+                        <Border
+                            x:Name="MenuBorder3"
+                            Width="65"
+                            Height="65"
+                            Margin="0,0,0,15"
+                            Background="#3E3E3E"
+                            CornerRadius="10"
+                            Style="{DynamicResource MenuBorderForButton}">
+                            <Button
+                                x:Name="MenuButton3"
+                                Command="{Binding GoToLibrary}"
+                                Style="{DynamicResource MenuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image
+                                        Width="25"
+                                        Height="25"
+                                        Opacity="1"
+                                        Source="/img/library.png">
+                                        <Image.RenderTransform>
+                                            <TranslateTransform x:Name="MenuButton3Transform" />
+                                        </Image.RenderTransform>
+                                    </Image>
+                                    <TextBlock
+                                        x:Name="MenuButtonText3"
+                                        VerticalAlignment="Center"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="20"
+                                        Visibility="Collapsed">
+                                        Библиотека
+                                    </TextBlock>
+                                </StackPanel>
+
+                            </Button>
+                        </Border>
+                        <Border
+                            x:Name="MenuBorder4"
+                            Width="65"
+                            Height="65"
+                            Margin="0,0,0,15"
+                            Background="#3E3E3E"
+                            CornerRadius="10"
+                            Style="{DynamicResource MenuBorderForButton}">
+                            <Button
+                                x:Name="MenuButton4"
+                                Command="{Binding GoToSettings}"
+                                Style="{DynamicResource MenuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image
+                                        Width="30"
+                                        Height="28"
+                                        Opacity="1"
+                                        Source="/img/settings.png">
+                                        <Image.RenderTransform>
+                                            <TranslateTransform x:Name="MenuButton4Transform" />
+                                        </Image.RenderTransform>
+                                    </Image>
+                                    <TextBlock
+                                        x:Name="MenuButtonText4"
+                                        VerticalAlignment="Center"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="20"
+                                        Visibility="Collapsed">
+                                        Настройки
+                                    </TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Border>
+                        <Border
+                            x:Name="MenuBorder5"
+                            Width="65"
+                            Height="65"
+                            Margin="0,0,0,15"
+                            Background="#3E3E3E"
+                            CornerRadius="10"
+                            Style="{DynamicResource MenuBorderForButton}">
+                            <Button
+                                x:Name="MenuButton5"
+                                Command="{Binding GoToInfo}"
+                                Style="{DynamicResource MenuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image
+                                        Width="25"
+                                        Height="25"
+                                        Opacity="1"
+                                        Source="/img/info.png">
+                                        <Image.RenderTransform>
+                                            <TranslateTransform x:Name="MenuButton5Transform" />
+                                        </Image.RenderTransform>
+                                    </Image>
+                                    <TextBlock
+                                        x:Name="MenuButtonText5"
+                                        VerticalAlignment="Center"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="20"
+                                        Visibility="Collapsed">
+                                        Информация
+                                    </TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Border>
+                        <Border
+                            x:Name="MenuBorder6"
+                            Width="65"
+                            Height="65"
+                            Margin="0,0,0,15"
+                            Background="#3E3E3E"
+                            CornerRadius="10"
+                            Style="{DynamicResource MenuBorderForButton}">
+                            <Button
+                                x:Name="MenuButton6"
+                                Command="{Binding LogoutCommand}"
+                                Style="{DynamicResource MenuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image
+                                        Width="25"
+                                        Height="25"
+                                        Opacity="1"
+                                        Source="/img/sign-out.png">
+                                        <Image.RenderTransform>
+                                            <TranslateTransform x:Name="MenuButton6Transform" />
+                                        </Image.RenderTransform>
+                                    </Image>
+                                    <TextBlock
+                                        x:Name="MenuButtonText6"
+                                        VerticalAlignment="Center"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="20"
+                                        Visibility="Collapsed">
+                                        Выйти
+                                    </TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Border>
                     </StackPanel>
-                    <Border Background="#3E3E3E" Width="65" Height="65" CornerRadius="32.5" Margin="0, 0, 0, 15" VerticalAlignment="Center" Grid.Row="2">
-                        <Image Source="/img/ava.png" Width="25" Height="25"/>
+                    <Border
+                        x:Name="MenuBorder7"
+                        Grid.Row="2"
+                        Width="65"
+                        Height="65"
+                        Margin="0,0,0,15"
+                        VerticalAlignment="Center"
+                        Background="#3E3E3E"
+                        CornerRadius="32.5">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <Image
+                                Width="25"
+                                Height="25"
+                                Source="/img/ava.png">
+                                <Image.RenderTransform>
+                                    <TranslateTransform x:Name="MenuButton7Transform" />
+                                </Image.RenderTransform>
+                            </Image>
+                            <TextBlock
+                                x:Name="MenuButtonText7"
+                                VerticalAlignment="Center"
+                                FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                FontSize="20"
+                                Foreground="White"
+                                Visibility="Collapsed">
+                                User
+                            </TextBlock>
+                        </StackPanel>
                     </Border>
+
                 </Grid>
             </Border>
+            <Frame
+                x:Name="MainFrame"
+                Grid.RowSpan="2"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                NavigationUIVisibility="Hidden"
+                SnapsToDevicePixels="True" />
         </Grid>
     </Grid>
 </Window>

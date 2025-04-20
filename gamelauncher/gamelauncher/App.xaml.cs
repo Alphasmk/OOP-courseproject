@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows;
 using System.Windows.Markup;
+using System.Windows.Navigation;
 
 namespace gamelauncher
 {
@@ -18,6 +19,7 @@ namespace gamelauncher
             }
 
             SetAppLanguage(Current.Properties["AppLanguage"].ToString());
+            
         }
 
         private void SetAppLanguage(string lang)

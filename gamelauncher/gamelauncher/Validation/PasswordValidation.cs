@@ -21,9 +21,4 @@ namespace gamelauncher.Validation
             return ValidationResult.ValidResult;
         }
     }
-
-    public class RepeatPasswordValidation
-    {
-
-    }
 }

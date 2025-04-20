@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/exclamation.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("img/search.png")]
 
 

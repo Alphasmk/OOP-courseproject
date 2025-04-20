@@ -1,13 +1,15 @@
-﻿<Application x:Class="gamelauncher.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:gamelauncher"
-             StartupUri="Views/LoginPage.xaml">
+﻿<Application
+    x:Class="gamelauncher.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:gamelauncher"
+    StartupUri="Views/LoginPage.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/ru-RU.xaml"/>
-                <!--<ResourceDictionary Source="Resources/en-EN.xaml"/>-->
+                <ResourceDictionary Source="Resources/RU-ru.xaml" />
+                <ResourceDictionary Source="Resources/EN-en.xaml" />
+                <ResourceDictionary Source="Resources/MyStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

@@ -87,4 +87,81 @@
     <Style x:Key="PasswordToolTip5" TargetType="TextBlock">
         <Setter Property="Text" Value="• Include at least one digit (0-9)." />
     </Style>
+    <Style x:Key="MenuBorderForButton" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="#3E3E3E" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+        <Setter Property="RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <!-- Анимация изменения цвета -->
+                            <ColorAnimation
+                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                            To="#B824E4"
+                            Duration="0:0:0.2" />
+
+                            <!-- Анимация увеличения -->
+                            <DoubleAnimation
+                            Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                            To="1.05"
+                            Duration="0:0:0.2" />
+                            <DoubleAnimation
+                            Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                            To="1.05"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <!-- Возврат цвета -->
+                            <ColorAnimation
+                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                            To="#3E3E3E"
+                            Duration="0:0:0.2" />
+
+                            <!-- Возврат размера -->
+                            <DoubleAnimation
+                            Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                            To="1"
+                            Duration="0:0:0.2" />
+                            <DoubleAnimation
+                            Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                            To="1"
+                            Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="MenuButton" TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Padding="5" Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

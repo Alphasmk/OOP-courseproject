@@ -16,6 +16,7 @@ using System.Text.RegularExpressions;
 using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Markup;
+using System.Windows.Media.Animation;
 
 namespace gamelauncher.Views
 {
@@ -24,18 +25,36 @@ namespace gamelauncher.Views
     /// </summary>
     public partial class LoginPage : Window
     {
+        private readonly LoginViewModel _viewModel;
         public LoginPage()
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             string lang = Application.Current.Properties["AppLanguage"].ToString();
             LoadLanguage(lang);
+            _viewModel = new LoginViewModel();
+            this.DataContext = _viewModel;
+            _viewModel.LoginSuccessful += OnLoginSuccessful;
+        }
+        private void OnLoginSuccessful()
+        {
+            var mainWindow = new MainTemplate();
+            mainWindow.Show();
+            this.Close();
         }
         public LoginPage(string _lang)
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             LoadLanguage(Application.Current.Properties["AppLanguage"].ToString());
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (DataContext is LoginViewModel viewModel)
+            {
+                viewModel._password = LoginPasswordBox.Password;
+            }
         }
 
         public bool _isRussian = true;
@@ -114,6 +133,69 @@ namespace gamelauncher.Views
             RegisterPage registerPage = new RegisterPage();
             this.Close();
             registerPage.Show();
+        }
+
+        private void LoginEmailTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            int oldTh = 0;
+            int newTh = 3;
+            int time = 100;
+            if (sender is TextBox tb && tb.Tag is Border border)
+            {
+                border.BorderBrush = Brushes.Purple;
+                var Animation = new ThicknessAnimation
+                {
+                    From = new Thickness(oldTh),
+                    To = new Thickness(newTh),
+                    Duration = TimeSpan.FromMilliseconds(time)
+                };
+                border.BeginAnimation(Border.BorderThicknessProperty, Animation);
+            }
+            else if (sender is PasswordBox pb && pb.Tag is Border _border)
+            {
+                _border.BorderBrush = Brushes.Purple;
+                var Animation = new ThicknessAnimation
+                {
+                    From = new Thickness(oldTh),
+                    To = new Thickness(newTh),
+                    Duration = TimeSpan.FromMilliseconds(time)
+                };
+                _border.BeginAnimation(Border.BorderThicknessProperty, Animation);
+            }
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            int oldTh = 3;
+            int newTh = 0;
+            int time = 100;
+            if (sender is TextBox tb && tb.Tag is Border border)
+            {
+                border.BorderBrush = Brushes.Purple;
+                var Animation = new ThicknessAnimation
+                {
+                    From = new Thickness(oldTh),
+                    To = new Thickness(newTh),
+                    Duration = TimeSpan.FromMilliseconds(time)
+                };
+                border.BeginAnimation(Border.BorderThicknessProperty, Animation);
+            }
+            else if (sender is PasswordBox pb && pb.Tag is Border _border)
+            {
+                _border.BorderBrush = Brushes.Purple;
+                var Animation = new ThicknessAnimation
+                {
+                    From = new Thickness(oldTh),
+                    To = new Thickness(newTh),
+                    Duration = TimeSpan.FromMilliseconds(time)
+                };
+                _border.BeginAnimation(Border.BorderThicknessProperty, Animation);
+            }
         }
     }
 }

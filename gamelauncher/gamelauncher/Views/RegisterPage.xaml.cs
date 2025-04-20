@@ -12,8 +12,11 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using gamelauncher.Model;
+using gamelauncher.MVVM;
 
 namespace gamelauncher.Views
 {
@@ -22,18 +25,17 @@ namespace gamelauncher.Views
     /// </summary>
     public partial class RegisterPage : Window
     {
-        //public RegisterPage()
-        //{
-        //    InitializeComponent();
-        //    WindowStartupLocation = WindowStartupLocation.CenterScreen;
-        //}
-
         public RegisterPage()
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             string lang = Application.Current.Properties["AppLanguage"].ToString();
             LoadLanguage(lang);
+        }
+
+        public void CreateAccount()
+        {
+            DataWorker.CreateUser(LoginEmailTextBox.Text.ToString(), RegisterPasswordTextBox.Text.ToString()); 
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
@@ -124,6 +126,63 @@ namespace gamelauncher.Views
             else
             {
                 RepeatPasswordError.Visibility = Visibility.Hidden;
+            }
+        }
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            int oldTh = 0;
+            int newTh = 3;
+            int time = 100;
+            if (sender is TextBox tb && tb.Tag is Border border)
+            {
+                border.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9319B8"));
+                var Animation = new ThicknessAnimation
+                {
+                    From = new Thickness(oldTh),
+                    To = new Thickness(newTh),
+                    Duration = TimeSpan.FromMilliseconds(time)
+                };
+                border.BeginAnimation(Border.BorderThicknessProperty, Animation);
+            }
+            else if (sender is PasswordBox pb && pb.Tag is Border _border)
+            {
+                _border.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9319B8"));
+                var Animation = new ThicknessAnimation
+                {
+                    From = new Thickness(oldTh),
+                    To = new Thickness(newTh),
+                    Duration = TimeSpan.FromMilliseconds(time)
+                };
+                _border.BeginAnimation(Border.BorderThicknessProperty, Animation);
+            }
+        }
+
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            int oldTh = 3;
+            int newTh = 0;
+            int time = 100;
+            if (sender is TextBox tb && tb.Tag is Border border)
+            {
+                border.BorderBrush = Brushes.Purple;
+                var Animation = new ThicknessAnimation
+                {
+                    From = new Thickness(oldTh),
+                    To = new Thickness(newTh),
+                    Duration = TimeSpan.FromMilliseconds(time)
+                };
+                border.BeginAnimation(Border.BorderThicknessProperty, Animation);
+            }
+            else if (sender is PasswordBox pb && pb.Tag is Border _border)
+            {
+                _border.BorderBrush = Brushes.Purple;
+                var Animation = new ThicknessAnimation
+                {
+                    From = new Thickness(oldTh),
+                    To = new Thickness(newTh),
+                    Duration = TimeSpan.FromMilliseconds(time)
+                };
+                _border.BeginAnimation(Border.BorderThicknessProperty, Animation);
             }
         }
     }

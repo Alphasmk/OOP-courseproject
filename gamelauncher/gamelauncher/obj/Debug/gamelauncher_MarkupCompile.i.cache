@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\App.xaml
-5352502755
+121614090235
 
-15-1764904434
-19129020751
-Resources\en-EN.xaml;Resources\ru-RU.xaml;Views\LoginPage.xaml;Views\MainTemplate.xaml;Views\RegisterPage.xaml;
+421492990697
+166-1181950201
+Resources\en-EN.xaml;Resources\MyStyles.xaml;Resources\ru-RU.xaml;Views\InfoPage.xaml;Views\LibraryPage.xaml;Views\LikedPage.xaml;Views\LoginPage.xaml;Views\MainTemplate.xaml;Views\RegisterError.xaml;Views\RegisterPage.xaml;Views\SettingsPage.xaml;Views\ShopPage.xaml;
 
-True
+False
 

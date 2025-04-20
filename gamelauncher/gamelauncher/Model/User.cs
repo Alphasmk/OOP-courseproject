@@ -8,7 +8,16 @@ namespace gamelauncher.Model
 {
     public class User
     {
-        public string _email { get; set; }
-        public string _password { get; set; }
+        public int Id { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public bool IsAdmin { get; set; }
+        public string UserName { get; set; }
+        public DateTime CreateTime { get; set; }
+        public decimal Balance { get; set; }
+        public bool IsBlocked { get; set; }
+
+        public ICollection<Wishlist> Wishlists { get; set; }
+        public ICollection<Library> Library { get; set; }
     }
 }

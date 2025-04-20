@@ -3,76 +3,200 @@
   "WorkspaceRootPath": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\resources\\en-en.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\resources\\en-en.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\shoppage.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\shoppage.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\resources\\ru-ru.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\resources\\ru-ru.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\shoppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\shoppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\registerpage.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\registerpage.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\maintemplate.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\maintemplate.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\shopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\shopviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\validation\\emailvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\validation\\emailvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\registerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\registerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\passwordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\passwordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\validation\\passwordvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\validation\\passwordvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\emailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\emailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\shoppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\shoppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\maintemplate.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\mvvm\\navigation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\mvvm\\navigation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\settingspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\registererror.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\registererror.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\resources\\ru-ru.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\resources\\ru-ru.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\registererror.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\registererror.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\registerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\registerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\applicationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\migrations\\20250420124615_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\migrations\\20250420124615_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\gameplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\gameplatform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\gamegroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\gamegroup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\dataworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\dataworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\gamegenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\gamegenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\purchase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\group.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|h:\\\u0443\u043D\u0438\u043A\\\u043E\u043E\u043F\\\u043A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\maintemplate.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\maintemplate.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\maintemplate.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\maintemplate.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\mvvm\\currentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\mvvm\\currentuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\passwordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\passwordviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\viewmodels\\emailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\viewmodels\\emailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\validation\\emailvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\validation\\emailvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\resources\\en-en.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\resources\\en-en.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\loginpage.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\loginpage.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\registererror.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\registererror.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\settingspage.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\settingspage.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\maintemplate.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\maintemplate.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\mvvm\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\mvvm\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\validation\\passwordvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\validation\\passwordvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\model\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\model\\platform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\resources\\mystyles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\resources\\mystyles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\views\\infopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|solutionrelative:gamelauncher\\views\\infopage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99A77578-BCB9-4E41-9988-05DA6E6648AE}|gamelauncher\\gamelauncher.csproj|H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -85,12 +209,12 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 234,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 460,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "ru-RU.xaml",
               "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Resources\\ru-RU.xaml",
               "RelativeDocumentMoniker": "gamelauncher\\Resources\\ru-RU.xaml",
@@ -103,107 +227,221 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RegisterPage.xaml",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterPage.xaml",
-              "RelativeDocumentMoniker": "gamelauncher\\Views\\RegisterPage.xaml",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterPage.xaml",
-              "RelativeToolTip": "gamelauncher\\Views\\RegisterPage.xaml",
+              "DocumentIndex": 1,
+              "Title": "ShopPage.xaml.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\ShopPage.xaml.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\ShopPage.xaml.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\ShopPage.xaml.cs",
+              "RelativeToolTip": "gamelauncher\\Views\\ShopPage.xaml.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAYwDwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T14:48:39.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ShopPage.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\ShopPage.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\ShopPage.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\ShopPage.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\ShopPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-01T18:39:32.562Z",
+              "WhenOpened": "2025-04-20T14:28:13.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoginPage.xaml.cs",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml.cs",
-              "RelativeDocumentMoniker": "gamelauncher\\Views\\LoginPage.xaml.cs",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml.cs",
-              "RelativeToolTip": "gamelauncher\\Views\\LoginPage.xaml.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAxwHIAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ShopViewModel.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\ShopViewModel.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\ViewModels\\ShopViewModel.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\ShopViewModel.cs",
+              "RelativeToolTip": "gamelauncher\\ViewModels\\ShopViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-29T15:55:40.053Z",
+              "WhenOpened": "2025-04-20T14:28:05.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "EmailViewModel.cs",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\EmailViewModel.cs",
-              "RelativeDocumentMoniker": "gamelauncher\\ViewModels\\EmailViewModel.cs",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\EmailViewModel.cs",
-              "RelativeToolTip": "gamelauncher\\ViewModels\\EmailViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 23,
+              "Title": "GameGroup.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\GameGroup.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\GameGroup.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\GameGroup.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\GameGroup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:59:13.95Z",
+              "WhenOpened": "2025-04-20T12:08:20.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Group.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Group.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\Group.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Group.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\Group.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T12:07:10.748Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "PasswordValidation.cs",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Validation\\PasswordValidation.cs",
-              "RelativeDocumentMoniker": "gamelauncher\\Validation\\PasswordValidation.cs",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Validation\\PasswordValidation.cs",
-              "RelativeToolTip": "gamelauncher\\Validation\\PasswordValidation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Title": "RegisterError.xaml.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterError.xaml.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\RegisterError.xaml.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterError.xaml.cs",
+              "RelativeToolTip": "gamelauncher\\Views\\RegisterError.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:04:00.571Z",
+              "WhenOpened": "2025-04-19T17:21:36.454Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "LoginPage.xaml",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml",
-              "RelativeDocumentMoniker": "gamelauncher\\Views\\LoginPage.xaml",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml",
-              "RelativeToolTip": "gamelauncher\\Views\\LoginPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-03T09:55:52.409Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "User.cs",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\User.cs",
-              "RelativeDocumentMoniker": "gamelauncher\\Model\\User.cs",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\User.cs",
-              "RelativeToolTip": "gamelauncher\\Model\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "Library.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Library.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\Library.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Library.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\Library.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:37:55.841Z",
+              "WhenOpened": "2025-04-19T13:39:56.207Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UserContext.cs",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\UserContext.cs",
-              "RelativeDocumentMoniker": "gamelauncher\\Model\\UserContext.cs",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\UserContext.cs",
-              "RelativeToolTip": "gamelauncher\\Model\\UserContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:42:17.075Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "MainTemplate.xaml",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\MainTemplate.xaml",
-              "RelativeDocumentMoniker": "gamelauncher\\Views\\MainTemplate.xaml",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\MainTemplate.xaml",
-              "RelativeToolTip": "gamelauncher\\Views\\MainTemplate.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-03T17:46:28.518Z",
+              "Title": "Wishlist.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Wishlist.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\Wishlist.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Wishlist.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\Wishlist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T13:39:40.532Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 27,
+              "Title": "Purchase.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Purchase.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\Purchase.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Purchase.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\Purchase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T13:39:24.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GamePlatform.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\GamePlatform.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\GamePlatform.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\GamePlatform.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\GamePlatform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T13:38:13.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Platform.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Platform.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\Platform.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Platform.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\Platform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T13:37:08.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "InfoPage.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\InfoPage.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\InfoPage.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\InfoPage.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\InfoPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-18T15:35:07.732Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Navigation.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\MVVM\\Navigation.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\MVVM\\Navigation.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\MVVM\\Navigation.cs",
+              "RelativeToolTip": "gamelauncher\\MVVM\\Navigation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T14:20:32.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SettingsPage.xaml.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\SettingsPage.xaml.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\SettingsPage.xaml.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\SettingsPage.xaml.cs",
+              "RelativeToolTip": "gamelauncher\\Views\\SettingsPage.xaml.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAqwFUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T14:01:59.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SettingsPage.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\SettingsPage.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\SettingsPage.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\SettingsPage.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\SettingsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-17T14:01:43.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\ViewModels\\HomeViewModel.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\HomeViewModel.cs",
+              "RelativeToolTip": "gamelauncher\\ViewModels\\HomeViewModel.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T13:57:15.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "MyStyles.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Resources\\MyStyles.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Resources\\MyStyles.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Resources\\MyStyles.xaml",
+              "RelativeToolTip": "gamelauncher\\Resources\\MyStyles.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-15T20:19:26.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "App.xaml",
               "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\App.xaml",
               "RelativeDocumentMoniker": "gamelauncher\\App.xaml",
@@ -215,31 +453,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 33,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "gamelauncher\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T08:56:47.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\App.xaml.cs",
               "RelativeDocumentMoniker": "gamelauncher\\App.xaml.cs",
               "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\App.xaml.cs",
               "RelativeToolTip": "gamelauncher\\App.xaml.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T19:00:23.265Z"
+              "WhenOpened": "2025-04-02T19:00:23.265Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 10,
+              "Title": "RegisterPage.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterPage.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\RegisterPage.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterPage.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\RegisterPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-01T18:39:32.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\LoginPage.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\LoginPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-03T09:55:52.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "EmailViewModel.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\EmailViewModel.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\ViewModels\\EmailViewModel.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\EmailViewModel.cs",
+              "RelativeToolTip": "gamelauncher\\ViewModels\\EmailViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T19:59:13.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "PasswordValidation.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Validation\\PasswordValidation.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Validation\\PasswordValidation.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Validation\\PasswordValidation.cs",
+              "RelativeToolTip": "gamelauncher\\Validation\\PasswordValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T19:04:00.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainTemplate.xaml.cs",
               "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\MainTemplate.xaml.cs",
               "RelativeDocumentMoniker": "gamelauncher\\Views\\MainTemplate.xaml.cs",
               "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\MainTemplate.xaml.cs",
               "RelativeToolTip": "gamelauncher\\Views\\MainTemplate.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAxwBMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T18:37:53.922Z"
+              "WhenOpened": "2025-04-01T18:37:53.922Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 49,
               "Title": "App.config",
               "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\App.config",
               "RelativeDocumentMoniker": "gamelauncher\\App.config",
@@ -248,88 +548,300 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2025-03-31T12:16:21.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RegisterError.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterError.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\RegisterError.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterError.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\RegisterError.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-19T17:05:27.229Z",
+              "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 358,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 411,
+          "SelectedChildIndex": 21,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 18,
+              "Title": "20250420124615_Initial.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Migrations\\20250420124615_Initial.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Migrations\\20250420124615_Initial.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Migrations\\20250420124615_Initial.cs",
+              "RelativeToolTip": "gamelauncher\\Migrations\\20250420124615_Initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T12:46:17.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ApplicationContext.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\ApplicationContext.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\ApplicationContext.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\ApplicationContext.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\ApplicationContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T12:11:29.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\LoginPage.xaml.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml.cs",
+              "RelativeToolTip": "gamelauncher\\Views\\LoginPage.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAvwCoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T15:55:40.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "CurrentUser.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\MVVM\\CurrentUser.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\MVVM\\CurrentUser.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\MVVM\\CurrentUser.cs",
+              "RelativeToolTip": "gamelauncher\\MVVM\\CurrentUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T08:54:08.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\MVVM\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\MVVM\\RelayCommand.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\MVVM\\RelayCommand.cs",
+              "RelativeToolTip": "gamelauncher\\MVVM\\RelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T13:44:26.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "MainTemplate.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\MainTemplate.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\MainTemplate.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\MainTemplate.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\MainTemplate.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-14T12:27:17.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "SettingsPage.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\SettingsPage.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\SettingsPage.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\SettingsPage.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\SettingsPage.xaml",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAAAIYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-17T14:01:52.271Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
               "Title": "en-EN.xaml",
               "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Resources\\en-EN.xaml",
               "RelativeDocumentMoniker": "gamelauncher\\Resources\\en-EN.xaml",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Resources\\en-EN.xaml*",
-              "RelativeToolTip": "gamelauncher\\Resources\\en-EN.xaml*",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Resources\\en-EN.xaml",
+              "RelativeToolTip": "gamelauncher\\Resources\\en-EN.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-04-02T19:00:31.621Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PasswordViewModel.cs",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\PasswordViewModel.cs",
-              "RelativeDocumentMoniker": "gamelauncher\\ViewModels\\PasswordViewModel.cs",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\PasswordViewModel.cs",
-              "RelativeToolTip": "gamelauncher\\ViewModels\\PasswordViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:59:02.999Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 15,
               "Title": "RegisterPage.xaml.cs",
               "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterPage.xaml.cs",
               "RelativeDocumentMoniker": "gamelauncher\\Views\\RegisterPage.xaml.cs",
               "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterPage.xaml.cs",
               "RelativeToolTip": "gamelauncher\\Views\\RegisterPage.xaml.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAqwHUAAAAuAAAAAAAAAA==",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAjwG8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T18:56:45.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 19,
+              "Title": "User.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\User.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\User.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\User.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-15T14:40:08.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
               "Title": "EmailValidation.cs",
               "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Validation\\EmailValidation.cs",
               "RelativeDocumentMoniker": "gamelauncher\\Validation\\EmailValidation.cs",
               "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Validation\\EmailValidation.cs",
               "RelativeToolTip": "gamelauncher\\Validation\\EmailValidation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T18:56:34.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T18:56:34.002Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RegisterPage.xaml",
-              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterPage.xaml",
-              "RelativeDocumentMoniker": "gamelauncher\\Views\\RegisterPage.xaml",
-              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterPage.xaml",
-              "RelativeToolTip": "gamelauncher\\Views\\RegisterPage.xaml",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAawLgAAACHAAAAAAAAAA==",
+              "DocumentIndex": 41,
+              "Title": "RegisterError.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterError.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\RegisterError.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\RegisterError.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\RegisterError.xaml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAD4v28AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-10T18:49:45.595Z",
+              "WhenOpened": "2025-04-19T17:05:32.59Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 40,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\LoginPage.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\LoginPage.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\LoginPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-15T20:27:23.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "PasswordViewModel.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\PasswordViewModel.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\ViewModels\\PasswordViewModel.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\PasswordViewModel.cs",
+              "RelativeToolTip": "gamelauncher\\ViewModels\\PasswordViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T19:59:02.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Game.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Game.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\Game.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Game.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\Game.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T13:29:30.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Genre.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Genre.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\Genre.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\Genre.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\Genre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T13:36:47.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "MainTemplate.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\MainTemplate.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\MainTemplate.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\MainTemplate.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\MainTemplate.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-03T17:46:28.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DataWorker.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\DataWorker.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\DataWorker.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\DataWorker.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\DataWorker.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAA5wFYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T14:30:38.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "gamelauncher\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T15:22:00.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
               "Title": "MainViewModel.cs",
               "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\MainViewModel.cs",
               "RelativeDocumentMoniker": "gamelauncher\\ViewModels\\MainViewModel.cs",
               "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\ViewModels\\MainViewModel.cs",
               "RelativeToolTip": "gamelauncher\\ViewModels\\MainViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAcwB8AAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T20:15:46.163Z",
+              "WhenOpened": "2025-04-10T20:15:46.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "GameGenre.cs",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\GameGenre.cs",
+              "RelativeDocumentMoniker": "gamelauncher\\Model\\GameGenre.cs",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Model\\GameGenre.cs",
+              "RelativeToolTip": "gamelauncher\\Model\\GameGenre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T13:37:53.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShopPage.xaml",
+              "DocumentMoniker": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\ShopPage.xaml",
+              "RelativeDocumentMoniker": "gamelauncher\\Views\\ShopPage.xaml",
+              "ToolTip": "H:\\\u0423\u043D\u0438\u043A\\\u041E\u041E\u041F\\\u041A\u0443\u0440\u0441\u0430\u0447\\gamelauncher\\gamelauncher\\Views\\ShopPage.xaml",
+              "RelativeToolTip": "gamelauncher\\Views\\ShopPage.xaml",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAADUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-20T14:28:15.259Z",
               "EditorCaption": ""
             }
           ]

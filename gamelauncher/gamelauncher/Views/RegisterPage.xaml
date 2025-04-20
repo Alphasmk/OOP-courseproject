@@ -21,7 +21,7 @@
         <WindowChrome CaptionHeight="5" ResizeBorderThickness="2" />
     </WindowChrome.WindowChrome>
     <Window.DataContext>
-        <viewmodels:MainViewModel />
+        <viewmodels:RegisterViewModel />
     </Window.DataContext>
     <Window.Resources>
         <local1:ValidationErrorToVisibilityConverter x:Key="ValidationErrorToVisibilityConverter" />
@@ -120,6 +120,7 @@
                             Foreground="#7A7878"
                             Style="{DynamicResource LoginEmailAddress}" />
                         <Border
+                            x:Name="EmailBorder"
                             Margin="20,5,20,0"
                             Background="#252525"
                             BorderThickness="1"
@@ -135,6 +136,9 @@
                                 FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                                 FontSize="15"
                                 Foreground="White"
+                                GotFocus="TextBox_GotFocus"
+                                LostFocus="TextBox_LostFocus"
+                                Tag="{Binding ElementName=EmailBorder}"
                                 Validation.ErrorTemplate="{x:Null}">
                                 <TextBox.Text>
                                     <Binding
@@ -181,17 +185,18 @@
                                         Placement="Relative"
                                         VerticalOffset="-35">
                                         <StackPanel>
-                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip1}"></TextBlock>
-                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip2}"></TextBlock>
-                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip3}"></TextBlock>
-                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip4}"></TextBlock>
-                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip5}"></TextBlock>
+                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip1}" />
+                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip2}" />
+                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip3}" />
+                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip4}" />
+                                            <TextBlock Background="Transparent" Style="{DynamicResource PasswordToolTip5}" />
                                         </StackPanel>
                                     </ToolTip>
                                 </Image.ToolTip>
                             </Image>
                         </StackPanel>
                         <Border
+                            x:Name="PasswordBorder"
                             Margin="20,0,20,0"
                             Background="#252525"
                             BorderThickness="1"
@@ -207,6 +212,9 @@
                                 FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
                                 FontSize="15"
                                 Foreground="White"
+                                GotFocus="TextBox_GotFocus"
+                                LostFocus="TextBox_LostFocus"
+                                Tag="{Binding ElementName=PasswordBorder}"
                                 Validation.ErrorTemplate="{x:Null}">
                                 <TextBox.Text>
                                     <Binding
@@ -237,6 +245,7 @@
                             Foreground="#7A7878"
                             Style="{DynamicResource PasswordRepeat}" />
                         <Border
+                            x:Name="RepeatPasswordBorder"
                             Margin="20,5,20,0"
                             Background="#252525"
                             BorderThickness="1"
@@ -252,6 +261,10 @@
                                 FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
                                 FontSize="15"
                                 Foreground="White"
+                                GotFocus="TextBox_GotFocus"
+                                LostFocus="TextBox_LostFocus"
+                                Text="{Binding RepeatPassword, UpdateSourceTrigger=PropertyChanged}"
+                                Tag="{Binding ElementName=RepeatPasswordBorder}"
                                 TextChanged="Password_TextChanged" />
                         </Border>
                         <TextBlock
@@ -306,6 +319,7 @@
                                 Height="40"
                                 Background="Transparent"
                                 BorderThickness="0"
+                                Command="{Binding CreateAccountCommand}"
                                 FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
                                 FontSize="15"
                                 Foreground="White"
