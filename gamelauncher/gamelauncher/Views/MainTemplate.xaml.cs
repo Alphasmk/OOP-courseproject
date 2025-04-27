@@ -7,6 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -15,13 +16,11 @@ using System.Windows.Shapes;
 using gamelauncher.Model;
 using gamelauncher.MVVM;
 using gamelauncher.ViewModels;
+using MahApps.Metro.Controls;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace gamelauncher.Views
 {
-    /// <summary>
-    /// Логика взаимодействия для MainTemplate.xaml
-    /// </summary>
     public partial class MainTemplate : Window
     {
         private readonly MainViewModel _viewModel;
@@ -31,8 +30,8 @@ namespace gamelauncher.Views
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             var navigation = new MVVM.Navigation(MainFrame);
             _viewModel = new MainViewModel(navigation);
-            this.DataContext = _viewModel;     
-            if(CurrentUser.Instance.UserName == null)
+            this.DataContext = _viewModel;
+            if (CurrentUser.Instance.UserName == null)
             {
                 MenuButtonText7.Text = CurrentUser.Instance.Email.Split('@')[0];
             }
@@ -40,14 +39,113 @@ namespace gamelauncher.Views
             {
                 MenuButtonText7.Text = CurrentUser.Instance.UserName;
             }
+
+            if (CurrentUser.IsAdmin)
+            {
+                MenuBorder8.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                MenuBorder8.Visibility = Visibility.Collapsed;
+            }
             _viewModel.LogoutSuccessful += OnLogoutSuccessful;
+            navigation.PageNavigated += OnPageNavigated;
+            navigation.NavigateTo(typeof(ShopPage));
+            MainFrame.Opacity = 1;
+        }
+
+        private void OnPageNavigated(Type sourcePageType)
+        {
+            var menuBorders = new[] { MenuBorder1, MenuBorder2, MenuBorder3, MenuBorder4, MenuBorder5, MenuBorder8 };
+
+            foreach (var border in menuBorders)
+            {
+                if (!(border.Background is SolidColorBrush brush))
+                {
+                    brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3E3E3E"));
+                    border.Background = brush;
+                }
+
+                var animation = new ColorAnimation
+                {
+                    To = (Color)ColorConverter.ConvertFromString("#3E3E3E"),
+                    Duration = TimeSpan.FromSeconds(0.3),
+                    EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+                };
+
+                brush.BeginAnimation(SolidColorBrush.ColorProperty, animation);
+
+                if (border.RenderTransform is ScaleTransform scaleTransform)
+                {
+                    var scaleAnimation = new DoubleAnimation
+                    {
+                        To = 1.0, 
+                        Duration = TimeSpan.FromSeconds(0.2),
+                        EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+                    };
+                    border.RenderTransform.BeginAnimation(ScaleTransform.ScaleXProperty, scaleAnimation);
+                    border.RenderTransform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleAnimation);
+                }
+            }
+
+            switch (_viewModel.CurrentPage)
+            {
+                case "Shop":
+                    ApplySelection(MenuBorder1);
+                    break;
+                case "Liked":
+                    ApplySelection(MenuBorder2);
+                    break;
+                case "Library":
+                    ApplySelection(MenuBorder3);
+                    break;
+                case "Settings":
+                    ApplySelection(MenuBorder4);
+                    break;
+                case "Info":
+                    ApplySelection(MenuBorder5);
+                    break;
+                case "Admin":
+                    ApplySelection(MenuBorder8);
+                    break;
+            }
+        }
+
+        private void ApplySelection(Border border)
+        {
+            if (!(border.Background is SolidColorBrush brush))
+            {
+                brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#9319B8"));
+                border.Background = brush;
+            }
+
+            var animation = new ColorAnimation
+            {
+                To = (Color)ColorConverter.ConvertFromString("#9319B8"),
+                Duration = TimeSpan.FromSeconds(0.3),
+                EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+            };
+
+            brush.BeginAnimation(SolidColorBrush.ColorProperty, animation);
+            if (border.RenderTransform == null || !(border.RenderTransform is ScaleTransform))
+            {
+                border.RenderTransform = new ScaleTransform(1.05, 1.05);
+                border.RenderTransformOrigin = new Point(0.5, 0.5);
+            }
+            else
+            {
+                border.RenderTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
+                border.RenderTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
+                ((ScaleTransform)border.RenderTransform).ScaleX = 1.05;
+                ((ScaleTransform)border.RenderTransform).ScaleY = 1.05;
+            }
         }
 
         private void OnLogoutSuccessful()
         {
             var loginWindow = new LoginPage();
-            loginWindow.Show();
             this.Close();
+            loginWindow.Show();
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -86,11 +184,76 @@ namespace gamelauncher.Views
         {
             VisualStateManager.GoToState(MenuPanel, isMenuMaximized ? "Collapsed" : "Expanded", true);
             isMenuMaximized = !isMenuMaximized;
-            //MenuColumn.Width = new GridLength(isMenuMaximized ? 300 : 120);
+        }
+
+        private void MenuButton_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            if (sender is Border border)
+            {
+                // Пропускаем анимацию, если это уже выбранный элемент
+                if ((border.Name == "MenuBorder1" && _viewModel.CurrentPage == "Shop") ||
+                    (border.Name == "MenuBorder2" && _viewModel.CurrentPage == "Liked") ||
+                    (border.Name == "MenuBorder3" && _viewModel.CurrentPage == "Library") ||
+                    (border.Name == "MenuBorder4" && _viewModel.CurrentPage == "Settings") ||
+                    (border.Name == "MenuBorder5" && _viewModel.CurrentPage == "Info") ||
+                    (border.Name == "MenuBorder8" && _viewModel.CurrentPage == "Admin"))
+                {
+                    return;
+                }
+
+                // Убедимся, что есть RenderTransform
+                if (border.RenderTransform == null || !(border.RenderTransform is ScaleTransform))
+                {
+                    border.RenderTransform = new ScaleTransform(1, 1);
+                    border.RenderTransformOrigin = new Point(0.5, 0.5); // Масштабирование из центра
+                }
+
+                // Анимация увеличения на 10%
+                var scaleAnimation = new DoubleAnimation
+                {
+                    To = 1.05, // Увеличение на 10%
+                    Duration = TimeSpan.FromSeconds(0.2),
+                    EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+                };
+
+                border.RenderTransform.BeginAnimation(ScaleTransform.ScaleXProperty, scaleAnimation);
+                border.RenderTransform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleAnimation);
+            }
+        }
+
+        private void MenuButton_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            if (sender is Border border)
+            {
+                // Не меняем размер, если это выбранный элемент
+                if ((border.Name == "MenuBorder1" && _viewModel.CurrentPage == "Shop") ||
+                    (border.Name == "MenuBorder2" && _viewModel.CurrentPage == "Liked") ||
+                    (border.Name == "MenuBorder3" && _viewModel.CurrentPage == "Library") ||
+                    (border.Name == "MenuBorder4" && _viewModel.CurrentPage == "Settings") ||
+                    (border.Name == "MenuBorder5" && _viewModel.CurrentPage == "Info") ||
+                    (border.Name == "MenuBorder8" && _viewModel.CurrentPage == "Admin"))
+                {
+                    return;
+                }
+
+                // Возвращаем к исходному размеру
+                if (border.RenderTransform is ScaleTransform scaleTransform)
+                {
+                    var scaleAnimation = new DoubleAnimation
+                    {
+                        To = 1.0, // Исходный размер
+                        Duration = TimeSpan.FromSeconds(0.2),
+                        EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+                    };
+
+                    scaleTransform.BeginAnimation(ScaleTransform.ScaleXProperty, scaleAnimation);
+                    scaleTransform.BeginAnimation(ScaleTransform.ScaleYProperty, scaleAnimation);
+                }
+            }
         }
 
         private bool isMenuMaximized = false;
-        private void MenuPanel_MouseEnter(object sender, MouseEventArgs e)
+        private void MenuPanel_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             MenuWrapper.BeginAnimation(WidthProperty, new DoubleAnimation
             {
@@ -274,6 +437,39 @@ namespace gamelauncher.Views
                 Duration = TimeSpan.FromMilliseconds(300),
                 EasingFunction = new SineEase()
             });
+
+            if (CurrentUser.IsAdmin)
+            {
+                MenuBorder8.BeginAnimation(WidthProperty, new DoubleAnimation
+                {
+                    From = 65,
+                    To = 200,
+                    Duration = TimeSpan.FromMilliseconds(300),
+                    EasingFunction = new SineEase()
+                });
+                MenuButton8Transform.BeginAnimation(TranslateTransform.XProperty, new DoubleAnimation
+                {
+                    From = 0,
+                    To = -35, // влево
+                    Duration = TimeSpan.FromMilliseconds(300),
+                    EasingFunction = new SineEase()
+                });
+                MenuButton8.BeginAnimation(WidthProperty, new DoubleAnimation
+                {
+                    From = 65,
+                    To = 200,
+                    Duration = TimeSpan.FromMilliseconds(300),
+                    EasingFunction = new SineEase()
+                });
+                MenuButtonText8.Visibility = Visibility.Visible;
+                MenuButtonText8.BeginAnimation(OpacityProperty, new DoubleAnimation
+                {
+                    From = 0,
+                    To = 1,
+                    Duration = TimeSpan.FromMilliseconds(300),
+                    EasingFunction = new SineEase()
+                });
+            }
             MenuBorder7.BeginAnimation(WidthProperty, new DoubleAnimation
             {
                 From = 65,
@@ -298,7 +494,7 @@ namespace gamelauncher.Views
             });
         }
 
-        private void MenuPanel_MouseLeave(object sender, MouseEventArgs e)
+        private void MenuPanel_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             MenuWrapper.BeginAnimation(WidthProperty, new DoubleAnimation
             {
@@ -482,6 +678,39 @@ namespace gamelauncher.Views
                 Duration = TimeSpan.FromMilliseconds(300),
                 EasingFunction = new SineEase()
             });
+            if (CurrentUser.IsAdmin)
+            {
+                MenuBorder8.BeginAnimation(WidthProperty, new DoubleAnimation
+                {
+                    From = 200,
+                    To = 65,
+                    Duration = TimeSpan.FromMilliseconds(300),
+                    EasingFunction = new SineEase()
+                });
+                MenuButton8Transform.BeginAnimation(TranslateTransform.XProperty, new DoubleAnimation
+                {
+                    From = -35,
+                    To = 0, // влево
+                    Duration = TimeSpan.FromMilliseconds(300),
+                    EasingFunction = new SineEase()
+                });
+                MenuButtonText8.BeginAnimation(OpacityProperty, new DoubleAnimation
+                {
+                    From = 1,
+                    To = 0,
+                    Duration = TimeSpan.FromMilliseconds(300),
+                    EasingFunction = new SineEase()
+                });
+                MenuButtonText8.Visibility = Visibility.Collapsed;
+                MenuButton8.BeginAnimation(WidthProperty, new DoubleAnimation
+                {
+                    From = 200,
+                    To = 65,
+                    Duration = TimeSpan.FromMilliseconds(300),
+                    EasingFunction = new SineEase()
+                });
+            }
+
             MenuBorder7.BeginAnimation(WidthProperty, new DoubleAnimation
             {
                 From = 200,

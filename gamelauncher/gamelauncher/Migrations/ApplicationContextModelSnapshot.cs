@@ -75,9 +75,17 @@ namespace gamelauncher.Migrations
                     b.Property<int>("GroupId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("LibraryGameId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("LibraryUserId")
+                        .HasColumnType("int");
+
                     b.HasKey("GameId", "GroupId");
 
                     b.HasIndex("GroupId");
+
+                    b.HasIndex("LibraryUserId", "LibraryGameId");
 
                     b.ToTable("GameGroups");
                 });
@@ -257,7 +265,7 @@ namespace gamelauncher.Migrations
             modelBuilder.Entity("gamelauncher.Model.GameGroup", b =>
                 {
                     b.HasOne("gamelauncher.Model.Game", "Game")
-                        .WithMany("GameGroups")
+                        .WithMany()
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -267,6 +275,10 @@ namespace gamelauncher.Migrations
                         .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("gamelauncher.Model.Library", null)
+                        .WithMany("GameGroups")
+                        .HasForeignKey("LibraryUserId", "LibraryGameId");
                 });
 
             modelBuilder.Entity("gamelauncher.Model.GamePlatform", b =>

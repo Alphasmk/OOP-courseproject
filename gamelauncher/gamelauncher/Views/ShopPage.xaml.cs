@@ -13,6 +13,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using gamelauncher.MVVM;
+using gamelauncher.ViewModels;
 
 namespace gamelauncher.Views
 {
@@ -24,6 +26,12 @@ namespace gamelauncher.Views
         public ShopPage()
         {
             InitializeComponent();
+        }
+
+        private void AdminButton_Click(object sender, RoutedEventArgs e)
+        {
+            var mainViewModel = (MainViewModel)App.Current.MainWindow.DataContext;
+            mainViewModel.GoToAdmin.Execute(null);
         }
 
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)

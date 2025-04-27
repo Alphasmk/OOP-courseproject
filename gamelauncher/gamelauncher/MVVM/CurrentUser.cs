@@ -11,10 +11,11 @@ namespace gamelauncher.MVVM
     {
         public static User Instance { get; set; }
         public static bool IsLoggedIn => Instance != null;
-        public static bool IsAdmin = Instance != null ? Instance.IsAdmin : false;        
+        public static bool IsAdmin;   
         public static void Login(User user) 
         {
             Instance = user;
+            IsAdmin = user.IsAdmin;
         }
 
         public static void Logout()

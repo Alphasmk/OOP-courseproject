@@ -142,6 +142,7 @@
                                 Validation.ErrorTemplate="{x:Null}">
                                 <TextBox.Text>
                                     <Binding
+                                        Mode="TwoWay"
                                         Path="EmailViewModel.Email"
                                         UpdateSourceTrigger="PropertyChanged"
                                         ValidatesOnDataErrors="True"
@@ -218,6 +219,7 @@
                                 Validation.ErrorTemplate="{x:Null}">
                                 <TextBox.Text>
                                     <Binding
+                                        Mode="TwoWay"
                                         Path="PasswordViewModel.Password"
                                         UpdateSourceTrigger="PropertyChanged"
                                         ValidatesOnDataErrors="True"
@@ -263,8 +265,8 @@
                                 Foreground="White"
                                 GotFocus="TextBox_GotFocus"
                                 LostFocus="TextBox_LostFocus"
-                                Text="{Binding RepeatPassword, UpdateSourceTrigger=PropertyChanged}"
                                 Tag="{Binding ElementName=RepeatPasswordBorder}"
+                                Text="{Binding RepeatPassword, UpdateSourceTrigger=PropertyChanged}"
                                 TextChanged="Password_TextChanged" />
                         </Border>
                         <TextBlock
@@ -323,7 +325,11 @@
                                 FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
                                 FontSize="15"
                                 Foreground="White"
-                                Style="{DynamicResource RegisterButton}" />
+                                Style="{DynamicResource RegisterButton}">
+                                <Button.InputBindings>
+                                    <KeyBinding Key="Enter" Command="{Binding CreateAccountCommand}" />
+                                </Button.InputBindings>
+                            </Button>
                         </Border>
                     </StackPanel>
                     <Grid Grid.Row="1" />

@@ -28,5 +28,10 @@ namespace gamelauncher.MVVM
         {
             execute(parameter);
         }
+
+        public void RaiseCanExecuteChanged()
+        {
+            CommandManager.InvalidateRequerySuggested();
+        }
     }
 }

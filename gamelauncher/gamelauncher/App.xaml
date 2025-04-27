@@ -10,6 +10,9 @@
                 <ResourceDictionary Source="Resources/RU-ru.xaml" />
                 <ResourceDictionary Source="Resources/EN-en.xaml" />
                 <ResourceDictionary Source="Resources/MyStyles.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <!--  Цветовая схема  -->
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

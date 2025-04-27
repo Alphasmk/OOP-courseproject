@@ -146,7 +146,8 @@
                                         Path="Email"
                                         UpdateSourceTrigger="PropertyChanged"
                                         ValidatesOnDataErrors="True"
-                                        ValidatesOnExceptions="True">
+                                        ValidatesOnExceptions="True"
+                                        Mode="TwoWay">
                                         <Binding.ValidationRules>
                                             <validationrule:EmailValidationRule />
                                         </Binding.ValidationRules>

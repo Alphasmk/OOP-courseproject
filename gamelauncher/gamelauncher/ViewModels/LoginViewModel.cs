@@ -65,6 +65,11 @@ namespace gamelauncher.ViewModels
                     RegisterError error = new RegisterError("Пользователь с таким email не существует");
                     error.ShowDialog();
                 }
+                else if(DataWorker.CheckBlock(email))
+                {
+                    RegisterError error = new RegisterError("Пользователь заблокирован");
+                    error.ShowDialog();
+                }
                 else
                 {
                     password = DataWorker.HashPassword(password);

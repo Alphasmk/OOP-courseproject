@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -63,7 +64,7 @@ namespace gamelauncher.Model
             using (ApplicationContext db = new ApplicationContext())
             {
                 bool isExist = db.Users.Any(element => element == user);
-                if(isExist)
+                if (isExist)
                 {
                     db.Users.Remove(user);
                     db.SaveChanges();
@@ -78,7 +79,7 @@ namespace gamelauncher.Model
             using (ApplicationContext db = new ApplicationContext())
             {
                 bool isExist = db.Users.Any(element => element == user);
-                if(isExist)
+                if (isExist)
                 {
                     User _user = db.Users.FirstOrDefault(us => us.Id == user.Id);
                     _user.UserName = newName;
@@ -113,6 +114,48 @@ namespace gamelauncher.Model
             {
                 var user = db.Users.FirstOrDefault(u => u.Email == email);
                 return user;
+            }
+        }
+
+        public static bool CheckBlock(string email)
+        {
+            using (ApplicationContext context = new ApplicationContext())
+            {
+                var user = context.Users.FirstOrDefault(u => u.Email == email);
+                return user.IsBlocked;
+            }
+        }
+
+        public static ICollection<Game> GetGames()
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                return db.Games
+                    .Include(g => g.GameGenres)
+                    .ThenInclude(gg => gg.Genre)
+                    .Include(g => g.GamePlatforms)
+                    .ThenInclude(gp => gp.Platform)
+                    .ToList();
+            }
+        }
+
+        public static bool UpdateUser(User updatedUser)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                User existingUser = db.Users.FirstOrDefault(u => u.Id == updatedUser.Id);
+                if (existingUser != null)
+                {
+                    existingUser.Email = updatedUser.Email;
+                    existingUser.IsAdmin = updatedUser.IsAdmin;
+                    existingUser.UserName = updatedUser.UserName;
+                    existingUser.Balance = updatedUser.Balance;
+                    existingUser.IsBlocked = updatedUser.IsBlocked;
+
+                    db.SaveChanges();
+                    return true;
+                }
+                return false;
             }
         }
     }

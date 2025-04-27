@@ -4,12 +4,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:gamelauncher.Views"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/wpf/tekoolkit/2008"
+    xmlns:toolkit1="http://metro.mahapps.com/winfx/xaml/controls"
     Title="Game Launcher"
     Width="1100"
     Height="650"
     MinWidth="900"
-    MinHeight="700"
+    MinHeight="800"
     Background="Transparent"
     Icon="/img/logo.png"
     WindowStyle="None"
@@ -17,6 +20,69 @@
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="5" ResizeBorderThickness="2" />
     </WindowChrome.WindowChrome>
+    <Window.Resources>
+        <Style x:Key="MenuBorderForButtonCh" TargetType="Border">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="#3E3E3E" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <!--  Анимация изменения цвета  -->
+                                <ColorAnimation
+                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                    To="#B824E4"
+                                    Duration="0:0:0.2" />
+
+                                <!--  Анимация увеличения  -->
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                                    To="1.05"
+                                    Duration="0:0:0.2" />
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                                    To="1.05"
+                                    Duration="0:0:0.2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <!--  Возврат цвета  -->
+                                <ColorAnimation
+                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                    To="#3E3E3E"
+                                    Duration="0:0:0.2" />
+
+                                <!--  Возврат размера  -->
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                                    To="1"
+                                    Duration="0:0:0.2" />
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                                    To="1"
+                                    Duration="0:0:0.2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Border
             Height="30"
@@ -117,7 +183,8 @@
                             Margin="0,5,0,15"
                             Background="#3E3E3E"
                             CornerRadius="10"
-                            Style="{DynamicResource MenuBorderForButton}">
+                            MouseEnter="MenuButton_MouseEnter"
+                            MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton1"
                                 Width="65"
@@ -155,7 +222,8 @@
                             Margin="0,0,0,15"
                             Background="#3E3E3E"
                             CornerRadius="10"
-                            Style="{DynamicResource MenuBorderForButton}">
+                            MouseEnter="MenuButton_MouseEnter"
+                            MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton2"
                                 Command="{Binding GoToLiked}"
@@ -188,7 +256,8 @@
                             Margin="0,0,0,15"
                             Background="#3E3E3E"
                             CornerRadius="10"
-                            Style="{DynamicResource MenuBorderForButton}">
+                            MouseEnter="MenuButton_MouseEnter"
+                            MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton3"
                                 Command="{Binding GoToLibrary}"
@@ -222,7 +291,8 @@
                             Margin="0,0,0,15"
                             Background="#3E3E3E"
                             CornerRadius="10"
-                            Style="{DynamicResource MenuBorderForButton}">
+                            MouseEnter="MenuButton_MouseEnter"
+                            MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton4"
                                 Command="{Binding GoToSettings}"
@@ -255,7 +325,8 @@
                             Margin="0,0,0,15"
                             Background="#3E3E3E"
                             CornerRadius="10"
-                            Style="{DynamicResource MenuBorderForButton}">
+                            MouseEnter="MenuButton_MouseEnter"
+                            MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton5"
                                 Command="{Binding GoToInfo}"
@@ -282,13 +353,48 @@
                             </Button>
                         </Border>
                         <Border
+                            x:Name="MenuBorder8"
+                            Width="65"
+                            Height="65"
+                            Margin="0,0,0,15"
+                            Background="#3E3E3E"
+                            CornerRadius="10"
+                            MouseEnter="MenuButton_MouseEnter"
+                            MouseLeave="MenuButton_MouseLeave">
+                            <Button
+                                x:Name="MenuButton8"
+                                Command="{Binding GoToAdmin}"
+                                Style="{DynamicResource MenuButton}">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image
+                                        Width="25"
+                                        Height="25"
+                                        Opacity="1"
+                                        Source="/img/admin.png">
+                                        <Image.RenderTransform>
+                                            <TranslateTransform x:Name="MenuButton8Transform" />
+                                        </Image.RenderTransform>
+                                    </Image>
+                                    <TextBlock
+                                        x:Name="MenuButtonText8"
+                                        VerticalAlignment="Center"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="20"
+                                        Visibility="Collapsed">
+                                        Админ
+                                    </TextBlock>
+                                </StackPanel>
+                            </Button>
+                        </Border>
+                        <Border
                             x:Name="MenuBorder6"
                             Width="65"
                             Height="65"
                             Margin="0,0,0,15"
                             Background="#3E3E3E"
                             CornerRadius="10"
-                            Style="{DynamicResource MenuBorderForButton}">
+                            MouseEnter="MenuButton_MouseEnter"
+                            MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton6"
                                 Command="{Binding LogoutCommand}"
@@ -314,6 +420,7 @@
                                 </StackPanel>
                             </Button>
                         </Border>
+
                     </StackPanel>
                     <Border
                         x:Name="MenuBorder7"
