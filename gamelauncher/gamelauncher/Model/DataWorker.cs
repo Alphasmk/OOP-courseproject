@@ -6,6 +6,10 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using gamelauncher.Views;
+using gamelauncher.ViewModels;
+using System.Collections.ObjectModel;
+using gamelauncher.MVVM;
+using System.Runtime.Remoting.Contexts;
 
 namespace gamelauncher.Model
 {
@@ -74,6 +78,21 @@ namespace gamelauncher.Model
             }
         }
 
+        public static bool DeleteGame(Game game)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                bool isExist = db.Games.Any(element => element == game);
+                if (isExist)
+                {
+                    db.Games.Remove(game);
+                    db.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+        }
+
         public static bool UpdateUserName(User user, string newName)
         {
             using (ApplicationContext db = new ApplicationContext())
@@ -126,7 +145,7 @@ namespace gamelauncher.Model
             }
         }
 
-        public static ICollection<Game> GetGames()
+        public static ICollection<Game> GetAllGames()
         {
             using (ApplicationContext db = new ApplicationContext())
             {
@@ -156,6 +175,145 @@ namespace gamelauncher.Model
                     return true;
                 }
                 return false;
+            }
+        }
+
+        public static ObservableCollection<GenreViewModel> GetAllGenres()
+        {
+            var genresCollection = new ObservableCollection<GenreViewModel>();
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                foreach (var genre in db.Genres)
+                {
+                    genresCollection.Add(new GenreViewModel
+                    {
+                        Id = genre.Id,
+                        Name = genre.Name,
+                        IsSelected = false
+                    });
+                }
+                return genresCollection;
+            }
+        }
+
+        public static ObservableCollection<PlatformViewModel> GetAllPlatforms()
+        {
+            var platformsCollection = new ObservableCollection<PlatformViewModel>();
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                foreach (var platform in db.Platforms)
+                {
+                    platformsCollection.Add(new PlatformViewModel
+                    {
+                        Id = platform.Id,
+                        Name = platform.Name,
+                        IsSelected = false
+                    });
+                }
+                return platformsCollection;
+            }
+        }
+
+        public static ObservableCollection<ImageItemViewModel> GetAllImages(int id, Action<ImageItemViewModel> OnDeleteAction)
+        {
+            var imagesCollection = new ObservableCollection<ImageItemViewModel>();
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var gameImages = db.GameImages.Where(w => w.GameId == id).ToList();
+                if(gameImages.Any())
+                {
+                    foreach (var gameImage in gameImages)
+                    {
+                        imagesCollection.Add(new ImageItemViewModel(OnDeleteAction)
+                        {
+                            GameImage = gameImage,
+                            ImagePath = gameImage.ImagePath
+                        });
+                    }
+                }
+            }
+            return imagesCollection;
+        }
+
+        public static bool isGameLiked(int id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var user = db.Users
+            .Include(u => u.Wishlists)
+            .FirstOrDefault(u => u.Id == CurrentUser.Instance.Id);
+
+                if (user == null || user.Wishlists == null)
+                {
+                    return false;
+                }
+
+                return user.Wishlists.Any(w => w.GameId == id);
+            }
+        }
+
+        public static bool isGameBought(int id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var user = db.Users
+                    .Include(u => u.Library)
+                    .FirstOrDefault(u => u.Id == CurrentUser.Instance.Id);
+                if (user == null || user.Library == null)
+                {
+                    return false;
+                }
+                return user.Library.Any(w => w.GameId == id);
+            }
+        }
+
+        public static void ChangeLikeState(int id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                int userId = CurrentUser.Instance.Id;
+                var existingWish = db.Wishlists
+                    .FirstOrDefault(w => w.UserId == userId && w.GameId == id);
+
+                if (existingWish != null)
+                {
+                    db.Wishlists.Remove(existingWish);
+                }
+                else
+                {
+                    var newWish = new Wishlist
+                    {
+                        UserId = userId,
+                        GameId = id,
+                        AddedDate = DateTime.Now
+                    };
+                    db.Wishlists.Add(newWish);
+                }
+                db.SaveChanges();
+            }
+        }
+
+        public static void BuyGame(int id)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                int userId = CurrentUser.Instance.Id;
+                var boughtGame = new Library
+                {
+                    UserId = userId,
+                    GameId = id,
+                    DateOfPurchase = DateTime.Now
+                };
+                var gamePurchase = new Purchase
+                {
+                    UserId = userId,
+                    GameId = id,
+                    PricePaid = db.Games.FirstOrDefault(w => w.Id == id).Price,
+                    PurchaseDate = DateTime.Now
+                };
+                db.Library.Add(boughtGame);
+                db.Purchases.Add(gamePurchase);
+                db.SaveChanges();
             }
         }
     }

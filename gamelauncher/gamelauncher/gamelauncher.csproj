@@ -58,6 +58,9 @@
     <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
+    <Reference Include="CommonWin32, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a0a4edcfe233918d, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonWin32.2.1.0.3\lib\net35-Client\CommonWin32.dll</HintPath>
+    </Reference>
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.4.0\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
@@ -163,8 +166,23 @@
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
+    <Reference Include="ModernWPF, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c99d0cfbea7491ef, processorArchitecture=MSIL">
+      <HintPath>..\packages\ModernWPF.1.4.6\lib\net40-Client\ModernWPF.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.WPF, Version=29.1462.41.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Data.WPF.29.1.41\lib\net462\Syncfusion.Data.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=29.1462.41.0, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.29.1.41\lib\net462\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfGrid.WPF, Version=29.1462.41.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfGrid.WPF.29.1.41\lib\net462\Syncfusion.SfGrid.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF, Version=29.1462.41.0, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.WPF.29.1.41\lib\net462\Syncfusion.Shared.WPF.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -256,40 +274,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\20250423090953_Initial.cs" />
-    <Compile Include="Migrations\20250423090953_Initial.Designer.cs">
-      <DependentUpon>20250423090953_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\20250509114831_Initial.cs" />
+    <Compile Include="Migrations\20250509114831_Initial.Designer.cs">
+      <DependentUpon>20250509114831_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextModelSnapshot.cs" />
     <Compile Include="Model\ApplicationContext.cs" />
     <Compile Include="Model\DataWorker.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\GameGenre.cs" />
-    <Compile Include="Model\GameGroup.cs" />
+    <Compile Include="Model\GameImages.cs" />
     <Compile Include="Model\GamePlatform.cs" />
     <Compile Include="Model\Genre.cs" />
-    <Compile Include="Model\Group.cs" />
     <Compile Include="Model\Library.cs" />
     <Compile Include="Model\Platform.cs" />
     <Compile Include="Model\Purchase.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\Wishlist.cs" />
+    <Compile Include="MVVM\AuthHelper.cs" />
     <Compile Include="MVVM\Converters.cs" />
     <Compile Include="MVVM\CurrentUser.cs" />
     <Compile Include="MVVM\Navigation.cs" />
     <Compile Include="MVVM\RelayCommand.cs" />
     <Compile Include="Validation\EmailValidation.cs" />
     <Compile Include="Validation\PasswordValidation.cs" />
+    <Compile Include="ViewModels\AddImagesViewModel.cs" />
     <Compile Include="ViewModels\AdminPanelGamesViewModel.cs" />
     <Compile Include="ViewModels\AdminPanelUsersViewModel.cs" />
     <Compile Include="ViewModels\AdminPanelViewModel.cs" />
+    <Compile Include="ViewModels\EditGameViewModel.cs" />
     <Compile Include="ViewModels\EditUserViewModel.cs" />
+    <Compile Include="ViewModels\GameCardViewModel.cs" />
+    <Compile Include="ViewModels\GameViewModel.cs" />
+    <Compile Include="ViewModels\GenreViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\ImageItemViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\PasswordViewModel.cs" />
+    <Compile Include="ViewModels\PlatformViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\ReplenishmentViewModel.cs" />
     <Compile Include="ViewModels\ShopViewModel.cs" />
+    <Compile Include="Views\AddImagesPage.xaml.cs">
+      <DependentUpon>AddImagesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminPanel.xaml.cs">
       <DependentUpon>AdminPanel.xaml</DependentUpon>
     </Compile>
@@ -299,8 +328,14 @@
     <Compile Include="Views\AdminPanelUsers.xaml.cs">
       <DependentUpon>AdminPanelUsers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditGame.xaml.cs">
+      <DependentUpon>EditGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EditUser.xaml.cs">
       <DependentUpon>EditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GamePage.xaml.cs">
+      <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\InfoPage.xaml.cs">
       <DependentUpon>InfoPage.xaml</DependentUpon>
@@ -320,6 +355,9 @@
     <Compile Include="Views\RegisterPage.xaml.cs">
       <DependentUpon>RegisterPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ReplenishmentPage.xaml.cs">
+      <DependentUpon>ReplenishmentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -338,6 +376,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\AddImagesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AdminPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -350,7 +392,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EditGame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EditUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GamePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -387,6 +437,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReplenishmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -503,6 +557,36 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="img\admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Three_dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Unliked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\liked_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\buy_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\liked_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\coins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GameImages\dota1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="GameImages\dota2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.5.2.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.5.2.1\build\MaterialDesignThemes.targets')" />

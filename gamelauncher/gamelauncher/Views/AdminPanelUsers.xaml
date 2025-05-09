@@ -14,7 +14,7 @@
         <!--  Стили для DataGrid  -->
         <SolidColorBrush x:Key="DarkBackground" Color="#1E1E1E" />
         <SolidColorBrush x:Key="RowHoverBrush" Color="#2A2A2A" />
-        <SolidColorBrush x:Key="RowSelectedBrush" Color="#3A3D41" />
+        <SolidColorBrush x:Key="RowSelectedBrush" Color="#535353" />
         <SolidColorBrush x:Key="HeaderBrush" Color="#333" />
         <SolidColorBrush x:Key="TextBrush" Color="#FFFFFF" />
         <Style TargetType="DataGrid">
@@ -57,6 +57,7 @@
             <Setter Property="RowStyle">
                 <Setter.Value>
                     <Style TargetType="DataGridRow">
+                        <Setter Property="Height" Value="50" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="{StaticResource RowHoverBrush}" />
@@ -68,6 +69,26 @@
                     </Style>
                 </Setter.Value>
             </Setter>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DataGridCell">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#e1a5f3" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="BorderBrush" Value="#b31fe0" />
+                </Trigger>
+            </Style.Triggers>
         </Style>
         <Style x:Key="CommandButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#DDDDDD" />
@@ -99,14 +120,31 @@
                 FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
                 FontSize="16"
                 HeadersVisibility="Column"
+                IsReadOnly="True"
                 ItemsSource="{Binding Users}"
                 RowHeaderWidth="0"
                 SelectedItem="{Binding SelectedUser, Mode=TwoWay}"
-                SelectionMode="Single"
-                IsReadOnly="True">
+                SelectionMode="Single">
                 <DataGrid.Resources>
                     <Style TargetType="DataGridCell">
                         <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                        <Setter Property="VerticalAlignment" Value="Stretch" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="DataGridCell">
+                                    <Grid Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="#e1a5f3" />
+                                <Setter Property="Foreground" Value="Black" />
+                                <Setter Property="BorderBrush" Value="#b31fe0" />
+                            </Trigger>
+                        </Style.Triggers>
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
@@ -134,7 +172,7 @@
                         Header="Created"
                         IsReadOnly="True" />
                     <DataGridTextColumn
-                        Width="80"
+                        Width="120"
                         Binding="{Binding Balance, StringFormat=${0:#,##0.00}}"
                         Header="Balance" />
                     <DataGridCheckBoxColumn

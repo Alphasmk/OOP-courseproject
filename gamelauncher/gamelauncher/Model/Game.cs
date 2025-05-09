@@ -18,5 +18,6 @@ namespace gamelauncher.Model
         public bool IsActive { get; set; }
         public ICollection<GameGenre> GameGenres { get; set; }
         public ICollection<GamePlatform> GamePlatforms { get; set; }
+        public ICollection<GameImage> GameImages { get; set; }
     }
 }

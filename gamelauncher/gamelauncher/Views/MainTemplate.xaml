@@ -9,9 +9,9 @@
     xmlns:toolkit="http://schemas.microsoft.com/wpf/tekoolkit/2008"
     xmlns:toolkit1="http://metro.mahapps.com/winfx/xaml/controls"
     Title="Game Launcher"
-    Width="1100"
+    Width="1110"
     Height="650"
-    MinWidth="900"
+    MinWidth="1110"
     MinHeight="800"
     Background="Transparent"
     Icon="/img/logo.png"
@@ -85,7 +85,7 @@
     </Window.Resources>
     <Grid>
         <Border
-            Height="30"
+            Height="40"
             VerticalAlignment="Top"
             Panel.ZIndex="1"
             Background="#1E1E1E"

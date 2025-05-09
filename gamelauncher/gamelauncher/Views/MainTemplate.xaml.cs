@@ -50,8 +50,7 @@ namespace gamelauncher.Views
             }
             _viewModel.LogoutSuccessful += OnLogoutSuccessful;
             navigation.PageNavigated += OnPageNavigated;
-            navigation.NavigateTo(typeof(ShopPage));
-            MainFrame.Opacity = 1;
+            navigation.NavigateTo(typeof(ShopPage), new Action<Game>(_viewModel.NavigateToGamePage));
         }
 
         private void OnPageNavigated(Type sourcePageType)
@@ -129,15 +128,15 @@ namespace gamelauncher.Views
             brush.BeginAnimation(SolidColorBrush.ColorProperty, animation);
             if (border.RenderTransform == null || !(border.RenderTransform is ScaleTransform))
             {
-                border.RenderTransform = new ScaleTransform(1.05, 1.05);
+                border.RenderTransform = new ScaleTransform(1.075, 1.075);
                 border.RenderTransformOrigin = new Point(0.5, 0.5);
             }
             else
             {
                 border.RenderTransform.BeginAnimation(ScaleTransform.ScaleXProperty, null);
                 border.RenderTransform.BeginAnimation(ScaleTransform.ScaleYProperty, null);
-                ((ScaleTransform)border.RenderTransform).ScaleX = 1.05;
-                ((ScaleTransform)border.RenderTransform).ScaleY = 1.05;
+                ((ScaleTransform)border.RenderTransform).ScaleX = 1.075;
+                ((ScaleTransform)border.RenderTransform).ScaleY = 1.075;
             }
         }
 

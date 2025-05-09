@@ -67,27 +67,24 @@ namespace gamelauncher.Migrations
                     b.ToTable("GameGenres");
                 });
 
-            modelBuilder.Entity("gamelauncher.Model.GameGroup", b =>
+            modelBuilder.Entity("gamelauncher.Model.GameImage", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("GameId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GroupId")
-                        .HasColumnType("int");
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("LibraryGameId")
-                        .HasColumnType("int");
+                    b.HasKey("Id");
 
-                    b.Property<int?>("LibraryUserId")
-                        .HasColumnType("int");
+                    b.HasIndex("GameId");
 
-                    b.HasKey("GameId", "GroupId");
-
-                    b.HasIndex("GroupId");
-
-                    b.HasIndex("LibraryUserId", "LibraryGameId");
-
-                    b.ToTable("GameGroups");
+                    b.ToTable("GameImages");
                 });
 
             modelBuilder.Entity("gamelauncher.Model.GamePlatform", b =>
@@ -118,21 +115,6 @@ namespace gamelauncher.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Genres");
-                });
-
-            modelBuilder.Entity("gamelauncher.Model.Group", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Group");
                 });
 
             modelBuilder.Entity("gamelauncher.Model.Library", b =>
@@ -262,23 +244,13 @@ namespace gamelauncher.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("gamelauncher.Model.GameGroup", b =>
+            modelBuilder.Entity("gamelauncher.Model.GameImage", b =>
                 {
                     b.HasOne("gamelauncher.Model.Game", "Game")
-                        .WithMany()
+                        .WithMany("GameImages")
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("gamelauncher.Model.Group", "Group")
-                        .WithMany("GameGroups")
-                        .HasForeignKey("GroupId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("gamelauncher.Model.Library", null)
-                        .WithMany("GameGroups")
-                        .HasForeignKey("LibraryUserId", "LibraryGameId");
                 });
 
             modelBuilder.Entity("gamelauncher.Model.GamePlatform", b =>

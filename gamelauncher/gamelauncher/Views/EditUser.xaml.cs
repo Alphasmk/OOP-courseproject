@@ -21,7 +21,6 @@ namespace gamelauncher.Views
     public partial class EditUser : Window
     {
         private EditUserViewModel viewModel;
-        public ICommand CloseCommand { get; }
         public EditUser(User SelectedUser)
         {
             InitializeComponent();

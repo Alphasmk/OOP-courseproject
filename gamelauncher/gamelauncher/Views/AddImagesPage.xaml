@@ -1,0 +1,216 @@
+﻿<Window
+    x:Class="gamelauncher.Views.AddImagesPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:gamelauncher.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="AddImagesPage"
+    Width="580"
+    Height="585"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Storyboard x:Key="WindowFadeIn">
+            <DoubleAnimation
+                Storyboard.TargetProperty="Opacity"
+                From="0"
+                To="1"
+                Duration="0:0:0.2" />
+        </Storyboard>
+        <Style x:Key="MenuButtonBorder" TargetType="Border">
+            <Setter Property="Background" Value="red" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="#9319B8" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Height" Value="35" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                    To="#B824E4"
+                                    Duration="0:0:0.2" />
+
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                                    To="1.05"
+                                    Duration="0:0:0.2" />
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                                    To="1.05"
+                                    Duration="0:0:0.2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation
+                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                    To="#9319B8"
+                                    Duration="0:0:0.2" />
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
+                                    To="1"
+                                    Duration="0:0:0.2" />
+                                <DoubleAnimation
+                                    Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
+                                    To="1"
+                                    Duration="0:0:0.2" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="MenuButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Padding="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource WindowFadeIn}" />
+        </EventTrigger>
+    </Window.Triggers>
+    <Border
+        Background="#252525"
+        BorderBrush="#5D4465"
+        BorderThickness="2"
+        CornerRadius="20">
+        <StackPanel Orientation="Vertical">
+            <TextBlock
+                Margin="0,20,0,0"
+                HorizontalAlignment="Center"
+                FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
+                FontSize="20"
+                Foreground="White"
+                Text="Добавление изображений" />
+            <Border
+                Height="450"
+                Margin="20,20,20,10"
+                Background="#3E3E3E"
+                CornerRadius="16">
+                <ListView
+                    Margin="10"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    ItemsSource="{Binding Images}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="OverridesDefaultStyle" Value="True" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListViewItem">
+                                        <Border
+                                            x:Name="Bd"
+                                            Background="{TemplateBinding Background}"
+                                            SnapsToDevicePixels="True">
+                                            <ContentPresenter />
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Bd" Property="Background" Value="LightBlue" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border
+                                Height="40"
+                                Margin="8"
+                                HorizontalAlignment="Center"
+                                Background="#474747"
+                                CornerRadius="10">
+                                <Grid HorizontalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.75*" />
+                                        <ColumnDefinition Width="0.25*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        Grid.Column="0"
+                                        Width="400"
+                                        Margin="5"
+                                        VerticalAlignment="Center"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="16"
+                                        Foreground="White"
+                                        Text="{Binding ImagePath}"
+                                        TextTrimming="CharacterEllipsis" />
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                        <Border
+                                            Width="30"
+                                            Height="30"
+                                            Margin="5"
+                                            Style="{StaticResource MenuButtonBorder}">
+                                            <Button Command="{Binding DeleteCommand}" Style="{StaticResource MenuButton}">
+                                                <Image Source="/img/minus.png" />
+                                            </Button>
+                                        </Border>
+                                        <Border
+                                            Width="30"
+                                            Height="30"
+                                            Margin="0,0,5,0"
+                                            Style="{StaticResource MenuButtonBorder}">
+                                            <Button Command="{Binding ChangeCommand}" Style="{StaticResource MenuButton}">
+                                                <Image Source="/img/Three_dots.png" />
+                                            </Button>
+                                        </Border>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Border Style="{StaticResource MenuButtonBorder}">
+                    <Button
+                        Padding="10"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Command="{Binding AddCommand}"
+                        Content="Добавить"
+                        Style="{StaticResource MenuButton}" />
+                </Border>
+                <Border Style="{StaticResource MenuButtonBorder}">
+                    <Button
+                        Padding="10"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Command="{Binding CloseCommand}"
+                        Content="Закрыть"
+                        Style="{StaticResource MenuButton}" />
+                </Border>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,6 +14,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using gamelauncher.Model;
 using gamelauncher.MVVM;
 using gamelauncher.ViewModels;
 
@@ -23,8 +25,11 @@ namespace gamelauncher.Views
     /// </summary>
     public partial class ShopPage : Page
     {
-        public ShopPage()
+        public ShopViewModel _viewModel;
+        public ShopPage(Action<Game> navigateToGamePage)
         {
+            _viewModel = new ShopViewModel(navigateToGamePage);
+            DataContext = _viewModel;
             InitializeComponent();
         }
 
@@ -114,6 +119,23 @@ namespace gamelauncher.Views
                     FillBehavior = FillBehavior.HoldEnd
                 };
                 LoopTransform1.BeginAnimation(TranslateTransform.XProperty, moveTextAnimation);
+            }
+        }
+
+        private static readonly Regex _regex = new Regex(@"^[0-9,]+$");
+
+        private void NumberOnlyTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !_regex.IsMatch(e.Text);
+        }
+
+        private void NumberOnlyTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Back || e.Key == Key.Delete ||
+                e.Key == Key.Left || e.Key == Key.Right ||
+                e.Key == Key.Tab)
+            {
+                e.Handled = false;
             }
         }
     }

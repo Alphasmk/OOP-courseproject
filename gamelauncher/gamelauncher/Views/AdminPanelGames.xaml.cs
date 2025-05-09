@@ -21,12 +21,13 @@ namespace gamelauncher.Views
     /// </summary>
     public partial class AdminPanelGames : Page
     {
+        public AdminPanelGamesViewModel ViewModel { get; }
         public AdminPanelGames()
         {
             InitializeComponent();
-            var viewModel = new AdminPanelGamesViewModel();
-            this.DataContext = viewModel;
-            viewModel.LoadGames();
+            ViewModel = new AdminPanelGamesViewModel();
+            DataContext = ViewModel;
+            ViewModel.RefreshCommand.Execute(null);
         }
     }
 }

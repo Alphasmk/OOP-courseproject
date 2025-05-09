@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore; 
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace gamelauncher.Model
 {
@@ -13,8 +13,7 @@ namespace gamelauncher.Model
         public DbSet<Purchase> Purchases { get; set; }
         public DbSet<Wishlist> Wishlists { get; set; }
         public DbSet<Library> Library { get; set; }
-        public DbSet<Group> Group { get; set; }
-        public DbSet<GameGroup> GameGroups { get; set; }
+        public DbSet<GameImage> GameImages { get; set; }
         public ApplicationContext()
         {
             Database.EnsureCreated();
@@ -25,9 +24,6 @@ namespace gamelauncher.Model
             modelBuilder.Entity<GameGenre>()
                 .HasKey(gg => new { gg.GameId, gg.GenreId });
 
-            modelBuilder.Entity<GameGroup>()
-                .HasKey(gg => new { gg.GameId, gg.GroupId });
-
             modelBuilder.Entity<GamePlatform>()
                 .HasKey(gp => new { gp.GameId, gp.PlatformId });
 
@@ -36,6 +32,15 @@ namespace gamelauncher.Model
 
             modelBuilder.Entity<Library>()
                 .HasKey(l => new { l.UserId, l.GameId });
+
+            modelBuilder.Entity<GameImage>()
+                .HasKey(gi => gi.Id);
+
+            modelBuilder.Entity<GameImage>()
+                .HasOne(gi => gi.Game)
+                .WithMany(g => g.GameImages)
+                .HasForeignKey(gi => gi.GameId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

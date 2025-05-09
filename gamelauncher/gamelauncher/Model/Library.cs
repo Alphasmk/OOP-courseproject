@@ -14,6 +14,5 @@ namespace gamelauncher.Model
         public int GameId { get; set; }
         public Game Game { get; set; }
         public DateTime? DateOfPurchase { get; set; }
-        public ICollection<GameGroup> GameGroups { get; set; }
     }
 }

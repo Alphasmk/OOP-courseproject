@@ -2,8 +2,7 @@
     x:Class="gamelauncher.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:gamelauncher"
-    StartupUri="Views/LoginPage.xaml">
+    xmlns:local="clr-namespace:gamelauncher">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

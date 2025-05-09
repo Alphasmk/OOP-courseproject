@@ -24,9 +24,9 @@
                 Width="150"
                 Height="40"
                 Background="#3E3E3E"
-                CornerRadius="8, 0, 0, 8"
-                BorderThickness="0, 0, 1, 0"
-                BorderBrush="#333232">
+                BorderBrush="#333232"
+                BorderThickness="0,0,1,0"
+                CornerRadius="8, 0, 0, 8">
                 <Border.Style>
                     <Style TargetType="Border">
                         <Setter Property="Background">
@@ -40,13 +40,10 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <!--  Анимация изменения цвета  -->
                                             <ColorAnimation
                                                 Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
                                                 To="#B824E4"
                                                 Duration="0:0:0.2" />
-
-                                            <!--  Анимация увеличения  -->
                                             <DoubleAnimation
                                                 Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
                                                 To="1.05"
@@ -62,13 +59,10 @@
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <!--  Возврат цвета  -->
                                             <ColorAnimation
                                                 Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
                                                 To="#3E3E3E"
                                                 Duration="0:0:0.2" />
-
-                                            <!--  Возврат размера  -->
                                             <DoubleAnimation
                                                 Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
                                                 To="1"
@@ -116,8 +110,8 @@
                 Width="150"
                 Height="40"
                 Background="#3E3E3E"
-                CornerRadius="0, 8, 8, 0"
-                BorderThickness="1, 0, 0, 0">
+                BorderThickness="1,0,0,0"
+                CornerRadius="0, 8, 8, 0">
                 <Border.Style>
                     <Style TargetType="Border">
                         <Setter Property="Background">
@@ -131,13 +125,10 @@
                                 <Trigger.EnterActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <!--  Анимация изменения цвета  -->
                                             <ColorAnimation
                                                 Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
                                                 To="#B824E4"
                                                 Duration="0:0:0.2" />
-
-                                            <!--  Анимация увеличения  -->
                                             <DoubleAnimation
                                                 Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
                                                 To="1.05"
@@ -153,13 +144,10 @@
                                 <Trigger.ExitActions>
                                     <BeginStoryboard>
                                         <Storyboard>
-                                            <!--  Возврат цвета  -->
                                             <ColorAnimation
                                                 Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
                                                 To="#3E3E3E"
                                                 Duration="0:0:0.2" />
-
-                                            <!--  Возврат размера  -->
                                             <DoubleAnimation
                                                 Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
                                                 To="1"

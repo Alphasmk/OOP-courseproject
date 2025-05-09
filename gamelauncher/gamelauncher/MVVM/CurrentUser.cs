@@ -16,11 +16,29 @@ namespace gamelauncher.MVVM
         {
             Instance = user;
             IsAdmin = user.IsAdmin;
+            AuthHelper.SaveCredentials(user.Email, user.Password);
         }
 
         public static void Logout()
         {
+            AuthHelper.DeleteCredentials();
             Instance = null;
+        }
+
+        public static bool TryAutoLogin()
+        {
+            var authData = AuthHelper.LoadCredentials();
+            if (authData == null)
+                return false;
+
+            var user = DataWorker.GetUser(authData.Email);
+            if (user != null)
+            {
+                Login(user);
+                return true;
+            }
+
+            return false;
         }
     }
 }

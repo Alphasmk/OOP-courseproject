@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using gamelauncher.Model;
 using gamelauncher.MVVM;
 using gamelauncher.Views;
 
@@ -51,7 +52,7 @@ namespace gamelauncher.ViewModels
             _navigation = navigation;
             GoToShop = new RelayCommand(_ =>
             {
-                _navigation.NavigateTo(typeof(Views.ShopPage));
+                _navigation.NavigateTo(typeof(ShopPage), new Action<Game>(NavigateToGamePage));
                 CurrentPage = "Shop";
                 SelectedMenuItem = "Shop";
             });
@@ -96,10 +97,16 @@ namespace gamelauncher.ViewModels
         }
 
         public event Action LogoutSuccessful;
+        public event Action<Game> NavigateToGame;
         public void Logout()
         {
             CurrentUser.Logout();
             LogoutSuccessful?.Invoke();
+        }
+
+        public void NavigateToGamePage(Game game)
+        {
+            _navigation.NavigateTo(typeof(GamePage), game);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

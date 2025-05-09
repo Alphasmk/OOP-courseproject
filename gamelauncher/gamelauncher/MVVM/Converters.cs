@@ -25,8 +25,6 @@ namespace gamelauncher.MVVM
             throw new NotImplementedException();
         }
     }
-
-    // Конвертер для отображения списка платформ
     public class PlatformsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -77,6 +75,35 @@ namespace gamelauncher.MVVM
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
+        }
+    }
+
+    public class NumberFormatConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is double number)
+            {
+                return number.ToString(culture);
+            }
+            return value?.ToString() ?? string.Empty;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is string strValue)
+            {
+                // Удаляем все нечисловые символы, кроме разделителей
+                string cleaned = new string(strValue
+                    .Where(c => char.IsDigit(c) || c == '.' || c == ',' || c == '-')
+                    .ToArray());
+
+                if (double.TryParse(cleaned, NumberStyles.Any, culture, out double number))
+                {
+                    return number;
+                }
+            }
+            return 0; // или DependencyProperty.UnsetValue для сохранения предыдущего значения
         }
     }
 }
