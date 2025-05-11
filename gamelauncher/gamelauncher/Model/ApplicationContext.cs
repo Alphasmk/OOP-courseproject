@@ -41,6 +41,24 @@ namespace gamelauncher.Model
                 .WithMany(g => g.GameImages)
                 .HasForeignKey(gi => gi.GameId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Wishlist>()
+                .HasOne(w => w.Game)
+                .WithMany()
+                .HasForeignKey(w => w.GameId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Library>()
+                .HasOne(l => l.Game)
+                .WithMany()
+                .HasForeignKey(l => l.GameId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Purchase>()
+                .HasOne(p => p.Game)
+                .WithMany()
+                .HasForeignKey(p => p.GameId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

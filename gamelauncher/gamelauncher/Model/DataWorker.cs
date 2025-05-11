@@ -32,7 +32,8 @@ namespace gamelauncher.Model
                         UserName = null,
                         CreateTime = DateTime.Now,
                         Balance = 0,
-                        IsBlocked = false
+                        IsBlocked = false,
+                        SnakeRecord = 0, 
                     };
                     db.Users.Add(newUser);
                     db.SaveChanges();
@@ -314,6 +315,35 @@ namespace gamelauncher.Model
                 db.Library.Add(boughtGame);
                 db.Purchases.Add(gamePurchase);
                 db.SaveChanges();
+            }
+        }
+
+        public static ObservableCollection<GameImage> LoadImages(int id)
+        {
+            var imagesCollection = new ObservableCollection<GameImage>();
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                var gameImages = db.GameImages.Where(w => w.GameId == id).ToList();
+                if(gameImages.Any())
+                {
+                    foreach(var image in gameImages)
+                    {
+                        imagesCollection.Add(image);
+                    }
+                }
+            }
+            return imagesCollection;
+        }
+
+        public static List<Platform> GetPlatformsByGameId(int gameId)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                return db.GamePlatforms
+                    .Where(gp => gp.GameId == gameId)
+                    .Include(gp => gp.Platform)
+                    .Select(gp => gp.Platform)
+                    .ToList();
             }
         }
     }

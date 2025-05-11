@@ -25,6 +25,7 @@ namespace gamelauncher.ViewModels
         private DateTime? _created;
         private double? _size;
         private string _imagePath;
+        private string _logoImagePath;
         private bool _isActive;
         private bool _isEditing;
         private ObservableCollection<GenreViewModel> _allGenres;
@@ -102,6 +103,16 @@ namespace gamelauncher.ViewModels
             }
         }
 
+        public string LogoImagePath
+        {
+            get => _logoImagePath;
+            set
+            {
+                _logoImagePath = value;
+                OnPropertyChanged();
+            }
+        }
+
         public decimal Price
         {
             get => _price;
@@ -167,6 +178,7 @@ namespace gamelauncher.ViewModels
         public ICommand SaveOrCreateCommand { get; }
         public ICommand ChangeActivityState { get; }
         public ICommand BrowseImageCommand { get; }
+        public ICommand BrowseLogoImageCommand { get; }
         public ICommand AddImagesCommand { get; }
         public EditGameViewModel(Game game, Action closeAction, bool IsEditing = false)
         {
@@ -183,13 +195,16 @@ namespace gamelauncher.ViewModels
                 Created = game.ReleaseDate;
                 Size = game.SizeGB;
                 ImagePath = game.CoverImagePath;
+                LogoImagePath = game.LogoImagePath;
                 IsActive = game.IsActive;
+                LogoImagePath = game.LogoImagePath;
             }
             SelectedGenres = new ObservableCollection<GenreViewModel>();
             SelectedPlatforms = new ObservableCollection<PlatformViewModel>();
             SaveOrCreateCommand = new RelayCommand(_ => SaveOrCreateGame(), _ => Validate());
             BrowseImageCommand = new RelayCommand(_ => BrowseImage());
-            AddImagesCommand = new RelayCommand(_ => AddImages());
+            BrowseLogoImageCommand = new RelayCommand(_ => BrowseLogoImage());
+            AddImagesCommand = new RelayCommand(_ => AddImages(), _ => CanAddImages());
             _closeAction = closeAction;
             CloseCommand = new RelayCommand(_ => ExecuteClose());
             ChangeActivityState = new RelayCommand(_ => ChangeActivity());
@@ -198,6 +213,11 @@ namespace gamelauncher.ViewModels
                 LoadSelectedGenres();
                 LoadSelectedPlatforms();
             }
+        }
+
+        private bool CanAddImages()
+        {
+            return IsEdit;
         }
 
         private void AddImages()
@@ -216,6 +236,19 @@ namespace gamelauncher.ViewModels
             if (openFileDialog.ShowDialog() == true)
             {
                 ImagePath = openFileDialog.FileName;
+            }
+        }
+
+        private void BrowseLogoImage()
+        {
+            var openFileDialog = new Microsoft.Win32.OpenFileDialog
+            {
+                Filter = "Image files (*.png;*.jpeg;*.jpg;*.bmp)|*.png;*.jpeg;*.jpg;*.bmp|All files (*.*)|*.*"
+            };
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                LogoImagePath = openFileDialog.FileName;
             }
         }
 
@@ -280,6 +313,7 @@ namespace gamelauncher.ViewModels
                         ReleaseDate = Created ?? DateTime.Now,
                         SizeGB = Size ?? 0,
                         CoverImagePath = ImagePath,
+                        LogoImagePath = LogoImagePath,
                         IsActive = IsActive
                     };
 
@@ -300,6 +334,7 @@ namespace gamelauncher.ViewModels
                     _game.SizeGB = Size ?? _game.SizeGB;
                     _game.CoverImagePath = ImagePath;
                     _game.IsActive = IsActive;
+                    _game.LogoImagePath = LogoImagePath;
 
                     UpdateGameGenres(db);
                     UpdateGamePlatforms(db);
@@ -394,12 +429,13 @@ namespace gamelauncher.ViewModels
 
         private bool Validate()
         {
-            string title_pattern = @"^[A-Za-zА-Яа-я0-9_]{1,20}$";
+            string title_pattern = @"^[A-Za-zА-Яа-я0-9_]+( [A-Za-zА-Яа-я0-9_]+)*$";
+
 
             string path_pattern = @"^(?:[a-zA-Z]:)?(\\[A-Za-zА-Яа-я0-9._ -]+)+\\?[A-Za-zА-Яа-я0-9._ -]+\.[a-zA-Z0-9]{1,5}$";
 
             bool isTitleValid = !string.IsNullOrEmpty(Title) && Regex.IsMatch(Title, title_pattern);
-            bool isPathValid = !string.IsNullOrEmpty(ImagePath) && Regex.IsMatch(ImagePath, path_pattern);
+            bool isPathValid = !string.IsNullOrEmpty(ImagePath) && Regex.IsMatch(ImagePath, path_pattern) && !string.IsNullOrEmpty(LogoImagePath) && Regex.IsMatch(LogoImagePath, path_pattern);
 
             if(SelectedGenres.Count() == 0 || SelectedPlatforms.Count() == 0)
             {

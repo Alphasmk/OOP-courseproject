@@ -12,34 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using gamelauncher.Model;
+using gamelauncher.ViewModels;
 
 namespace gamelauncher.Views
 {
     public partial class GamePage : Page
     {
+        private GamePageViewModel viewModel;
         public GamePage(Game game)
         {
             InitializeComponent();
+            viewModel = new GamePageViewModel(game);
+            DataContext = viewModel;
         }
 
-        private void Prev_Click(object sender, RoutedEventArgs e)
+        private void MainScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
         {
-            if (FlipView.SelectedIndex > 0)
-                FlipView.SelectedIndex--;
-            FlipView.HideControlButtons();
+            ExternalScrollBar.Value = e.VerticalOffset;
         }
 
-        private void Next_Click(object sender, RoutedEventArgs e)
+        private void ExternalScrollBar_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            if (FlipView.SelectedIndex < FlipView.Items.Count - 1)
-                FlipView.SelectedIndex++;
-            FlipView.HideControlButtons();
-        }
-
-        private void FlipView_Loaded(object sender, RoutedEventArgs e)
-        {
-            FlipView.HideControlButtons();
+            MainScrollViewer.ScrollToVerticalOffset(e.NewValue);
         }
     }
 }

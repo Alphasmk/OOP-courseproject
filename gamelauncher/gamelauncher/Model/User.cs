@@ -16,6 +16,7 @@ namespace gamelauncher.Model
         public DateTime CreateTime { get; set; }
         public decimal Balance { get; set; }
         public bool IsBlocked { get; set; }
+        public int SnakeRecord { get; set; }
 
         public ICollection<Wishlist> Wishlists { get; set; }
         public ICollection<Library> Library { get; set; }

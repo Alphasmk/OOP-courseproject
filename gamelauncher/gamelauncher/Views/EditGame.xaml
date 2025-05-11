@@ -173,7 +173,10 @@
                                 <TextBox Style="{StaticResource TextBoxStyle}" Text="{Binding Price, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:N2}}" />
                             </Border>
                         </StackPanel>
-                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="5, 0, 0, 0">
+                        <StackPanel
+                            Margin="5,0,0,0"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
                             <TextBlock Text="Обложка:">
                                 <TextBlock.Style>
                                     <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
@@ -190,7 +193,7 @@
                                         <Style BasedOn="{StaticResource TextBoxBorderStyle}" TargetType="{x:Type Border}">
                                             <Setter Property="Width" Value="240" />
                                             <Setter Property="HorizontalAlignment" Value="Left" />
-                                            <Setter Property="Margin" Value="10, 0, 0, 0" />
+                                            <Setter Property="Margin" Value="10,0,0,0" />
                                         </Style>
                                     </Border.Style>
                                     <TextBox Text="{Binding ImagePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
@@ -240,39 +243,7 @@
                         Margin="0,0,0,0"
                         HorizontalAlignment="Center"
                         Orientation="Horizontal">
-                        <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                            <StackPanel.Resources>
-                                <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-                                    <Setter Property="Margin" Value="0,20,0,20" />
-                                    <Setter Property="Foreground" Value="White" />
-                                    <Setter Property="FontFamily" Value="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu" />
-                                    <Setter Property="FontSize" Value="16" />
-                                    <Setter Property="TextAlignment" Value="Right" />
-                                </Style>
-                            </StackPanel.Resources>
-                            <TextBlock Text="Жанры:">
-                                <TextBlock.Style>
-                                    <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
-                                        <Setter Property="Margin" Value="0,0,0,180" />
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBlock Text="Платформы:">
-                                <TextBlock.Style>
-                                    <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
-                                        <Setter Property="Margin" Value="0,30,0,0" />
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                            <TextBlock Text="Размер(GB):">
-                                <TextBlock.Style>
-                                    <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
-                                        <Setter Property="Margin" Value="0,55,0,0" />
-                                    </Style>
-                                </TextBlock.Style>
-                            </TextBlock>
-                        </StackPanel>
-                        <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                        <StackPanel Orientation="Vertical">
                             <StackPanel.Resources>
                                 <Style x:Key="TextBoxStyle" TargetType="TextBox">
                                     <Setter Property="Background" Value="Transparent" />
@@ -284,104 +255,204 @@
                                 </Style>
                                 <Style x:Key="TextBoxBorderStyle" TargetType="Border">
                                     <Setter Property="Padding" Value="5" />
-                                    <Setter Property="Width" Value="250" />
+                                    <Setter Property="Width" Value="245" />
                                     <Setter Property="Height" Value="38" />
                                     <Setter Property="Margin" Value="10,10,0,10" />
                                     <Setter Property="Background" Value="#3E3E3E" />
                                     <Setter Property="CornerRadius" Value="8" />
                                 </Style>
+                                <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+                                    <Setter Property="Foreground" Value="White" />
+                                    <Setter Property="FontFamily" Value="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu" />
+                                    <Setter Property="FontSize" Value="16" />
+                                    <Setter Property="TextAlignment" Value="Right" />
+                                </Style>
                             </StackPanel.Resources>
-                            <Border
-                                Width="300"
-                                Height="200"
-                                Margin="10,0,0,0"
-                                Background="#3E3E3E"
-                                CornerRadius="10">
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="BorderThickness" Value="0" />
-                                    </Style>
-                                </Border.Style>
-                                <GroupBox
-                                    Margin="0"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    BorderThickness="0"
-                                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu">
-                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
-                                        <ItemsControl ItemsSource="{Binding AllGenres}">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <WrapPanel MaxHeight="180" Orientation="Vertical" />
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <CheckBox
-                                                        Margin="5"
-                                                        Content="{Binding Name}"
-                                                        FontSize="10"
-                                                        Foreground="White"
-                                                        IsChecked="{Binding IsSelected, Mode=TwoWay}" />
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
-                                    </ScrollViewer>
-                                </GroupBox>
-                            </Border>
-                            <Border
-                                Width="300"
-                                Height="40"
-                                Margin="10,40,0,0"
-                                Background="#3E3E3E"
-                                CornerRadius="10">
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="BorderThickness" Value="0" />
-                                    </Style>
-                                </Border.Style>
-                                <GroupBox
-                                    Margin="0"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    BorderThickness="0"
-                                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu">
-                                    <ScrollViewer VerticalScrollBarVisibility="Auto">
-                                        <ItemsControl ItemsSource="{Binding AllPlatforms}">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <WrapPanel MaxHeight="180" Orientation="Horizontal" />
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <CheckBox
-                                                        Margin="5"
-                                                        Content="{Binding Name}"
-                                                        FontSize="13"
-                                                        Foreground="White"
-                                                        IsChecked="{Binding IsSelected, Mode=TwoWay}" />
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
-                                    </ScrollViewer>
-                                </GroupBox>
-                            </Border>
-                            <Border>
-                                <Border.Style>
-                                    <Style BasedOn="{StaticResource TextBoxBorderStyle}" TargetType="Border">
-                                        <Setter Property="Margin" Value="10,35,0,10" />
-                                        <Setter Property="Width" Value="300" />
-                                    </Style>
-                                </Border.Style>
-                                <TextBox Style="{StaticResource TextBoxStyle}" Text="{Binding Size, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:N2}}" />
-                            </Border>
-                        </StackPanel>
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                <TextBlock Text="Жанры:">
+                                    <TextBlock.Style>
+                                        <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
+                                            <Setter Property="Margin" Value="0,10,0,0" />
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                                <Border
+                                    Width="300"
+                                    Height="185"
+                                    Margin="10,5,0,0"
+                                    Background="#3E3E3E"
+                                    CornerRadius="10">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="BorderThickness" Value="0" />
+                                        </Style>
+                                    </Border.Style>
+                                    <GroupBox
+                                        Margin="0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        BorderThickness="0"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu">
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                            <ItemsControl ItemsSource="{Binding AllGenres}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel MaxHeight="180" Orientation="Vertical" />
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox
+                                                            Margin="5"
+                                                            Content="{Binding Name}"
+                                                            FontSize="10"
+                                                            Foreground="White"
+                                                            IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </ScrollViewer>
+                                    </GroupBox>
+                                </Border>
+                            </StackPanel>
 
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                <TextBlock Text="Платформы:">
+                                    <TextBlock.Style>
+                                        <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
+                                            <Setter Property="Margin" Value="0,20,10,0" />
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                                <Border
+                                    Width="300"
+                                    Height="40"
+                                    Margin="0,15,0,0"
+                                    Background="#3E3E3E"
+                                    CornerRadius="10">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="BorderThickness" Value="0" />
+                                        </Style>
+                                    </Border.Style>
+                                    <GroupBox
+                                        Margin="0"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        BorderThickness="0"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu">
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                            <ItemsControl ItemsSource="{Binding AllPlatforms}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <WrapPanel MaxHeight="180" Orientation="Horizontal" />
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <CheckBox
+                                                            Margin="5"
+                                                            Content="{Binding Name}"
+                                                            FontSize="13"
+                                                            Foreground="White"
+                                                            IsChecked="{Binding IsSelected, Mode=TwoWay}" />
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </ScrollViewer>
+                                    </GroupBox>
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                                <TextBlock Text="Размер(GB):">
+                                    <TextBlock.Style>
+                                        <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
+                                            <Setter Property="Margin" Value="0,25,0,0" />
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                                <Border>
+                                    <Border.Style>
+                                        <Style BasedOn="{StaticResource TextBoxBorderStyle}" TargetType="Border">
+                                            <Setter Property="Margin" Value="10,15,0,10" />
+                                            <Setter Property="Width" Value="300" />
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBox Style="{StaticResource TextBoxStyle}" Text="{Binding Size, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat={}{0:N2}}" />
+                                </Border>
+                            </StackPanel>
+
+                            <StackPanel
+                                Margin="5,0,0,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal">
+
+                                <StackPanel
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal">
+                                    <TextBlock Text="Лого:">
+                                        <TextBlock.Style>
+                                            <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
+                                                <Setter Property="Margin" Value="0,10,0,0" />
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                    <Border>
+                                        <Border.Style>
+                                            <Style BasedOn="{StaticResource TextBoxBorderStyle}" TargetType="{x:Type Border}">
+                                                <Setter Property="Width" Value="240" />
+                                                <Setter Property="HorizontalAlignment" Value="Left" />
+                                                <Setter Property="Margin" Value="10,0,0,0" />
+                                            </Style>
+                                        </Border.Style>
+                                        <TextBox Text="{Binding LogoImagePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                            <TextBox.Style>
+                                                <Style BasedOn="{StaticResource TextBoxStyle}" TargetType="{x:Type TextBox}" />
+                                            </TextBox.Style>
+                                        </TextBox>
+                                    </Border>
+                                    <Border>
+                                        <Border.Style>
+                                            <Style BasedOn="{StaticResource TextBoxBorderStyle}" TargetType="{x:Type Border}">
+                                                <Setter Property="Width" Value="50" />
+                                                <Setter Property="Height" Value="30" />
+                                                <Setter Property="VerticalAlignment" Value="Center" />
+                                                <Setter Property="Padding" Value="3" />
+                                            </Style>
+                                        </Border.Style>
+                                        <Button Command="{Binding BrowseLogoImageCommand}">
+                                            <Button.Style>
+                                                <Style TargetType="{x:Type Button}">
+                                                    <Setter Property="OverridesDefaultStyle" Value="True" />
+                                                    <Setter Property="Background" Value="Transparent" />
+                                                    <Setter Property="Foreground" Value="White" />
+                                                    <Setter Property="BorderThickness" Value="0" />
+                                                    <Setter Property="Cursor" Value="Hand" />
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                                <Border Padding="5" Background="{TemplateBinding Background}">
+                                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </Button.Style>
+                                            <Image
+                                                Width="25"
+                                                HorizontalAlignment="Center"
+                                                Source="/img/Three_dots.png" />
+                                        </Button>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
                     </StackPanel>
                 </StackPanel>
-
-
             </StackPanel>
             <StackPanel
                 Margin="0,0,0,20"
@@ -462,7 +533,33 @@
                 </StackPanel.Resources>
                 <Border>
                     <Border.Style>
-                        <Style BasedOn="{StaticResource MenuButtonBorder}" TargetType="Border" />
+                        <Style BasedOn="{StaticResource MenuButtonBorder}" TargetType="Border">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsEdit}" Value="False">
+                                    <DataTrigger.EnterActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#3A3D41"
+                                                    Duration="0:0:0.2" />
+
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.EnterActions>
+                                    <DataTrigger.ExitActions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                    To="#9319B8"
+                                                    Duration="0:0:0.2" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </DataTrigger.ExitActions>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
                     </Border.Style>
                     <Button
                         Padding="10"

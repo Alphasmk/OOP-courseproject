@@ -18,6 +18,7 @@ namespace gamelauncher.ViewModels
     {
         private Game _game;
         private ObservableCollection<ImageItemViewModel> _images;
+        private bool _canAdd;
 
         public ObservableCollection<ImageItemViewModel> Images
         {
@@ -25,6 +26,16 @@ namespace gamelauncher.ViewModels
             set
             {
                 _images = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool CanAdd
+        {
+            get => _canAdd;
+            set
+            {
+                _canAdd = value;
                 OnPropertyChanged();
             }
         }
@@ -38,7 +49,7 @@ namespace gamelauncher.ViewModels
             _closeAction = closeAction;
             _images = new ObservableCollection<ImageItemViewModel>();
             _images = DataWorker.GetAllImages(game.Id, RemoveImageFromCollection);
-            AddCommand = new RelayCommand(_ => AddImage());
+            AddCommand = new RelayCommand(_ => AddImage(), _ => canAddImage());
             CloseCommand = new RelayCommand(_ => _closeAction?.Invoke());
         }
 
@@ -74,6 +85,15 @@ namespace gamelauncher.ViewModels
 
                 Images.Add(newItem);
             }
+        }
+
+        private bool canAddImage()
+        {
+            if(Images.Count >= 6)
+            {
+                return false;
+            }
+            return true;
         }
 
         private void RemoveImageFromCollection(ImageItemViewModel imageItem)

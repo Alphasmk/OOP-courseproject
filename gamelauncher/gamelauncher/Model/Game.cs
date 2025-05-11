@@ -15,6 +15,7 @@ namespace gamelauncher.Model
         public DateTime? ReleaseDate { get; set; }
         public double? SizeGB { get; set; }
         public string CoverImagePath { get; set; }
+        public string LogoImagePath { get; set; }
         public bool IsActive { get; set; }
         public ICollection<GameGenre> GameGenres { get; set; }
         public ICollection<GamePlatform> GamePlatforms { get; set; }

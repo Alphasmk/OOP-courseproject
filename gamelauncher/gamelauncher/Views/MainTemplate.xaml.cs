@@ -51,6 +51,7 @@ namespace gamelauncher.Views
             _viewModel.LogoutSuccessful += OnLogoutSuccessful;
             navigation.PageNavigated += OnPageNavigated;
             navigation.NavigateTo(typeof(ShopPage), new Action<Game>(_viewModel.NavigateToGamePage));
+            OnPageNavigated(typeof(ShopPage));
         }
 
         private void OnPageNavigated(Type sourcePageType)
