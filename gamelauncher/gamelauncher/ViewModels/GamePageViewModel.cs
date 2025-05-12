@@ -27,9 +27,11 @@ namespace gamelauncher.ViewModels
         private string _logoPath;
         private bool _isLiked;
         private bool _isBought;
+        private string _description;
         private DateTime? _date;
         private int _currentImageIndex;
         private ObservableCollection<string> _platforms;
+        private ObservableCollection<string> _genres;
         public ObservableCollection<GameImage> GameImages
         {
             get => _gameImages;
@@ -80,10 +82,21 @@ namespace gamelauncher.ViewModels
             }
         }
 
+        public ObservableCollection<string> Genres
+        {
+            get => _genres;
+            set
+            {
+                _genres = value;
+                OnPropertyChanged();
+            }
+        }
+
         public string Title { get => _title; }
         public string LogoPath { get => _logoPath; }
         public decimal Price { get => _price; }
         public int Id { get => _id; }
+        public string Description { get => _description; }
         public bool IsFree => Price == 0;
 
         public DateTime? Date { get => _date; }
@@ -115,6 +128,7 @@ namespace gamelauncher.ViewModels
             _logoPath = game.LogoImagePath;
             _price = game.Price;
             _date = game.ReleaseDate;
+            _description = game.Description;
             IsBought = DataWorker.isGameBought(Id);
             IsLiked = DataWorker.isGameLiked(Id);
             LoadImages();
@@ -126,6 +140,7 @@ namespace gamelauncher.ViewModels
             if (GameImages.Count > 0)
                 SelectedImage = GameImages[0];
             GetPlatformNames();
+            GetGenreNames();
         }
 
         private async void PreviousImage()
@@ -156,6 +171,16 @@ namespace gamelauncher.ViewModels
                         Platforms.Add("/img/applelogo.png");
                         break;
                 }
+            }
+        }
+
+        private void GetGenreNames()
+        {
+            Genres = new ObservableCollection<string>();
+            var genresList = DataWorker.GetGenresByGameId(Id);
+            foreach (var genre in genresList)
+            {
+                Genres.Add(genre.Name);
             }
         }
 

@@ -346,5 +346,17 @@ namespace gamelauncher.Model
                     .ToList();
             }
         }
+
+        public static List<Genre> GetGenresByGameId(int gameId)
+        {
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                return db.GameGenres
+                    .Where(gg => gg.GameId == gameId)
+                    .Include(gg => gg.Genre)
+                    .Select(gg => gg.Genre)
+                    .ToList();
+            }
+        }
     }
 }

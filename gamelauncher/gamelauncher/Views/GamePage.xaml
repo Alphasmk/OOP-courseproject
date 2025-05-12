@@ -300,17 +300,47 @@
                             </ListBox>
                         </Grid>
                     </Viewbox>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.05*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" Margin="0,0,0,10">
+                            <TextBlock
+                                Grid.Column="1"
+                                VerticalAlignment="Bottom"
+                                FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
+                                FontSize="35"
+                                Foreground="White"
+                                Text="Описание" />
+                        </Border>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.05*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="1" Margin="0,0,0,50">
+                            <TextBlock
+                                FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                FontSize="16"
+                                Foreground="White"
+                                Text="{Binding Description}"
+                                TextWrapping="Wrap" />
+                        </Border>
+                    </Grid>
                 </StackPanel>
             </ScrollViewer>
             <Grid
                 Grid.Row="1"
-                Grid.Column="1"
                 Grid.RowSpan="2"
+                Grid.Column="1"
                 Width="330"
                 Margin="0,0,0,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="7*" />
+                    <RowDefinition Height="20*"/>
                 </Grid.RowDefinitions>
                 <Border
                     Grid.Row="0"
@@ -502,7 +532,7 @@
                                 Text="{Binding Date, StringFormat='{}{0:dd.MM.yyyy}'}" />
                         </Grid>
                         <Border Margin="15,0,15,10" Style="{StaticResource Line}" />
-                        <Grid Height="35" Margin="15,0,15,15">
+                        <Grid Height="35" Margin="15,0,15,10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="Auto" />
@@ -517,9 +547,9 @@
                                 Text="Платформы:" />
                             <Border
                                 Grid.Column="1"
+                                Padding="2"
                                 Background="#585858"
-                                CornerRadius="5"
-                                Padding="2">
+                                CornerRadius="5">
                                 <StackPanel Orientation="Horizontal">
                                     <ItemsControl ItemsSource="{Binding Platforms}">
                                         <ItemsControl.ItemsPanel>
@@ -533,19 +563,66 @@
                                                     Width="22"
                                                     Height="22"
                                                     Margin="5,0"
-                                                    Source="{Binding}"
-                                                    RenderOptions.BitmapScalingMode="HighQuality"/>
+                                                    RenderOptions.BitmapScalingMode="HighQuality"
+                                                    Source="{Binding}" />
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
                                     </ItemsControl>
                                 </StackPanel>
                             </Border>
                         </Grid>
+                        <Border Margin="15,0,15,10" Style="{StaticResource Line}" />
+                        <Grid Margin="15,0,15,15">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Column="0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                FontSize="16"
+                                Foreground="#BDBDBD"
+                                Text="Жанры:" />
+                            <ItemsControl
+                                Grid.Column="1"
+                                MaxWidth="220"
+                                VerticalAlignment="Center"
+                                ItemsSource="{Binding Genres}"
+                                HorizontalContentAlignment="Right">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right"/>
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border
+                                            Margin="3"
+                                            Background="#585858"
+                                            CornerRadius="5"
+                                            HorizontalAlignment="Right">
+                                            <TextBlock
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                                FontSize="12"
+                                                Foreground="White"
+                                                Margin="5"
+                                                Text="{Binding}" />
+                                        </Border>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
                     </StackPanel>
                 </Border>
             </Grid>
             <ScrollBar
                 x:Name="ExternalScrollBar"
+                Grid.Row="0"
+                Grid.RowSpan="3"
                 Grid.Column="2"
                 Margin="10,0,0,0"
                 LargeChange="100"
