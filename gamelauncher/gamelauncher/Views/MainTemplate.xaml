@@ -21,6 +21,36 @@
         <WindowChrome CaptionHeight="5" ResizeBorderThickness="2" />
     </WindowChrome.WindowChrome>
     <Window.Resources>
+        <Style x:Key="MenuButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Padding="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="InvisibleButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <Style x:Key="MenuBorderForButtonCh" TargetType="Border">
             <Setter Property="Background">
                 <Setter.Value>
@@ -88,7 +118,7 @@
             Height="40"
             VerticalAlignment="Top"
             Panel.ZIndex="1"
-            Background="#1E1E1E"
+            Background="{DynamicResource TopBarColor}"
             MouseLeftButtonDown="Border_MouseLeftButtonDown">
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <Button
@@ -126,7 +156,7 @@
         <Grid
             Name="auth"
             Margin="0,30,0,0"
-            Background="#181818">
+            Background="{DynamicResource DarkGrey}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="15*" />
                 <RowDefinition Height="75*" />
@@ -152,7 +182,7 @@
                 Width="150"
                 HorizontalAlignment="Left"
                 Panel.ZIndex="1"
-                Background="#1E1E1E"
+                Background="{DynamicResource TopBarColor}"
                 MouseEnter="MenuPanel_MouseEnter"
                 MouseLeave="MenuPanel_MouseLeave">
                 <Grid x:Name="MenuPanel">
@@ -168,20 +198,23 @@
                         Grid.Row="0"
                         Panel.ZIndex="100"
                         Orientation="Vertical">
-                        <Image
+                        <Button
                             Grid.Row="0"
                             Grid.Column="0"
                             Width="80"
                             Margin="0,0,0,30"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top"
-                            Source="/img/logo.png" />
+                            Command="{Binding GoToSnake}"
+                            Style="{StaticResource InvisibleButtonStyle}">
+                            <Image Source="/img/logo.png" />
+                        </Button>
                         <Border
                             x:Name="MenuBorder1"
                             Width="65"
                             Height="65"
                             Margin="0,5,0,15"
-                            Background="#3E3E3E"
+                            Background="{DynamicResource MenuButtonColor}"
                             CornerRadius="10"
                             MouseEnter="MenuButton_MouseEnter"
                             MouseLeave="MenuButton_MouseLeave">
@@ -193,7 +226,7 @@
                                 Background="Transparent"
                                 BorderThickness="0"
                                 Command="{Binding GoToShop}"
-                                Style="{DynamicResource MenuButton}">
+                                Style="{StaticResource MenuButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image
                                         Width="25"
@@ -209,9 +242,8 @@
                                         VerticalAlignment="Center"
                                         FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                                         FontSize="20"
-                                        Visibility="Collapsed">
-                                        Магазин
-                                    </TextBlock>
+                                        Text="{DynamicResource Shop}"
+                                        Visibility="Collapsed" />
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -220,14 +252,14 @@
                             Width="65"
                             Height="65"
                             Margin="0,0,0,15"
-                            Background="#3E3E3E"
+                            Background="{DynamicResource MenuButtonColor}"
                             CornerRadius="10"
                             MouseEnter="MenuButton_MouseEnter"
                             MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton2"
                                 Command="{Binding GoToLiked}"
-                                Style="{DynamicResource MenuButton}">
+                                Style="{StaticResource MenuButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image
                                         Width="25"
@@ -243,9 +275,8 @@
                                         VerticalAlignment="Center"
                                         FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                                         FontSize="20"
-                                        Visibility="Collapsed">
-                                        Желаемое
-                                    </TextBlock>
+                                        Text="{DynamicResource Wishlist}"
+                                        Visibility="Collapsed" />
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -254,14 +285,14 @@
                             Width="65"
                             Height="65"
                             Margin="0,0,0,15"
-                            Background="#3E3E3E"
+                            Background="{DynamicResource MenuButtonColor}"
                             CornerRadius="10"
                             MouseEnter="MenuButton_MouseEnter"
                             MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton3"
                                 Command="{Binding GoToLibrary}"
-                                Style="{DynamicResource MenuButton}">
+                                Style="{StaticResource MenuButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image
                                         Width="25"
@@ -277,9 +308,8 @@
                                         VerticalAlignment="Center"
                                         FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                                         FontSize="20"
-                                        Visibility="Collapsed">
-                                        Библиотека
-                                    </TextBlock>
+                                        Text="{DynamicResource Library}"
+                                        Visibility="Collapsed" />
                                 </StackPanel>
 
                             </Button>
@@ -289,14 +319,14 @@
                             Width="65"
                             Height="65"
                             Margin="0,0,0,15"
-                            Background="#3E3E3E"
+                            Background="{DynamicResource MenuButtonColor}"
                             CornerRadius="10"
                             MouseEnter="MenuButton_MouseEnter"
                             MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton4"
                                 Command="{Binding GoToSettings}"
-                                Style="{DynamicResource MenuButton}">
+                                Style="{StaticResource MenuButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image
                                         Width="30"
@@ -312,43 +342,8 @@
                                         VerticalAlignment="Center"
                                         FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                                         FontSize="20"
-                                        Visibility="Collapsed">
-                                        Настройки
-                                    </TextBlock>
-                                </StackPanel>
-                            </Button>
-                        </Border>
-                        <Border
-                            x:Name="MenuBorder5"
-                            Width="65"
-                            Height="65"
-                            Margin="0,0,0,15"
-                            Background="#3E3E3E"
-                            CornerRadius="10"
-                            MouseEnter="MenuButton_MouseEnter"
-                            MouseLeave="MenuButton_MouseLeave">
-                            <Button
-                                x:Name="MenuButton5"
-                                Command="{Binding GoToInfo}"
-                                Style="{DynamicResource MenuButton}">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image
-                                        Width="25"
-                                        Height="25"
-                                        Opacity="1"
-                                        Source="/img/info.png">
-                                        <Image.RenderTransform>
-                                            <TranslateTransform x:Name="MenuButton5Transform" />
-                                        </Image.RenderTransform>
-                                    </Image>
-                                    <TextBlock
-                                        x:Name="MenuButtonText5"
-                                        VerticalAlignment="Center"
-                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                                        FontSize="20"
-                                        Visibility="Collapsed">
-                                        Информация
-                                    </TextBlock>
+                                        Text="{DynamicResource Settings}"
+                                        Visibility="Collapsed" />
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -357,14 +352,14 @@
                             Width="65"
                             Height="65"
                             Margin="0,0,0,15"
-                            Background="#3E3E3E"
+                            Background="{DynamicResource MenuButtonColor}"
                             CornerRadius="10"
                             MouseEnter="MenuButton_MouseEnter"
                             MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton8"
                                 Command="{Binding GoToAdmin}"
-                                Style="{DynamicResource MenuButton}">
+                                Style="{StaticResource MenuButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image
                                         Width="25"
@@ -380,9 +375,8 @@
                                         VerticalAlignment="Center"
                                         FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                                         FontSize="20"
-                                        Visibility="Collapsed">
-                                        Админ
-                                    </TextBlock>
+                                        Text="{DynamicResource Admin}"
+                                        Visibility="Collapsed" />
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -391,14 +385,14 @@
                             Width="65"
                             Height="65"
                             Margin="0,0,0,15"
-                            Background="#3E3E3E"
+                            Background="{DynamicResource MenuButtonColor}"
                             CornerRadius="10"
                             MouseEnter="MenuButton_MouseEnter"
                             MouseLeave="MenuButton_MouseLeave">
                             <Button
                                 x:Name="MenuButton6"
                                 Command="{Binding LogoutCommand}"
-                                Style="{DynamicResource MenuButton}">
+                                Style="{StaticResource MenuButton}">
                                 <StackPanel Orientation="Horizontal">
                                     <Image
                                         Width="25"
@@ -414,9 +408,8 @@
                                         VerticalAlignment="Center"
                                         FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                                         FontSize="20"
-                                        Visibility="Collapsed">
-                                        Выйти
-                                    </TextBlock>
+                                        Text="{DynamicResource Logout}"
+                                        Visibility="Collapsed" />
                                 </StackPanel>
                             </Button>
                         </Border>
@@ -429,7 +422,7 @@
                         Height="65"
                         Margin="0,0,0,15"
                         VerticalAlignment="Center"
-                        Background="#3E3E3E"
+                        Background="{DynamicResource MenuButtonColor}"
                         CornerRadius="32.5">
                         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                             <Image
@@ -446,9 +439,8 @@
                                 FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                                 FontSize="20"
                                 Foreground="White"
-                                Visibility="Collapsed">
-                                User
-                            </TextBlock>
+                                Text="{Binding UserName}"
+                                Visibility="Collapsed" />
                         </StackPanel>
                     </Border>
 

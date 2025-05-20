@@ -20,6 +20,53 @@
                 To="1"
                 Duration="0:0:0.2" />
         </Storyboard>
+        <Style x:Key="CustomThumbStyle" TargetType="Thumb">
+            <Setter Property="Height" Value="Auto" />
+            <Setter Property="Width" Value="5" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Border Background="{DynamicResource TopBarColor}" CornerRadius="2" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomScrollBar" TargetType="ScrollBar">
+            <Setter Property="Width" Value="4" />
+            <Setter Property="Height" Value="Auto" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollBar">
+                        <Grid>
+                            <Track
+                                x:Name="PART_Track"
+                                IsDirectionReversed="True"
+                                Maximum="{TemplateBinding Maximum}"
+                                ViewportSize="{TemplateBinding ViewportSize}"
+                                Value="{TemplateBinding Value}">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton
+                                        Height="0"
+                                        Command="ScrollBar.LineDownCommand"
+                                        Style="{x:Null}" />
+                                </Track.DecreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource CustomThumbStyle}" />
+                                </Track.Thumb>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton
+                                        Height="0"
+                                        Command="ScrollBar.LineUpCommand"
+                                        Style="{x:Null}" />
+                                </Track.IncreaseRepeatButton>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Window.Resources>
     <Window.Triggers>
         <EventTrigger RoutedEvent="Window.Loaded">
@@ -27,7 +74,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Border
-        Background="#252525"
+        Background="{DynamicResource TopBarColor}"
         BorderBrush="#5D4465"
         BorderThickness="2"
         CornerRadius="20">
@@ -48,15 +95,15 @@
                     VerticalAlignment="Top"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     FontSize="18"
-                    Foreground="White">
+                    Foreground="{DynamicResource MainFontColor}">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsEdit}" Value="True">
-                                    <Setter Property="Text" Value="{Binding Title, StringFormat='Изменение игры: {0}'}" />
+                                    <Setter Property="Text" Value="{Binding WindowTitle}" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding IsEdit}" Value="False">
-                                    <Setter Property="Text" Value="Создание игры" />
+                                    <Setter Property="Text" Value="{DynamicResource CreateGame}" />
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
@@ -70,7 +117,7 @@
                     VerticalAlignment="Top"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     FontSize="16"
-                    Foreground="White">
+                    Foreground="{DynamicResource MainFontColor}">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Style.Triggers>
@@ -84,7 +131,7 @@
                         </Style>
                     </TextBlock.Style>
                     <TextBlock.Text>
-                        <MultiBinding StringFormat="ID: {0}, создана: {1}">
+                        <MultiBinding StringFormat="ID: {0}, {1}">
                             <Binding Path="Id" />
                             <Binding Path="Created" />
                         </MultiBinding>
@@ -99,7 +146,7 @@
                         <StackPanel.Resources>
                             <Style x:Key="TextBlockStyle" TargetType="TextBlock">
                                 <Setter Property="Margin" Value="0,55,0,55" />
-                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Foreground" Value="{DynamicResource MainFontColor}" />
                                 <Setter Property="FontFamily" Value="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu" />
                                 <Setter Property="FontSize" Value="16" />
                                 <Setter Property="TextAlignment" Value="Right" />
@@ -109,7 +156,7 @@
                                 <Setter Property="BorderThickness" Value="0" />
                                 <Setter Property="VerticalContentAlignment" Value="Center" />
                                 <Setter Property="FontFamily" Value="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu" />
-                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Foreground" Value="{DynamicResource MainFontColor}" />
                                 <Setter Property="FontSize" Value="16" />
                             </Style>
                             <Style x:Key="TextBoxBorderStyle" TargetType="Border">
@@ -117,12 +164,12 @@
                                 <Setter Property="Width" Value="300" />
                                 <Setter Property="Height" Value="38" />
                                 <Setter Property="Margin" Value="10,10,0,10" />
-                                <Setter Property="Background" Value="#3E3E3E" />
+                                <Setter Property="Background" Value="{DynamicResource TextBoxMainColor}" />
                                 <Setter Property="CornerRadius" Value="8" />
                             </Style>
                         </StackPanel.Resources>
                         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                            <TextBlock Text="Название:">
+                            <TextBlock Text="{DynamicResource Title:}">
                                 <TextBlock.Style>
                                     <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
                                         <Setter Property="Margin" Value="0,15,0,0" />
@@ -135,7 +182,7 @@
 
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                            <TextBlock Text="Описание:">
+                            <TextBlock Text="{DynamicResource Description:}">
                                 <TextBlock.Style>
                                     <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
                                         <Setter Property="Margin" Value="0,15,0,0" />
@@ -156,13 +203,28 @@
                                             <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
                                             <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
                                             <Setter Property="VerticalContentAlignment" Value="Top" />
+
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="TextBox">
+                                                        <ScrollViewer
+                                                            x:Name="PART_ContentHost"
+                                                            HorizontalScrollBarVisibility="{TemplateBinding HorizontalScrollBarVisibility}"
+                                                            VerticalScrollBarVisibility="{TemplateBinding VerticalScrollBarVisibility}">
+                                                            <ScrollViewer.Resources>
+                                                                <Style BasedOn="{StaticResource CustomScrollBar}" TargetType="ScrollBar" />
+                                                            </ScrollViewer.Resources>
+                                                        </ScrollViewer>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
                                         </Style>
                                     </TextBox.Style>
                                 </TextBox>
                             </Border>
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                            <TextBlock Text="Цена:">
+                            <TextBlock Text="{DynamicResource Price:}">
                                 <TextBlock.Style>
                                     <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
                                         <Setter Property="Margin" Value="0,15,0,0" />
@@ -175,9 +237,10 @@
                         </StackPanel>
                         <StackPanel
                             Margin="5,0,0,0"
+                            HorizontalAlignment="Right"
                             VerticalAlignment="Center"
                             Orientation="Horizontal">
-                            <TextBlock Text="Обложка:">
+                            <TextBlock Text="{DynamicResource Cover:}">
                                 <TextBlock.Style>
                                     <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
                                         <Setter Property="Margin" Value="0,10,0,0" />
@@ -185,7 +248,7 @@
                                 </TextBlock.Style>
                             </TextBlock>
                             <StackPanel
-                                HorizontalAlignment="Center"
+                                HorizontalAlignment="Right"
                                 VerticalAlignment="Center"
                                 Orientation="Horizontal">
                                 <Border>
@@ -250,7 +313,7 @@
                                     <Setter Property="BorderThickness" Value="0" />
                                     <Setter Property="VerticalContentAlignment" Value="Center" />
                                     <Setter Property="FontFamily" Value="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu" />
-                                    <Setter Property="Foreground" Value="White" />
+                                    <Setter Property="Foreground" Value="{DynamicResource MainFontColor}" />
                                     <Setter Property="FontSize" Value="16" />
                                 </Style>
                                 <Style x:Key="TextBoxBorderStyle" TargetType="Border">
@@ -258,18 +321,18 @@
                                     <Setter Property="Width" Value="245" />
                                     <Setter Property="Height" Value="38" />
                                     <Setter Property="Margin" Value="10,10,0,10" />
-                                    <Setter Property="Background" Value="#3E3E3E" />
+                                    <Setter Property="Background" Value="{DynamicResource TextBoxMainColor}" />
                                     <Setter Property="CornerRadius" Value="8" />
                                 </Style>
                                 <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-                                    <Setter Property="Foreground" Value="White" />
+                                    <Setter Property="Foreground" Value="{DynamicResource MainFontColor}" />
                                     <Setter Property="FontFamily" Value="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu" />
                                     <Setter Property="FontSize" Value="16" />
                                     <Setter Property="TextAlignment" Value="Right" />
                                 </Style>
                             </StackPanel.Resources>
                             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                <TextBlock Text="Жанры:">
+                                <TextBlock Text="{DynamicResource Genres:}">
                                     <TextBlock.Style>
                                         <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
                                             <Setter Property="Margin" Value="0,10,0,0" />
@@ -280,7 +343,7 @@
                                     Width="300"
                                     Height="185"
                                     Margin="10,5,0,0"
-                                    Background="#3E3E3E"
+                                    Background="{DynamicResource TextBoxMainColor}"
                                     CornerRadius="10">
                                     <Border.Style>
                                         <Style TargetType="Border">
@@ -306,7 +369,7 @@
                                                             Margin="5"
                                                             Content="{Binding Name}"
                                                             FontSize="10"
-                                                            Foreground="White"
+                                                            Foreground="{DynamicResource MainFontColor}"
                                                             IsChecked="{Binding IsSelected, Mode=TwoWay}" />
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>
@@ -317,7 +380,7 @@
                             </StackPanel>
 
                             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                <TextBlock Text="Платформы:">
+                                <TextBlock Text="{DynamicResource Platforms:}">
                                     <TextBlock.Style>
                                         <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
                                             <Setter Property="Margin" Value="0,20,10,0" />
@@ -328,7 +391,7 @@
                                     Width="300"
                                     Height="40"
                                     Margin="0,15,0,0"
-                                    Background="#3E3E3E"
+                                    Background="{DynamicResource TextBoxMainColor}"
                                     CornerRadius="10">
                                     <Border.Style>
                                         <Style TargetType="Border">
@@ -354,7 +417,7 @@
                                                             Margin="5"
                                                             Content="{Binding Name}"
                                                             FontSize="13"
-                                                            Foreground="White"
+                                                            Foreground="{DynamicResource MainFontColor}"
                                                             IsChecked="{Binding IsSelected, Mode=TwoWay}" />
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>
@@ -365,7 +428,7 @@
                             </StackPanel>
 
                             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                                <TextBlock Text="Размер(GB):">
+                                <TextBlock Text="{DynamicResource Size:}">
                                     <TextBlock.Style>
                                         <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="TextBlock">
                                             <Setter Property="Margin" Value="0,25,0,0" />
@@ -393,7 +456,7 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Orientation="Horizontal">
-                                    <TextBlock Text="Лого:">
+                                    <TextBlock Text="{DynamicResource Logo:}">
                                         <TextBlock.Style>
                                             <Style BasedOn="{StaticResource TextBlockStyle}" TargetType="{x:Type TextBlock}">
                                                 <Setter Property="Margin" Value="0,10,0,0" />
@@ -568,7 +631,7 @@
                         Command="{Binding AddImagesCommand}">
                         <Button.Style>
                             <Style BasedOn="{StaticResource MenuButton}" TargetType="Button">
-                                <Setter Property="Content" Value="Добавить изображений" />
+                                <Setter Property="Content" Value="{DynamicResource AddingImages}" />
                             </Style>
                         </Button.Style>
                     </Button>
@@ -596,10 +659,10 @@
                             <Style BasedOn="{StaticResource MenuButton}" TargetType="Button">
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding IsActive}" Value="True">
-                                        <Setter Property="Content" Value="Активна" />
+                                        <Setter Property="Content" Value="{DynamicResource Active}" />
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding IsActive}" Value="False">
-                                        <Setter Property="Content" Value="Неактивна" />
+                                        <Setter Property="Content" Value="{DynamicResource NotActive}" />
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
@@ -646,10 +709,10 @@
                             <Style BasedOn="{StaticResource MenuButton}" TargetType="Button">
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding IsEdit}" Value="True">
-                                        <Setter Property="Content" Value="Сохранить" />
+                                        <Setter Property="Content" Value="{DynamicResource Save}" />
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding IsEdit}" Value="False">
-                                        <Setter Property="Content" Value="Создать" />
+                                        <Setter Property="Content" Value="{DynamicResource Create}" />
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
@@ -662,7 +725,7 @@
                         Background="Transparent"
                         BorderThickness="0"
                         Command="{Binding CloseCommand}"
-                        Content="Закрыть"
+                        Content="{DynamicResource Back}"
                         Style="{StaticResource MenuButton}" />
                 </Border>
             </StackPanel>

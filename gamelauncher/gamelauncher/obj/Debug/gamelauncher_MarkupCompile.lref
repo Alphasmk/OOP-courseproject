@@ -1,13 +1,16 @@
 ﻿
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\App.xaml;;
+FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\RestorePasswordPage.xaml;;
+FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\SnakePage.xaml;;
+FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\AddGroup.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\AddImagesPage.xaml;;
+FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\AddToGroup.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\AdminPanel.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\AdminPanelGames.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\AdminPanelUsers.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\EditGame.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\EditUser.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\GamePage.xaml;;
-FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\InfoPage.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\LibraryPage.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\LikedPage.xaml;;
 FH:\Уник\ООП\Курсач\gamelauncher\gamelauncher\Views\LoginPage.xaml;;

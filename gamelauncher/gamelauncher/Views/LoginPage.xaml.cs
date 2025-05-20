@@ -30,8 +30,6 @@ namespace gamelauncher.Views
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            string lang = Application.Current.Properties["AppLanguage"].ToString();
-            LoadLanguage(lang);
             _viewModel = new LoginViewModel();
             this.DataContext = _viewModel;
             _viewModel.LoginSuccessful += OnLoginSuccessful;
@@ -46,7 +44,6 @@ namespace gamelauncher.Views
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            LoadLanguage(Application.Current.Properties["AppLanguage"].ToString());
         }
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
@@ -62,25 +59,6 @@ namespace gamelauncher.Views
         {
             _isRussian = !_isRussian;
             string lang = _isRussian ? "ru-RU" : "en-EN";
-            LoadLanguage(lang);
-        }
-
-        private void LoadLanguage(string lang)
-        {
-            Application.Current.Properties["AppLanguage"] = lang;
-            Application.Current.Resources.MergedDictionaries.Clear();
-
-            var dict = new ResourceDictionary
-            {
-                Source = new Uri($"/Resources/{lang}.xaml", UriKind.Relative)
-            };
-
-            Application.Current.Resources.MergedDictionaries.Add(dict);
-
-            CultureInfo culture = new CultureInfo(lang);
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-            CultureInfo.DefaultThreadCurrentUICulture = culture;
-            Language = XmlLanguage.GetLanguage(culture.IetfLanguageTag);
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -125,7 +103,6 @@ namespace gamelauncher.Views
             }
 
             _isRussian = !_isRussian;
-            LoadLanguage(lang);
         }
 
         private void ToggleCreateAccount_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

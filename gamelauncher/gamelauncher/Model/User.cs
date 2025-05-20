@@ -20,5 +20,6 @@ namespace gamelauncher.Model
 
         public ICollection<Wishlist> Wishlists { get; set; }
         public ICollection<Library> Library { get; set; }
+        public ICollection<UserGameGroup> UserGameGroups { get; set; }
     }
 }

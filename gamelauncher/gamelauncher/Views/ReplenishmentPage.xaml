@@ -9,7 +9,6 @@
     Title="ReplenishmentPage"
     Width="500"
     Height="280"
-    d:DataContext="{d:DesignInstance Type=viewmodels:ReplenishmentViewModel}"
     AllowsTransparency="True"
     Background="Transparent"
     BorderThickness="0"
@@ -29,12 +28,12 @@
             <Setter Property="VerticalContentAlignment" Value="Stretch" />
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="14" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" CornerRadius="6">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
@@ -48,7 +47,7 @@
     </Window.Triggers>
     <Grid>
         <Border
-            Background="#252525"
+            Background="{DynamicResource TopBarColor}"
             BorderBrush="#5D4465"
             BorderThickness="2"
             CornerRadius="20">
@@ -57,15 +56,15 @@
                     Margin="0,0,0,10"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
                     FontSize="24"
-                    Foreground="White"
-                    Text="Пополнение баланса"
+                    Foreground="{DynamicResource MainFontColor}"
+                    Text="{DynamicResource ReplenishBalance}"
                     TextAlignment="Center" />
                 <TextBlock
                     Margin="0,0,0,30"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     FontSize="20"
-                    Foreground="White"
-                    Text="{Binding Balance, StringFormat='Текущий баланс: ${0:N2}'}"
+                    Foreground="{DynamicResource MainFontColor}"
+                    Text="{Binding WindowTitle}"
                     TextAlignment="Center" />
                 <StackPanel
                     Height="45"
@@ -77,11 +76,11 @@
                         VerticalAlignment="Center"
                         FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                         FontSize="18"
-                        Foreground="White"
-                        Text="Введите сумму:" />
+                        Foreground="{DynamicResource MainFontColor}"
+                        Text="{DynamicResource EnterSum}" />
                     <Border
                         Width="320"
-                        Background="#3E3E3E"
+                        Background="{DynamicResource TextBoxMainColor}"
                         CornerRadius="8">
                         <TextBox
                             Padding="5"
@@ -90,7 +89,7 @@
                             BorderThickness="0"
                             FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                             FontSize="18"
-                            Foreground="White"
+                            Foreground="{DynamicResource MainFontColor}"
                             Text="{Binding AdditionalSum, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, StringFormat=N2}" />
                     </Border>
                 </StackPanel>
@@ -159,7 +158,7 @@
                             Background="Transparent"
                             BorderThickness="0"
                             Command="{Binding ReplenishCommand}"
-                            Content="Пополнить"
+                            Content="{DynamicResource Replenish}"
                             FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                             Foreground="White"
                             Style="{StaticResource InvisibleButtonStyle}" />
@@ -205,7 +204,7 @@
                             Background="Transparent"
                             BorderThickness="0"
                             Command="{Binding CloseCommand}"
-                            Content="Назад"
+                            Content="{DynamicResource Back}"
                             FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                             Foreground="White"
                             Style="{StaticResource InvisibleButtonStyle}" />

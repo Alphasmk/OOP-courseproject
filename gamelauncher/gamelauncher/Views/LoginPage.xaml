@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:gamelauncher="clr-namespace:gamelauncher"
+    xmlns:local="clr-namespace:gamelauncher.MVVM"
     xmlns:local1="clr-namespace:gamelauncher.Validation"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:validationrule="clr-namespace:gamelauncher.Validation"
@@ -20,17 +21,31 @@
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="5" ResizeBorderThickness="2" />
     </WindowChrome.WindowChrome>
-    <!--<Window.DataContext>
-        <viewmodels:LoginViewModel />
-    </Window.DataContext>-->
     <Window.Resources>
+        <Style x:Key="InvisibleButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Background="{TemplateBinding Background}"
+                            BorderThickness="0"
+                            CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
         <local1:ValidationErrorToVisibilityConverter x:Key="ValidationErrorToVisibilityConverter" />
     </Window.Resources>
     <Grid>
         <Border
             Height="30"
             VerticalAlignment="Top"
-            Background="#1E1E1E"
+            Background="{DynamicResource TopBarColor}"
             MouseLeftButtonDown="Border_MouseLeftButtonDown">
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <Button
@@ -68,7 +83,7 @@
         <Grid
             Name="auth"
             Margin="0,30,0,0"
-            Background="#181818">
+            Background="{DynamicResource DarkGrey}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="15*" />
                 <RowDefinition Height="70*" />
@@ -85,7 +100,7 @@
                 MaxWidth="500px"
                 MaxHeight="500"
                 Margin="10"
-                Background="#1E1E1E"
+                Background="{DynamicResource TopBarColor}"
                 CornerRadius="20">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -110,19 +125,19 @@
                             FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
                             FontSize="22"
                             FontWeight="Bold"
-                            Foreground="White"
-                            Style="{DynamicResource LoginTitle}" />
+                            Foreground="{DynamicResource MainFontColor}"
+                            Text="{DynamicResource LoginTitle}" />
                         <TextBlock
                             Margin="20,10,0,0"
                             HorizontalAlignment="Left"
                             FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
                             FontSize="15"
                             Foreground="#7A7878"
-                            Style="{DynamicResource LoginEmailAddress}" />
+                            Text="{DynamicResource LoginEmailAddress}" />
                         <Border
                             x:Name="EmailBorder"
                             Margin="20,10,20,0"
-                            Background="#252525"
+                            Background="{DynamicResource TextBoxMainColor}"
                             BorderThickness="1"
                             CornerRadius="10"
                             UseLayoutRounding="True">
@@ -135,7 +150,7 @@
                                 BorderThickness="0"
                                 FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                                 FontSize="15"
-                                Foreground="White"
+                                Foreground="{DynamicResource MainFontColor}"
                                 GotFocus="TextBox_GotFocus"
                                 LostFocus="TextBox_LostFocus"
                                 Tag="{Binding ElementName=EmailBorder}"
@@ -143,11 +158,11 @@
                                 Validation.ErrorTemplate="{x:Null}">
                                 <TextBox.Text>
                                     <Binding
+                                        Mode="TwoWay"
                                         Path="Email"
                                         UpdateSourceTrigger="PropertyChanged"
                                         ValidatesOnDataErrors="True"
-                                        ValidatesOnExceptions="True"
-                                        Mode="TwoWay">
+                                        ValidatesOnExceptions="True">
                                         <Binding.ValidationRules>
                                             <validationrule:EmailValidationRule />
                                         </Binding.ValidationRules>
@@ -161,7 +176,7 @@
                             HorizontalAlignment="Right"
                             FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
                             Foreground="#FF0073"
-                            Style="{DynamicResource EmailError}"
+                            Text="{DynamicResource EmailError}"
                             Visibility="{Binding ElementName=LoginEmailTextBox, Path=(Validation.HasError), Converter={StaticResource ValidationErrorToVisibilityConverter}, ConverterParameter=False}" />
                         <TextBlock
                             Margin="20,10,0,0"
@@ -169,11 +184,11 @@
                             FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
                             FontSize="15"
                             Foreground="#7A7878"
-                            Style="{DynamicResource LoginPassword}" />
+                            Text="{DynamicResource LoginPassword}" />
                         <Border
                             x:Name="PasswordBorder"
                             Margin="20,10,20,0"
-                            Background="#252525"
+                            Background="{DynamicResource TextBoxMainColor}"
                             BorderThickness="1"
                             CornerRadius="10"
                             UseLayoutRounding="True">
@@ -186,21 +201,21 @@
                                 BorderThickness="0"
                                 FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
                                 FontSize="15"
-                                Foreground="White"
+                                Foreground="{DynamicResource MainFontColor}"
                                 GotFocus="TextBox_GotFocus"
                                 LostFocus="TextBox_LostFocus"
                                 PasswordChanged="PasswordBox_PasswordChanged"
                                 Tag="{Binding ElementName=PasswordBorder}" />
                         </Border>
-                        <TextBlock
-                            Width="155"
+                        <Button
                             Margin="20,0,0,0"
                             HorizontalAlignment="Left"
+                            Command="{Binding RestoreCommand}"
+                            Content="{DynamicResource ForgotPassword}"
                             FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
                             FontSize="15"
                             Foreground="#7A7878"
-                            Style="{DynamicResource ForgotPassword}"
-                            TextDecorations="Underline" />
+                            Style="{StaticResource InvisibleButtonStyle}" />
                         <Border Margin="20,25,20,0" CornerRadius="5">
                             <Border.Style>
                                 <Style TargetType="Border">
@@ -242,9 +257,28 @@
                                 Height="40"
                                 BorderThickness="0"
                                 Command="{Binding LoginCommand}"
+                                Content="{DynamicResource LoginTitle}"
                                 FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
-                                FontSize="15"
-                                Style="{DynamicResource LoginButton}" />
+                                FontSize="15">
+                                <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="OverridesDefaultStyle" Value="True" />
+                                        <Setter Property="Background" Value="Transparent" />
+                                        <Setter Property="Foreground" Value="White" />
+                                        <Setter Property="BorderThickness" Value="0" />
+                                        <Setter Property="Cursor" Value="Hand" />
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border Padding="5" Background="{TemplateBinding Background}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
                         </Border>
                     </StackPanel>
                     <Grid Grid.Row="1" />
@@ -255,7 +289,7 @@
                             FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
                             FontSize="15"
                             Foreground="#7A7878"
-                            Style="{DynamicResource RegisterQA}" />
+                            Text="{DynamicResource RegisterQA}" />
                         <TextBlock
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
@@ -264,20 +298,80 @@
                             FontSize="15"
                             Foreground="#7A7878"
                             MouseLeftButtonDown="ToggleCreateAccount_MouseLeftButtonDown"
-                            Style="{DynamicResource CreateAccountButton}"
+                            Text="{DynamicResource CreateAccountButton}"
                             TextDecorations="Underline">
                             <TextBlock />
                         </TextBlock>
                     </StackPanel>
                 </Grid>
             </Border>
-            <Image
-                x:Name="ToggleLanguage"
+            <StackPanel
                 Grid.Row="2"
                 Grid.Column="2"
-                Width="50"
-                MouseDown="ToggleLanguage_MouseDown"
-                Style="{DynamicResource LanguageIMG}" />
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
+                <Button
+                    Width="50"
+                    Margin="10"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Command="{Binding ChangeLanguageCommand}"
+                    Style="{StaticResource InvisibleButtonStyle}">
+                    <Image x:Name="ToggleLanguage">
+                        <Image.Style>
+                            <Style TargetType="Image">
+                                <Setter Property="Source" Value="/img/usa.png" />
+
+                                <Style.Triggers>
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding CurrentLanguage}" Value="ru-RU" />
+                                            <Condition Binding="{Binding IsLightTheme}" Value="True" />
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Source" Value="/img/russia_dark.png" />
+                                    </MultiDataTrigger>
+
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding CurrentLanguage}" Value="ru-RU" />
+                                            <Condition Binding="{Binding IsLightTheme}" Value="False" />
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Source" Value="/img/russia.png" />
+                                    </MultiDataTrigger>
+
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding CurrentLanguage}" Value="en-EN" />
+                                            <Condition Binding="{Binding IsLightTheme}" Value="True" />
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Source" Value="/img/usa_dark.png" />
+                                    </MultiDataTrigger>
+
+                                    <MultiDataTrigger>
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding CurrentLanguage}" Value="en-EN" />
+                                            <Condition Binding="{Binding IsLightTheme}" Value="False" />
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Source" Value="/img/usa.png" />
+                                    </MultiDataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Image.Style>
+                    </Image>
+                </Button>
+                <Button
+                    Width="50"
+                    Margin="10"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Command="{Binding ToggleThemeCommand}"
+                    Style="{StaticResource InvisibleButtonStyle}">
+                    <Image
+                        x:Name="ToggleTheme"
+                        RenderOptions.BitmapScalingMode="HighQuality"
+                        Style="{DynamicResource ThemeIMG}" />
+                </Button>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

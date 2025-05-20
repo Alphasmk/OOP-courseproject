@@ -28,14 +28,34 @@ namespace gamelauncher.ViewModels
             }
         }
 
+        private string _userName;
+
+        public string UserName
+        {
+            get => _userName;
+            set
+            {
+                if(value != null)
+                {
+                    _userName = value;
+                }
+                else
+                {
+                    _userName = CurrentUser.Instance.Email.Split('@')[0];
+                }
+                OnPropertyChanged();
+                OnUserNameChanged?.Invoke();
+            }
+        }
+
         public INavigation _navigation;
         public ICommand GoToShop { get; }
         public ICommand GoToLiked { get; }
         public ICommand GoToLibrary { get; }
         public ICommand GoToSettings { get; }
-        public ICommand GoToInfo { get; }
         public ICommand LogoutCommand { get; }
         public ICommand GoToAdmin { get; }
+        public ICommand GoToSnake { get; }
 
         private string _selectedMenuItem;
         public string SelectedMenuItem
@@ -47,9 +67,16 @@ namespace gamelauncher.ViewModels
                 OnPropertyChanged();
             }
         }
-        public MainViewModel(INavigation navigation)
+
+        private event Action OnUserNameChanged;
+        public MainViewModel(INavigation navigation, Action UserNameChanged)
         {
+            CurrentUser.UserChanged += () =>
+            {
+                UserName = CurrentUser.Instance.UserName;
+            };
             _navigation = navigation;
+            UserName = CurrentUser.Instance.UserName;
             GoToShop = new RelayCommand(_ =>
             {
                 _navigation.NavigateTo(typeof(ShopPage), new Action<Game>(NavigateToGamePage));
@@ -59,14 +86,14 @@ namespace gamelauncher.ViewModels
 
             GoToLiked = new RelayCommand(_ =>
             {
-                _navigation.NavigateTo(typeof(Views.LikedPage));
+                _navigation.NavigateTo(typeof(Views.LikedPage), new Action<Game>(NavigateToGamePage));
                 CurrentPage = "Liked";
                 SelectedMenuItem = "Liked";
             });
 
             GoToLibrary = new RelayCommand(_ =>
             {
-                _navigation.NavigateTo(typeof(Views.LibraryPage));
+                _navigation.NavigateTo(typeof(Views.LibraryPage), new Action<Game>(NavigateToGamePage));
                 CurrentPage = "Library";
                 SelectedMenuItem = "Library";
             });
@@ -78,13 +105,6 @@ namespace gamelauncher.ViewModels
                 SelectedMenuItem = "Settings";
             });
 
-            GoToInfo = new RelayCommand(_ =>
-            {
-                _navigation.NavigateTo(typeof(Views.InfoPage));
-                CurrentPage = "Info";
-                SelectedMenuItem = "Info";
-            });
-
             GoToAdmin = new RelayCommand(_ =>
             {
                 _navigation.NavigateTo(typeof(Views.AdminPanel));
@@ -92,8 +112,22 @@ namespace gamelauncher.ViewModels
                 SelectedMenuItem = "Admin";
             });
 
+            GoToSnake = new RelayCommand(_ =>
+            {
+                //if (CurrentPage == "Snake")
+                //{
+                //    oldSnakePage.Cleanup();
+                //}
+
+                // Переходим на новую страницу
+                _navigation.NavigateTo(typeof(Views.SnakePage));
+                CurrentPage = "Snake";
+                SelectedMenuItem = "Snake";
+            });
+
             CurrentPage = "Shop";
             LogoutCommand = new RelayCommand(_ => Logout());
+
         }
 
         public event Action LogoutSuccessful;

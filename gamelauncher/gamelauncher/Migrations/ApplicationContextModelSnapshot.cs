@@ -217,6 +217,41 @@ namespace gamelauncher.Migrations
                     b.ToTable("Users");
                 });
 
+            modelBuilder.Entity("gamelauncher.Model.UserGameGroup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserGameGroups");
+                });
+
+            modelBuilder.Entity("gamelauncher.Model.UserGameGroupGame", b =>
+                {
+                    b.Property<int>("UserGameGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserGameGroupId", "GameId");
+
+                    b.HasIndex("GameId");
+
+                    b.ToTable("UserGameGroupGames");
+                });
+
             modelBuilder.Entity("gamelauncher.Model.Wishlist", b =>
                 {
                     b.Property<int>("UserId")
@@ -300,6 +335,30 @@ namespace gamelauncher.Migrations
                     b.HasOne("gamelauncher.Model.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("gamelauncher.Model.UserGameGroup", b =>
+                {
+                    b.HasOne("gamelauncher.Model.User", "User")
+                        .WithMany("UserGameGroups")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("gamelauncher.Model.UserGameGroupGame", b =>
+                {
+                    b.HasOne("gamelauncher.Model.Game", "Game")
+                        .WithMany()
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("gamelauncher.Model.UserGameGroup", "UserGameGroup")
+                        .WithMany("UserGameGroupGames")
+                        .HasForeignKey("UserGameGroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

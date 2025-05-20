@@ -8,408 +8,400 @@
     Title="SettingsPage"
     HorizontalAlignment="Stretch"
     VerticalAlignment="Stretch"
-    d:DesignHeight="540"
-    d:DesignWidth="960"
+    d:DesignHeight="640"
+    d:DesignWidth="1060"
     mc:Ignorable="d">
 
-    <Grid
-        Margin="150,0,0,0"
-        HorizontalAlignment="Stretch"
-        VerticalAlignment="Stretch"
-        Background="#181818">
-        <StackPanel Margin="15,15,15,0" Orientation="Vertical">
-            <TextBlock
-                HorizontalAlignment="Center"
-                FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
-                FontSize="25"
-                Foreground="White">
-                Аккаунт
-            </TextBlock>
+    <Page.Resources>
+        <Style x:Key="InvisibleButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CustomThumbStyle" TargetType="Thumb">
+            <Setter Property="Height" Value="Auto" />
+            <Setter Property="Width" Value="5" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Thumb">
+                        <Border Background="{DynamicResource TopBarColor}" CornerRadius="2" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CustomScrollBar" TargetType="ScrollBar">
+            <Setter Property="Width" Value="4" />
+            <Setter Property="Height" Value="Auto" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollBar">
+                        <Grid>
+                            <Track
+                                x:Name="PART_Track"
+                                IsDirectionReversed="True"
+                                Maximum="{TemplateBinding Maximum}"
+                                ViewportSize="{TemplateBinding ViewportSize}"
+                                Value="{TemplateBinding Value}">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton
+                                        Height="0"
+                                        Command="ScrollBar.LineDownCommand"
+                                        Style="{x:Null}" />
+                                </Track.DecreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb Style="{StaticResource CustomThumbStyle}" />
+                                </Track.Thumb>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton
+                                        Height="0"
+                                        Command="ScrollBar.LineUpCommand"
+                                        Style="{x:Null}" />
+                                </Track.IncreaseRepeatButton>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Page.Resources>
+    <Grid Margin="150,0,0,0" Background="{DynamicResource DarkGrey}">
+        <Grid
+            Width="900"
+            Height="600"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="0.55*" />
+            </Grid.RowDefinitions>
             <Border
-                Width="1025"
-                Height="1"
-                Margin="0,15,0,0"
-                Background="#3E3E3E" />
-            <Border
-                Height="65"
-                MaxWidth="1000"
-                Margin="0,20,0,0"
-                Background="#292929"
-                CornerRadius="5">
-                <StackPanel
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Orientation="Horizontal">
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="40,10,10,10"
+                Background="{DynamicResource TopBarColor}"
+                CornerRadius="20">
+                <StackPanel Margin="10,0,10,0" Orientation="Vertical">
                     <TextBlock
-                        Margin="0,0,10,0"
-                        VerticalAlignment="Center"
-                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                        FontSize="18"
-                        Foreground="White">
-                        Имя пользователя:
-                    </TextBlock>
-                    <Border
-                        x:Name="ChangeAccountName"
-                        Margin="5,0,10,0"
-                        Background="#3E3E3E"
-                        BorderThickness="0"
-                        CornerRadius="5"
-                        UseLayoutRounding="True">
-                        <TextBox
-                            Width="300"
-                            Height="35"
-                            Padding="5"
-                            VerticalContentAlignment="Center"
-                            Background="Transparent"
-                            BorderThickness="0"
-                            FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                            FontSize="14"
-                            Foreground="White"
-                            GotFocus="TextBox_GotFocus"
-                            LostFocus="TextBox_LostFocus"
-                            Tag="{Binding ElementName=ChangeAccountName}" />
-                    </Border>
-                    <Border
-                        Width="110"
-                        Height="30"
-                        Margin="5,3,0,3"
-                        Background="#9319B8"
-                        CornerRadius="5">
-                        <Border.Style>
-                            <Style TargetType="Border">
-                                <Setter Property="Background">
-                                    <Setter.Value>
-                                        <SolidColorBrush Color="#9319B8" />
-                                    </Setter.Value>
-                                </Setter>
-
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Trigger.EnterActions>
-                                            <BeginStoryboard>
-                                                <Storyboard>
-                                                    <ColorAnimation
-                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                        To="#B824E4"
-                                                        Duration="0:0:0.2" />
-
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </Trigger.EnterActions>
-
-                                        <Trigger.ExitActions>
-                                            <BeginStoryboard>
-                                                <Storyboard>
-                                                    <ColorAnimation
-                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                        To="#9319B8"
-                                                        Duration="0:0:0.2" />
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </Trigger.ExitActions>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-                        <Button
-                            HorizontalContentAlignment="Center"
-                            Background="Transparent"
-                            BorderThickness="0">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="OverridesDefaultStyle" Value="True" />
-                                    <Setter Property="Background" Value="Transparent" />
-                                    <Setter Property="Foreground" Value="White" />
-                                    <Setter Property="BorderThickness" Value="0" />
-                                    <Setter Property="Cursor" Value="Hand" />
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Padding="5" Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Button.Style>
-                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                                <Image Width="18" Source="/img/Check.png" />
+                        Margin="0,15"
+                        FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
+                        FontSize="25"
+                        Foreground="{DynamicResource MainFontColor}"
+                        Text="{DynamicResource Account}"
+                        TextAlignment="Center" />
+                    <Border Height="260" Padding="10">
+                        <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.6*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
                                 <TextBlock
+                                    Margin="0,15"
                                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                                    FontSize="14"
-                                    Foreground="White">
-                                    Сохранить
-                                </TextBlock>
-                            </StackPanel>
-                        </Button>
+                                    FontSize="15"
+                                    Foreground="{DynamicResource MainFontColor}"
+                                    Text="{DynamicResource UserName}"
+                                    TextAlignment="Right"
+                                    TextWrapping="Wrap" />
+                                <Border
+                                    Grid.Column="1"
+                                    Height="40"
+                                    Margin="5"
+                                    Padding="5"
+                                    Background="{DynamicResource TextBoxMainColor}"
+                                    CornerRadius="10">
+                                    <TextBox
+                                        VerticalContentAlignment="Center"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="12"
+                                        Foreground="{DynamicResource MainFontColor}"
+                                        Text="{Binding UserName, Mode=TwoWay}" />
+                                </Border>
+                            </Grid>
+                            <Border
+                                Height="1"
+                                Margin="0,15"
+                                Background="#3E3E3E" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.6*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Margin="0,15"
+                                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                    FontSize="15"
+                                    Foreground="{DynamicResource MainFontColor}"
+                                    Text="{DynamicResource NewPass}"
+                                    TextAlignment="Right"
+                                    TextWrapping="Wrap" />
+                                <Border
+                                    Grid.Column="1"
+                                    Height="40"
+                                    Margin="5"
+                                    Padding="5"
+                                    Background="{DynamicResource TextBoxMainColor}"
+                                    CornerRadius="10">
+                                    <TextBox
+                                        VerticalContentAlignment="Center"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="12"
+                                        Foreground="{DynamicResource MainFontColor}"
+                                        Text="{Binding UserPassword, Mode=TwoWay}" />
+                                </Border>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.6*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Margin="0,15"
+                                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                    FontSize="15"
+                                    Foreground="{DynamicResource MainFontColor}"
+                                    Text="{DynamicResource RepeatNewPass}"
+                                    TextAlignment="Right"
+                                    TextWrapping="Wrap" />
+                                <Border
+                                    Grid.Column="1"
+                                    Height="40"
+                                    Margin="5"
+                                    Padding="5"
+                                    Background="{DynamicResource TextBoxMainColor}"
+                                    CornerRadius="10">
+                                    <TextBox
+                                        VerticalContentAlignment="Center"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                                        FontSize="12"
+                                        Foreground="{DynamicResource MainFontColor}"
+                                        Text="{Binding UserPasswordRepeat, Mode=TwoWay}" />
+                                </Border>
+                            </Grid>
+                        </StackPanel>
                     </Border>
-
+                    <Border
+                        Width="80"
+                        Height="30"
+                        Background="#9319B8"
+                        CornerRadius="8">
+                        <Button
+                            Command="{Binding SaveCommand}"
+                            Content="{DynamicResource Save}"
+                            FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                            Foreground="White"
+                            Style="{StaticResource InvisibleButtonStyle}" />
+                    </Border>
                 </StackPanel>
             </Border>
             <Border
-                Height="100"
-                MaxWidth="1000"
-                Margin="0,20,0,0"
-                Background="#292929"
-                CornerRadius="5">
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                Grid.Row="1"
+                Grid.Column="0"
+                Margin="40,10,10,10"
+                Background="{DynamicResource TopBarColor}"
+                CornerRadius="20">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock
+                        Margin="0,15"
+                        FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
+                        FontSize="25"
+                        Foreground="{DynamicResource MainFontColor}"
+                        Text="{DynamicResource ThemeAndLanguage}"
+                        TextAlignment="Center" />
                     <StackPanel
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Orientation="Vertical">
-                        <StackPanel
-                            Margin="0,0,0,10"
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Center"
-                            Orientation="Horizontal">
-                            <TextBlock
-                                Margin="0,0,10,0"
-                                VerticalAlignment="Center"
-                                FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                                FontSize="18"
-                                Foreground="White">
-                                Пароль:
-                            </TextBlock>
-                            <Border
-                                x:Name="ChangePassword"
-                                Margin="5,0,10,0"
-                                Background="#3E3E3E"
-                                BorderThickness="0"
-                                CornerRadius="5"
-                                UseLayoutRounding="True">
-                                <TextBox
-                                    Width="300"
-                                    Height="35"
-                                    Padding="5"
-                                    VerticalContentAlignment="Center"
-                                    Background="Transparent"
-                                    BorderThickness="0"
-                                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                                    FontSize="14"
-                                    Foreground="White"
-                                    GotFocus="TextBox_GotFocus"
-                                    LostFocus="TextBox_LostFocus"
-                                    Tag="{Binding ElementName=ChangePassword}" />
-                            </Border>
-                        </StackPanel>
-                        <StackPanel
-                            HorizontalAlignment="Right"
-                            VerticalAlignment="Center"
-                            Orientation="Horizontal">
-                            <TextBlock
-                                Margin="0,0,10,0"
-                                VerticalAlignment="Center"
-                                FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                                FontSize="18"
-                                Foreground="White">
-                                Повторите пароль:
-                            </TextBlock>
-                            <Border
-                                x:Name="ChangePasswordRepeat"
-                                Margin="5,0,10,0"
-                                Background="#3E3E3E"
-                                BorderThickness="0"
-                                CornerRadius="5"
-                                UseLayoutRounding="True">
-                                <TextBox
-                                    Width="300"
-                                    Height="35"
-                                    Padding="5"
-                                    VerticalContentAlignment="Center"
-                                    Background="Transparent"
-                                    BorderThickness="0"
-                                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                                    FontSize="14"
-                                    Foreground="White"
-                                    GotFocus="TextBox_GotFocus"
-                                    LostFocus="TextBox_LostFocus"
-                                    Tag="{Binding ElementName=ChangePasswordRepeat}" />
-                            </Border>
-                        </StackPanel>
+                        Orientation="Horizontal">
+                        <Border
+                            Width="80"
+                            Height="80"
+                            Margin="10"
+                            Background="{DynamicResource TextBoxMainColor}"
+                            CornerRadius="20">
+                            <Button
+                                Width="60"
+                                Command="{Binding ChangeLanguageCommand}"
+                                Style="{StaticResource InvisibleButtonStyle}">
+                                <Image RenderOptions.BitmapScalingMode="HighQuality">
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Source" Value="/img/usa.png" />
+                                            <Style.Triggers>
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{Binding CurrentLanguage}" Value="ru-RU" />
+                                                        <Condition Binding="{Binding IsLightTheme}" Value="True" />
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="Source" Value="/img/russia_dark.png" />
+                                                </MultiDataTrigger>
+
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{Binding CurrentLanguage}" Value="ru-RU" />
+                                                        <Condition Binding="{Binding IsLightTheme}" Value="False" />
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="Source" Value="/img/russia.png" />
+                                                </MultiDataTrigger>
+
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{Binding CurrentLanguage}" Value="en-EN" />
+                                                        <Condition Binding="{Binding IsLightTheme}" Value="True" />
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="Source" Value="/img/usa_dark.png" />
+                                                </MultiDataTrigger>
+
+                                                <MultiDataTrigger>
+                                                    <MultiDataTrigger.Conditions>
+                                                        <Condition Binding="{Binding CurrentLanguage}" Value="en-EN" />
+                                                        <Condition Binding="{Binding IsLightTheme}" Value="False" />
+                                                    </MultiDataTrigger.Conditions>
+                                                    <Setter Property="Source" Value="/img/usa.png" />
+                                                </MultiDataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </Button>
+                        </Border>
+                        <Border
+                            Width="80"
+                            Height="80"
+                            Margin="10"
+                            Background="{DynamicResource TextBoxMainColor}"
+                            CornerRadius="20">
+                            <Button Command="{Binding ToggleThemeCommand}" Style="{StaticResource InvisibleButtonStyle}">
+                                <Image
+                                    Margin="15"
+                                    RenderOptions.BitmapScalingMode="HighQuality"
+                                    Style="{DynamicResource ThemeIMG}" />
+                            </Button>
+                        </Border>
                     </StackPanel>
-                    <Border
-                        Width="110"
-                        Height="30"
-                        Margin="5,3,0,3"
-                        Background="#9319B8"
-                        CornerRadius="5">
-                        <Border.Style>
-                            <Style TargetType="Border">
-                                <Setter Property="Background">
-                                    <Setter.Value>
-                                        <SolidColorBrush Color="#9319B8" />
-                                    </Setter.Value>
-                                </Setter>
-
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Trigger.EnterActions>
-                                            <BeginStoryboard>
-                                                <Storyboard>
-                                                    <ColorAnimation
-                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                        To="#B824E4"
-                                                        Duration="0:0:0.2" />
-
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </Trigger.EnterActions>
-
-                                        <Trigger.ExitActions>
-                                            <BeginStoryboard>
-                                                <Storyboard>
-                                                    <ColorAnimation
-                                                        Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                        To="#9319B8"
-                                                        Duration="0:0:0.2" />
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </Trigger.ExitActions>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Border.Style>
-                        <Button
-                            HorizontalContentAlignment="Center"
-                            Background="Transparent"
-                            BorderThickness="0">
-                            <Button.Style>
-                                <Style TargetType="Button">
-                                    <Setter Property="OverridesDefaultStyle" Value="True" />
-                                    <Setter Property="Background" Value="Transparent" />
-                                    <Setter Property="Foreground" Value="White" />
-                                    <Setter Property="BorderThickness" Value="0" />
-                                    <Setter Property="Cursor" Value="Hand" />
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="Button">
-                                                <Border Padding="5" Background="{TemplateBinding Background}">
-                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Button.Style>
-                            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                                <Image Width="18" Source="/img/Check.png" />
-                                <TextBlock
-                                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                                    FontSize="14"
-                                    Foreground="White">
-                                    Сохранить
-                                </TextBlock>
-                            </StackPanel>
-                        </Button>
-                    </Border>
                 </StackPanel>
             </Border>
             <Border
-                Width="1025"
-                Height="1"
-                Margin="0,15,0,0"
-                Background="#3E3E3E" />
-            <TextBlock
-                Margin="0,15,0,0"
-                HorizontalAlignment="Center"
-                FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
-                FontSize="25"
-                Foreground="White">
-                Приложение
-            </TextBlock>
-            <Border
-                Width="1025"
-                Height="1"
-                Margin="0,15,0,0"
-                Background="#3E3E3E" />
-            <StackPanel
-                Margin="0,15,0,0"
-                HorizontalAlignment="Center"
-                Orientation="Horizontal">
-                <TextBlock
-                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                    FontSize="18"
-                    Foreground="White">
-                    Тема приложения:
-                </TextBlock>
-                <RadioButton
-                    Margin="10,0,0,0"
-                    VerticalAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Content="Темная"
-                    FontFamily="pack://application:,,,/fonts/Ubuntu-Light.ttf #Ubuntu"
-                    FontSize="18"
-                    Foreground="White"
-                    GroupName="Theme"
-                    IsChecked="True" />
-                <RadioButton
-                    Margin="10,0,0,0"
-                    VerticalAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Content="Светлая"
-                    FontFamily="pack://application:,,,/fonts/Ubuntu-Light.ttf #Ubuntu"
-                    FontSize="18"
-                    Foreground="White"
-                    GroupName="Theme" />
-            </StackPanel>
-            <StackPanel
-                Margin="0,15,0,0"
-                HorizontalAlignment="Center"
-                Orientation="Horizontal">
-                <TextBlock
-                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                    FontSize="18"
-                    Foreground="White">
-                    Язык приложения:
-                </TextBlock>
-                <RadioButton
-                    Margin="10,0,0,0"
-                    VerticalAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Content="Русский"
-                    FontFamily="pack://application:,,,/fonts/Ubuntu-Light.ttf #Ubuntu"
-                    FontSize="18"
-                    Foreground="White"
-                    GroupName="Language"
-                    IsChecked="True" />
-                <RadioButton
-                    Margin="10,0,0,0"
-                    VerticalAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Content="English"
-                    FontFamily="pack://application:,,,/fonts/Ubuntu-Light.ttf #Ubuntu"
-                    FontSize="18"
-                    Foreground="White"
-                    GroupName="Language" />
-            </StackPanel>
-            <Border
-                Width="1025"
-                Height="1"
-                Margin="0,10,0,0"
-                Background="#3E3E3E" />
-            <TextBlock
-                Margin="0,15,0,0"
-                HorizontalAlignment="Center"
-                FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
-                FontSize="25"
-                Foreground="White">
-                Условия пользования
-            </TextBlock>
-            <Border
-                Width="1025"
-                Height="1"
-                Margin="0,15,0,0"
-                Background="#3E3E3E" />
-            <TextBlock Margin="0,15,0,0" HorizontalAlignment="Center">
-                <Hyperlink
-                    FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                    FontSize="20"
-                    Foreground="White">
-                    Условия пользования
-                    <Image Width="20" Source="/img/Link.png" />
-                </Hyperlink>
-            </TextBlock>
-        </StackPanel>
+                Grid.Row="0"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Margin="10,10,40,10"
+                Background="{DynamicResource TopBarColor}"
+                CornerRadius="20">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock
+                        Margin="0,15"
+                        FontFamily="pack://application:,,,/fonts/Ubuntu-Bold.ttf #Ubuntu"
+                        FontSize="25"
+                        Foreground="{DynamicResource MainFontColor}"
+                        Text="{DynamicResource PurchaseHistory}"
+                        TextAlignment="Center" />
+                    <ListBox
+                        Grid.Row="1"
+                        MaxHeight="500"
+                        Margin="10"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        ItemsSource="{Binding UserPurchasesList}"
+                        ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                        ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ListBox.Resources>
+                            <Style BasedOn="{StaticResource CustomScrollBar}" TargetType="ScrollBar" />
+                        </ListBox.Resources>
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="Margin" Value="0,5,0,5" />
+                                <Setter Property="Padding" Value="10,5" />
+                                <Setter Property="Background" Value="{DynamicResource TextBoxMainColor}" />
+                                <Setter Property="BorderBrush" Value="#5D4465" />
+                                <Setter Property="BorderThickness" Value="1" />
+                                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="ListBoxItem">
+                                            <Border
+                                                Background="{TemplateBinding Background}"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                CornerRadius="5">
+                                                <ContentPresenter
+                                                    Margin="{TemplateBinding Padding}"
+                                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                    VerticalAlignment="Center" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="{DynamicResource DarkGrey}" />
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="0.5*" />
+                                        <ColumnDefinition Width="0.5*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        Grid.Column="0"
+                                        Margin="10,0"
+                                        FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
+                                        FontSize="16"
+                                        Foreground="{DynamicResource MainFontColor}"
+                                        Text="{Binding Name}"
+                                        TextAlignment="Left"
+                                        TextTrimming="CharacterEllipsis" />
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        Margin="10,0"
+                                        FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
+                                        FontSize="16"
+                                        Foreground="{DynamicResource MainFontColor}"
+                                        Text="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}"
+                                        TextAlignment="Center"
+                                        TextTrimming="CharacterEllipsis" />
+                                    <TextBlock
+                                        Grid.Column="2"
+                                        Margin="10,0"
+                                        FontFamily="pack://application:,,,/fonts/ZenMaruGothic-Bold.ttf #Zen Maru Gothic"
+                                        FontSize="16"
+                                        Foreground="{DynamicResource MainFontColor}"
+                                        Text="{Binding Price, StringFormat='${0:N2}'}"
+                                        TextAlignment="Center"
+                                        TextTrimming="CharacterEllipsis" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </Page>

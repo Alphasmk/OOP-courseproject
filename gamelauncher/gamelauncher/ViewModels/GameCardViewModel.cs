@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,16 +21,30 @@ namespace gamelauncher.ViewModels
         private int _id;
         private string _title;
         private decimal _price;
+        private double? _size;
         private string _imagePath;
+        private string _imageLogoPath;
         private bool _isActive;
         private bool _isLiked;
         private bool _isBought;
+        private DateTime? _release;
         private ObservableCollection<GenreViewModel> _allGenres;
         private ObservableCollection<PlatformViewModel> _allPlatforms;
         private ObservableCollection<GenreViewModel> _genreList;
         private ObservableCollection<PlatformViewModel> _platformList;
         public Action<Game> NavigateToGame;
 
+        private ObservableCollection<UserGameGroup> _groups;
+
+        public ObservableCollection<UserGameGroup> Groups
+        {
+            get => _groups ?? new ObservableCollection<UserGameGroup>();
+            set
+            {
+                _groups = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ObservableCollection<GenreViewModel> AllGenres
         {
@@ -56,6 +71,16 @@ namespace gamelauncher.ViewModels
             set
             {
                 _id = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public DateTime? Release
+        {
+            get => _release;
+            set
+            {
+                _release = value;
                 OnPropertyChanged();
             }
         }
@@ -101,6 +126,17 @@ namespace gamelauncher.ViewModels
                 }
             }
         }
+        public double? Size
+        {
+            get => _size;
+            set
+            {
+
+                _size = value;
+                OnPropertyChanged();
+
+            }
+        }
 
         public string ImagePath
         {
@@ -108,6 +144,15 @@ namespace gamelauncher.ViewModels
             set
             {
                 _imagePath = value;
+                OnPropertyChanged();
+            }
+        }
+        public string ImageLogoPath
+        {
+            get => _imageLogoPath;
+            set
+            {
+                _imageLogoPath = value;
                 OnPropertyChanged();
             }
         }
@@ -163,6 +208,8 @@ namespace gamelauncher.ViewModels
         public ICommand SetHoverFalseCommand { get; }
         public ICommand GameNavigateCommand { get; }
 
+        public ICommand AddToGroupCommand { get; }
+
         public event Action GameBought;
 
         public GameCardViewModel(Game game)
@@ -171,21 +218,36 @@ namespace gamelauncher.ViewModels
             Id = game.Id;
             Title = game.Title;
             Price = game.Price;
+            Size = game.SizeGB;
             ImagePath = game.CoverImagePath;
             IsActive = game.IsActive;
+            ImageLogoPath = game.LogoImagePath;
+            Release = game.ReleaseDate;
             GenreList = new ObservableCollection<GenreViewModel>();
             PlatformList = new ObservableCollection<PlatformViewModel>();
             IsLiked = DataWorker.isGameLiked(Id);
             IsBought = DataWorker.isGameBought(Id);
             LikeCommand = new RelayCommand(_ => Like());
-            BuyCommand = new RelayCommand(_ => BuyGame());
+            BuyCommand = new RelayCommand(async _ => await BuyGame());
+            AddToGroupCommand = new RelayCommand(_ => AddingToGroup());
+            Groups = DataWorker.GetAllGameGroups(Id);
             SetHoverTrueCommand = new RelayCommand(_ => IsHovered = true);
             SetHoverFalseCommand = new RelayCommand(_ => IsHovered = false);
             GameNavigateCommand = new RelayCommand(_ => NavigateToGame.Invoke(game));
+
             LoadAllGenres();
             LoadGameGenres();
             LoadAllPlatforms();
             LoadGamePlatforms();
+        }
+
+        private void AddingToGroup()
+        {
+            var dialog = new AddToGroup(() =>
+            {
+                Groups = DataWorker.GetAllGameGroups(Id);
+            }, Id);
+            dialog.ShowDialog();
         }
 
         private void Like()
@@ -238,22 +300,56 @@ namespace gamelauncher.ViewModels
             }
         }
 
-        private void BuyGame()
+        private async Task BuyGame()
         {
+            bool isOk;
+            try
+            {
+                using (var ping = new Ping())
+                {
+                    var reply = ping.Send("8.8.8.8", 3000);
+                    isOk = reply.Status == IPStatus.Success;
+                }
+            }
+            catch
+            {
+                isOk = false;
+            }
             if (CurrentUser.Instance.Balance < Price)
             {
-                RegisterError error = new RegisterError("Недостаточно средств на балансе");
-                error.ShowDialog();
+                if (LanguageManager.CurrentLanguage == "ru-RU")
+                {
+                    RegisterError error = new RegisterError("Недостаточно средств на балансе");
+                    error.ShowDialog();
+                }
+                else
+                {
+                    RegisterError error = new RegisterError("Insufficient funds on balance");
+                    error.ShowDialog();
+                }
+            }
+            else if(!isOk)
+            {
+                if (LanguageManager.CurrentLanguage == "ru-RU")
+                {
+                    RegisterError err = new RegisterError("Проверьте интернет-соединение");
+                    err.ShowDialog();
+                }
+                else
+                {
+                    RegisterError err = new RegisterError("Check your internet connection");
+                    err.ShowDialog();
+                }
             }
             else
             {
-                DataWorker.BuyGame(Id);
                 CurrentUser.Instance.Balance -= Price;
                 DataWorker.UpdateUser(CurrentUser.Instance);
                 RegisterError error = new RegisterError("Успешная покупка");
                 error.ShowDialog();
                 IsBought = true;
                 GameBought?.Invoke();
+                await DataWorker.BuyGame(Id);
             }
         }
 

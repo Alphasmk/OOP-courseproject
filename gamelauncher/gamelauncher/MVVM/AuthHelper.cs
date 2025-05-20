@@ -28,8 +28,16 @@ namespace gamelauncher.MVVM
             }
             catch (Exception ex)
             {
-                RegisterError error = new RegisterError("Ошибка при сохранении");
-                error.ShowDialog();
+                if (LanguageManager.CurrentLanguage == "ru-RU")
+                {
+                    RegisterError error = new RegisterError("Ошибка при сохранении");
+                    error.ShowDialog();
+                }
+                else
+                {
+                    RegisterError good = new RegisterError("Error while saving");
+                    good.Show();
+                }
             }
         }
 
@@ -50,8 +58,16 @@ namespace gamelauncher.MVVM
             }
             catch (Exception ex)
             {
-                RegisterError error = new RegisterError("Ошибка загрузки данных");
-                error.ShowDialog();
+                if (LanguageManager.CurrentLanguage == "ru-RU")
+                {
+                    RegisterError error = new RegisterError("Ошибка загрузки данных");
+                    error.ShowDialog();
+                }
+                else
+                {
+                    RegisterError good = new RegisterError("Error loading data");
+                    good.Show();
+                }
             }
 
             return null;

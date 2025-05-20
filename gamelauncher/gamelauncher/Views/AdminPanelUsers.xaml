@@ -11,23 +11,17 @@
     mc:Ignorable="d">
 
     <Page.Resources>
-        <!--  Стили для DataGrid  -->
-        <SolidColorBrush x:Key="DarkBackground" Color="#1E1E1E" />
-        <SolidColorBrush x:Key="RowHoverBrush" Color="#2A2A2A" />
-        <SolidColorBrush x:Key="RowSelectedBrush" Color="#535353" />
-        <SolidColorBrush x:Key="HeaderBrush" Color="#333" />
-        <SolidColorBrush x:Key="TextBrush" Color="#FFFFFF" />
         <Style TargetType="DataGrid">
-            <Setter Property="Background" Value="{StaticResource DarkBackground}" />
-            <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
-            <Setter Property="RowBackground" Value="#222" />
-            <Setter Property="AlternatingRowBackground" Value="#262626" />
+            <Setter Property="Background" Value="{DynamicResource DarkBackground}" />
+            <Setter Property="Foreground" Value="{DynamicResource MainFontColor}" />
+            <Setter Property="RowBackground" Value="{DynamicResource RowBackgroundDark}" />
+            <Setter Property="AlternatingRowBackground" Value="{DynamicResource AlternateRowDark}" />
             <Setter Property="GridLinesVisibility" Value="None" />
             <Setter Property="ColumnHeaderStyle">
                 <Setter.Value>
                     <Style TargetType="DataGridColumnHeader">
-                        <Setter Property="Background" Value="{StaticResource HeaderBrush}" />
-                        <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+                        <Setter Property="Background" Value="{DynamicResource HeaderBrushDark}" />
+                        <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
                         <Setter Property="FontWeight" Value="Bold" />
                         <Setter Property="HorizontalContentAlignment" Value="Center" />
                         <Setter Property="Padding" Value="5" />
@@ -39,16 +33,16 @@
             <Setter Property="CellStyle">
                 <Setter.Value>
                     <Style TargetType="DataGridCell">
-                        <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+                        <Setter Property="Foreground" Value="{DynamicResource MainFontColor}" />
                         <Setter Property="Padding" Value="4,2" />
                         <Setter Property="BorderThickness" Value="0" />
                         <Setter Property="Background" Value="Transparent" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource RowHoverBrush}" />
+                                <Setter Property="Background" Value="{DynamicResource RowHoverBrushDark}" />
                             </Trigger>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter Property="Background" Value="{StaticResource RowSelectedBrush}" />
+                                <Setter Property="Background" Value="{DynamicResource RowSelectedBrushDark}" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
@@ -57,38 +51,17 @@
             <Setter Property="RowStyle">
                 <Setter.Value>
                     <Style TargetType="DataGridRow">
-                        <Setter Property="Height" Value="50" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource RowHoverBrush}" />
+                                <Setter Property="Background" Value="{DynamicResource RowHoverBrushDark}" />
                             </Trigger>
                             <Trigger Property="IsSelected" Value="True">
-                                <Setter Property="Background" Value="{StaticResource RowSelectedBrush}" />
+                                <Setter Property="Background" Value="{DynamicResource RowSelectedBrushDark}" />
                             </Trigger>
                         </Style.Triggers>
                     </Style>
                 </Setter.Value>
             </Setter>
-        </Style>
-        <Style TargetType="DataGridCell">
-            <Setter Property="TextBlock.TextAlignment" Value="Center" />
-            <Setter Property="VerticalAlignment" Value="Stretch" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="DataGridCell">
-                        <Grid Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center" />
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="#e1a5f3" />
-                    <Setter Property="Foreground" Value="Black" />
-                    <Setter Property="BorderBrush" Value="#b31fe0" />
-                </Trigger>
-            </Style.Triggers>
         </Style>
         <Style x:Key="CommandButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="#DDDDDD" />
@@ -110,7 +83,7 @@
         <Border
             Grid.Row="0"
             Padding="5"
-            Background="#1E1E1E"
+            Background="{DynamicResource TopBarColor}"
             CornerRadius="5">
             <DataGrid
                 x:Name="usersDataGrid"
@@ -156,29 +129,29 @@
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Email}"
-                        Header="Email"
+                        Header="{DynamicResource Email}"
                         IsReadOnly="True" />
                     <DataGridCheckBoxColumn
                         Width="80"
                         Binding="{Binding IsAdmin}"
-                        Header="Admin" />
+                        Header="{DynamicResource Admin}" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding UserName}"
-                        Header="Username" />
+                        Header="{DynamicResource Username}" />
                     <DataGridTextColumn
                         Width="120"
                         Binding="{Binding CreateTime, StringFormat={}{0:dd.MM.yyyy HH:mm}}"
-                        Header="Created"
+                        Header="{DynamicResource Created}"
                         IsReadOnly="True" />
                     <DataGridTextColumn
                         Width="120"
                         Binding="{Binding Balance, StringFormat=${0:#,##0.00}}"
-                        Header="Balance" />
+                        Header="{DynamicResource Balance}" />
                     <DataGridCheckBoxColumn
-                        Width="80"
+                        Width="120"
                         Binding="{Binding IsBlocked}"
-                        Header="Blocked" />
+                        Header="{DynamicResource Blocked}" />
                 </DataGrid.Columns>
             </DataGrid>
         </Border>
@@ -229,7 +202,7 @@
                     Background="Transparent"
                     BorderThickness="0"
                     Command="{Binding RefreshCommand}"
-                    Content="Обновить"
+                    Content="{DynamicResource Refresh}"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     Foreground="White">
                     <Button.Style>
@@ -320,7 +293,7 @@
                     Background="Transparent"
                     BorderThickness="0"
                     Command="{Binding DeleteCommand}"
-                    Content="Удалить выбранного"
+                    Content="{DynamicResource DeleteSelected}"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     Foreground="White">
                     <Button.Style>
@@ -414,7 +387,7 @@
                     Background="Transparent"
                     BorderThickness="0"
                     Command="{Binding EditCommand}"
-                    Content="Изменить выбранного"
+                    Content="{DynamicResource ChangeSelected}"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     Foreground="White">
                     <Button.Style>

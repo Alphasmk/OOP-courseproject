@@ -22,8 +22,11 @@ namespace gamelauncher.Views
     /// </summary>
     public partial class SettingsPage : Page
     {
+        private SettingsViewModel _viewModel;
         public SettingsPage()
         {
+            _viewModel = new SettingsViewModel();
+            DataContext = _viewModel;
             InitializeComponent();
         }
 

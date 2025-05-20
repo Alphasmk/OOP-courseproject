@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using gamelauncher.Model;
 using gamelauncher.MVVM;
+using gamelauncher.ViewModels;
 
 namespace gamelauncher.Views
 {
@@ -29,8 +30,7 @@ namespace gamelauncher.Views
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            string lang = Application.Current.Properties["AppLanguage"].ToString();
-            LoadLanguage(lang);
+            DataContext = new RegisterViewModel();
         }
 
         public void CreateAccount()
@@ -39,7 +39,6 @@ namespace gamelauncher.Views
         }
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            string lang = Application.Current.Properties["AppLanguage"].ToString();
             LoginPage loginPage = new LoginPage();
             this.Close();
             loginPage.Show();
@@ -79,41 +78,6 @@ namespace gamelauncher.Views
         //    string lang = _isRussian ? "ru-RU" : "en-EN";
         //    LoadLanguage(lang);
         //}
-
-        private void LoadLanguage(string lang)
-        {
-            Application.Current.Properties["AppLanguage"] = lang;
-            Application.Current.Resources.MergedDictionaries.Clear();
-
-            var dict = new ResourceDictionary
-            {
-                Source = new Uri($"/Resources/{lang}.xaml", UriKind.Relative)
-            };
-
-            Application.Current.Resources.MergedDictionaries.Add(dict);
-
-            CultureInfo culture = new CultureInfo(lang);
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-            CultureInfo.DefaultThreadCurrentUICulture = culture;
-            Language = XmlLanguage.GetLanguage(culture.IetfLanguageTag);
-        }
-        private void ToggleLanguage_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            string lang;
-            if (_isRussian)
-            {
-                ToggleLanguage.Source = new BitmapImage(new Uri("pack://application:,,,/img/russia.png"));
-                lang = "ru-RU";
-            }
-            else
-            {
-                ToggleLanguage.Source = new BitmapImage(new Uri("pack://application:,,,/img/usa.png"));
-                lang = "en-EN";
-            }
-
-            _isRussian = !_isRussian; // Переключаем состояние
-            LoadLanguage(lang);
-        }
 
         private void Password_TextChanged(object sender, EventArgs e)
         {

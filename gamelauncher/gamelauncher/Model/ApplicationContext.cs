@@ -14,6 +14,8 @@ namespace gamelauncher.Model
         public DbSet<Wishlist> Wishlists { get; set; }
         public DbSet<Library> Library { get; set; }
         public DbSet<GameImage> GameImages { get; set; }
+        public DbSet<UserGameGroup> UserGameGroups { get; set; }
+        public DbSet<UserGameGroupGame> UserGameGroupGames { get; set; }
         public ApplicationContext()
         {
             Database.EnsureCreated();
@@ -58,6 +60,30 @@ namespace gamelauncher.Model
                 .HasOne(p => p.Game)
                 .WithMany()
                 .HasForeignKey(p => p.GameId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<UserGameGroup>()
+    .HasKey(ugg => ugg.Id);
+
+            modelBuilder.Entity<UserGameGroup>()
+                .HasOne(ugg => ugg.User)
+                .WithMany(u => u.UserGameGroups)
+                .HasForeignKey(ugg => ugg.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<UserGameGroupGame>()
+                .HasKey(uggg => new { uggg.UserGameGroupId, uggg.GameId });
+
+            modelBuilder.Entity<UserGameGroupGame>()
+                .HasOne(uggg => uggg.UserGameGroup)
+                .WithMany(ugg => ugg.UserGameGroupGames)
+                .HasForeignKey(uggg => uggg.UserGameGroupId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<UserGameGroupGame>()
+                .HasOne(uggg => uggg.Game)
+                .WithMany()
+                .HasForeignKey(uggg => uggg.GameId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
 

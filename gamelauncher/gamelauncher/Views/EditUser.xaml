@@ -28,7 +28,7 @@
         </EventTrigger>
     </Window.Triggers>
     <Border
-        Background="#252525"
+        Background="{DynamicResource TopBarColor}"
         BorderBrush="#5D4465"
         BorderThickness="2"
         CornerRadius="20">
@@ -49,8 +49,8 @@
                     VerticalAlignment="Top"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     FontSize="18"
-                    Foreground="White"
-                    Text="{Binding Email, StringFormat='Изменение пользователя: {0}'}" />
+                    Foreground="{DynamicResource MainFontColor}"
+                    Text="{Binding WindowTitle}" />
                 <TextBlock
                     x:Name="UnderTitle"
                     Height="50"
@@ -59,9 +59,9 @@
                     VerticalAlignment="Top"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     FontSize="16"
-                    Foreground="White">
+                    Foreground="{DynamicResource MainFontColor}">
                     <TextBlock.Text>
-                        <MultiBinding StringFormat="ID: {0}, создан: {1}">
+                        <MultiBinding StringFormat="ID: {0}, {1}">
                             <Binding Path="Id" />
                             <Binding Path="Created" />
                         </MultiBinding>
@@ -75,15 +75,15 @@
                         <StackPanel.Resources>
                             <Style x:Key="TextBlockStyle" TargetType="TextBlock">
                                 <Setter Property="Margin" Value="0,19,0,19" />
-                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Foreground" Value="{DynamicResource MainFontColor}" />
                                 <Setter Property="FontFamily" Value="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu" />
                                 <Setter Property="FontSize" Value="18" />
                                 <Setter Property="TextAlignment" Value="Right" />
                             </Style>
                         </StackPanel.Resources>
-                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Почта:" />
-                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Имя пользователя:" />
-                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="Баланс:" />
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="{DynamicResource Email:}" />
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="{DynamicResource Username:}" />
+                        <TextBlock Style="{StaticResource TextBlockStyle}" Text="{DynamicResource Balance:}" />
                     </StackPanel>
                     <StackPanel VerticalAlignment="Center" Orientation="Vertical">
                         <StackPanel.Resources>
@@ -92,7 +92,7 @@
                                 <Setter Property="BorderThickness" Value="0" />
                                 <Setter Property="VerticalContentAlignment" Value="Center" />
                                 <Setter Property="FontFamily" Value="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu" />
-                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Foreground" Value="{DynamicResource MainFontColor}" />
                                 <Setter Property="FontSize" Value="16" />
                             </Style>
                             <Style x:Key="TextBoxBorderStyle" TargetType="Border">
@@ -100,7 +100,7 @@
                                 <Setter Property="Width" Value="250" />
                                 <Setter Property="Height" Value="38" />
                                 <Setter Property="Margin" Value="10,10,0,10" />
-                                <Setter Property="Background" Value="#3E3E3E" />
+                                <Setter Property="Background" Value="{DynamicResource TextBoxMainColor}" />
                                 <Setter Property="CornerRadius" Value="8" />
                             </Style>
                         </StackPanel.Resources>
@@ -198,7 +198,7 @@
                 <Border>
                     <Border.Style>
                         <Style BasedOn="{StaticResource MenuButtonBorder}" TargetType="Border">
-                            <Setter Property="BorderThickness" Value="4, 0, 4, 0" />
+                            <Setter Property="BorderThickness" Value="4,0,4,0" />
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsAdmin}" Value="True">
                                     <Setter Property="BorderBrush" Value="green" />
@@ -218,10 +218,10 @@
                             <Style BasedOn="{StaticResource MenuButton}" TargetType="Button">
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding IsAdmin}" Value="True">
-                                        <Setter Property="Content" Value="Убрать администратора" />
+                                        <Setter Property="Content" Value="{DynamicResource RemoveAdministrator}" />
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding IsAdmin}" Value="False">
-                                        <Setter Property="Content" Value="Сделать администратором" />
+                                        <Setter Property="Content" Value="{DynamicResource MakeAdministrator}" />
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
@@ -231,7 +231,7 @@
                 <Border>
                     <Border.Style>
                         <Style BasedOn="{StaticResource MenuButtonBorder}" TargetType="Border">
-                            <Setter Property="BorderThickness" Value="4, 0, 4, 0" />
+                            <Setter Property="BorderThickness" Value="4,0,4,0" />
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsBlocked}" Value="True">
                                     <Setter Property="BorderBrush" Value="red" />
@@ -252,10 +252,10 @@
 
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding IsBlocked}" Value="True">
-                                        <Setter Property="Content" Value="Разблокировать" />
+                                        <Setter Property="Content" Value="{DynamicResource Unblock}" />
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding IsBlocked}" Value="False">
-                                        <Setter Property="Content" Value="Заблокировать" />
+                                        <Setter Property="Content" Value="{DynamicResource Block}" />
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
@@ -297,7 +297,7 @@
                         Background="Transparent"
                         BorderThickness="0"
                         Command="{Binding SaveCommand}"
-                        Content="Сохранить"
+                        Content="{DynamicResource Save}"
                         Style="{StaticResource MenuButton}" />
                 </Border>
                 <Border Style="{StaticResource MenuButtonBorder}">
@@ -306,7 +306,7 @@
                         Background="Transparent"
                         BorderThickness="0"
                         Command="{Binding CloseCommand}"
-                        Content="Закрыть"
+                        Content="{DynamicResource Back}"
                         Style="{StaticResource MenuButton}" />
                 </Border>
             </StackPanel>

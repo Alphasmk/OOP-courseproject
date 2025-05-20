@@ -26,6 +26,17 @@ namespace gamelauncher.ViewModels
         private bool _isAdmin;
         private bool _isBlocked;
         private string _balanceString;
+        private string _windowTitle;
+
+        public string WindowTitle
+        {
+            get => _windowTitle;
+            set
+            {
+                _windowTitle = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string UserName
         {
@@ -123,6 +134,14 @@ namespace gamelauncher.ViewModels
             UserName = user.UserName;
             BalanceString = _user.Balance.ToString();
             _closeAction = closeAction;
+            if(LanguageManager.CurrentLanguage == "ru-RU")
+            {
+                WindowTitle = "Изменение пользователя: " + Email;
+            }
+            else
+            {
+                WindowTitle = "User change: " + Email;
+            }
             CloseCommand = new RelayCommand(_ => ExecuteClose());
             CreateAdminCommand = new RelayCommand(_ => ChangeAdminState());
             BlockCommand = new RelayCommand(_ => ChangeBlockState());
@@ -171,8 +190,16 @@ namespace gamelauncher.ViewModels
                 {
                     if(DataWorker.IsUserExist(Email) && Email != _user.Email)
                     {
-                        RegisterError success = new RegisterError("Пользователь с таким email уже существует");
-                        success.ShowDialog();
+                        if (LanguageManager.CurrentLanguage == "ru-RU")
+                        {
+                            RegisterError success = new RegisterError("Пользователь с таким email уже существует");
+                            success.ShowDialog();
+                        }
+                        else
+                        {
+                            RegisterError success = new RegisterError("A user with this email already exists");
+                            success.ShowDialog();
+                        }
                     }
                     else
                     {
@@ -183,14 +210,30 @@ namespace gamelauncher.ViewModels
                         newUser.Balance = parsedBalance;
                         DataWorker.UpdateUser(newUser);
 
-                        RegisterError success = new RegisterError("Успешно сохранено");
-                        success.ShowDialog();
+                        if(LanguageManager.CurrentLanguage == "ru-RU")
+                        {
+                            RegisterError success = new RegisterError("Успешно сохранено");
+                            success.ShowDialog();
+                        }
+                        else
+                        {
+                            RegisterError success = new RegisterError("Successfully saved");
+                            success.ShowDialog();
+                        }
                     }
                 }
                 catch
                 {
-                    RegisterError error = new RegisterError("Данные введены неверно");
-                    error.ShowDialog();
+                    if (LanguageManager.CurrentLanguage == "ru-RU")
+                    {
+                        RegisterError error = new RegisterError("Данные введены неверно");
+                        error.ShowDialog();
+                    }
+                    else
+                    {
+                        RegisterError error = new RegisterError("Data entered incorrectly");
+                        error.ShowDialog();
+                    }
                 }
             }
         }

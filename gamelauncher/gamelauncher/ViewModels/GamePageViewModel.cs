@@ -134,7 +134,7 @@ namespace gamelauncher.ViewModels
             LoadImages();
             PreviousImageCommand = new RelayCommand(_ => PreviousImage(), _ => CanPreviousImage());
             NextImageCommand = new RelayCommand(_ => NextImage(), _ => CanNextImage());
-            BuyGameCommand = new RelayCommand(_ => BuyGame(), _ => CanBuyGame());
+            BuyGameCommand = new RelayCommand(async _ => await BuyGame(), _ => CanBuyGame());
             LikeCommand = new RelayCommand(_ => Like());
 
             if (GameImages.Count > 0)
@@ -184,20 +184,36 @@ namespace gamelauncher.ViewModels
             }
         }
 
-        private void BuyGame()
+        private async Task BuyGame()
         {
             if (CurrentUser.Instance.Balance < Price)
             {
-                RegisterError error = new RegisterError("Недостаточно средств на балансе");
-                error.ShowDialog();
+                if (LanguageManager.CurrentLanguage == "ru-RU")
+                {
+                    RegisterError error = new RegisterError("Недостаточно средств на балансе");
+                    error.ShowDialog();
+                }
+                else
+                {
+                    RegisterError error = new RegisterError("Insufficient funds on balance");
+                    error.ShowDialog();
+                }
             }
             else
             {
-                DataWorker.BuyGame(Id);
+                await DataWorker.BuyGame(Id);
                 CurrentUser.Instance.Balance -= Price;
                 DataWorker.UpdateUser(CurrentUser.Instance);
-                RegisterError error = new RegisterError("Успешная покупка");
-                error.ShowDialog();
+                if (LanguageManager.CurrentLanguage == "ru-RU")
+                {
+                    RegisterError error = new RegisterError("Успешная покупка");
+                    error.ShowDialog();
+                }
+                else
+                {
+                    RegisterError error = new RegisterError("Successful purchase");
+                    error.ShowDialog();
+                }
                 IsBought = true;
             }
         }

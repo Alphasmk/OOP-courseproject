@@ -14,7 +14,7 @@
         Margin="150,0,0,0"
         HorizontalAlignment="Stretch"
         VerticalAlignment="Stretch"
-        Background="#181818">
+        Background="{DynamicResource DarkGrey}">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="11*" />
@@ -23,69 +23,18 @@
             <Border
                 Width="150"
                 Height="40"
-                Background="#3E3E3E"
-                BorderBrush="#333232"
+                Background="{DynamicResource TextBoxMainColor}"
+                BorderBrush="{DynamicResource DarkGrey}"
                 BorderThickness="0,0,1,0"
                 CornerRadius="8, 0, 0, 8">
-                <Border.Style>
-                    <Style TargetType="Border">
-                        <Setter Property="Background">
-                            <Setter.Value>
-                                <SolidColorBrush Color="#9319B8" />
-                            </Setter.Value>
-                        </Setter>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Trigger.EnterActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation
-                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                To="#B824E4"
-                                                Duration="0:0:0.2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
-                                                To="1.05"
-                                                Duration="0:0:0.2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
-                                                To="1.05"
-                                                Duration="0:0:0.2" />
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.EnterActions>
-
-                                <Trigger.ExitActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation
-                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                To="#3E3E3E"
-                                                Duration="0:0:0.2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
-                                                To="1"
-                                                Duration="0:0:0.2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
-                                                To="1"
-                                                Duration="0:0:0.2" />
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.ExitActions>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Border.Style>
                 <Button
                     Background="Transparent"
                     BorderThickness="0"
                     Command="{Binding GoToGames}"
+                    Content="{DynamicResource Games}"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     FontSize="16"
-                    Foreground="White">
-                    Игры
+                    Foreground="{DynamicResource MainFontColor}">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -109,68 +58,17 @@
             <Border
                 Width="150"
                 Height="40"
-                Background="#3E3E3E"
+                Background="{DynamicResource TextBoxMainColor}"
                 BorderThickness="1,0,0,0"
                 CornerRadius="0, 8, 8, 0">
-                <Border.Style>
-                    <Style TargetType="Border">
-                        <Setter Property="Background">
-                            <Setter.Value>
-                                <SolidColorBrush Color="#9319B8" />
-                            </Setter.Value>
-                        </Setter>
-
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Trigger.EnterActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation
-                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                To="#B824E4"
-                                                Duration="0:0:0.2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
-                                                To="1.05"
-                                                Duration="0:0:0.2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
-                                                To="1.05"
-                                                Duration="0:0:0.2" />
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.EnterActions>
-
-                                <Trigger.ExitActions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <ColorAnimation
-                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                                                To="#3E3E3E"
-                                                Duration="0:0:0.2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
-                                                To="1"
-                                                Duration="0:0:0.2" />
-                                            <DoubleAnimation
-                                                Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
-                                                To="1"
-                                                Duration="0:0:0.2" />
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </Trigger.ExitActions>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </Border.Style>
                 <Button
                     Background="Transparent"
                     BorderThickness="0"
                     Command="{Binding GoToUsers}"
+                    Content="{DynamicResource Users}"
                     FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
                     FontSize="16"
-                    Foreground="White">
-                    Пользователи
+                    Foreground="{DynamicResource MainFontColor}">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="OverridesDefaultStyle" Value="True" />

@@ -9,6 +9,7 @@ using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
 using gamelauncher.Model;
@@ -33,6 +34,16 @@ namespace gamelauncher.ViewModels
         private decimal _lowerLimit;
         private decimal _upperLimit;
         private bool _PriceFilter;
+        private string _balanceTitle;
+        public string BalanceTitle
+        {
+            get => _balanceTitle;
+            set
+            {
+                _balanceTitle = value;
+                OnPropertyChanged();
+            }
+        }
         public ObservableCollection<GameCardViewModel> Cards
         {
             get => _cards;
@@ -355,6 +366,7 @@ namespace gamelauncher.ViewModels
             Cards = new ObservableCollection<GameCardViewModel>();
             SelectedGenres = new ObservableCollection<GenreViewModel>();
             Balance = CurrentUser.Instance.Balance;
+            BalanceTitle = $"{Application.Current.Resources["Balance"]}: ${Balance:N2}";
             GameNavigate += gameNavigate;
             LoadGames();
             LoadAllGenres();
@@ -374,13 +386,12 @@ namespace gamelauncher.ViewModels
             OnPropertyChanged(nameof(Balance));
         }
 
-        public Action<decimal> BalanceUpdated;
-
         private void ReplenishBalance()
         {
             ReplenishmentPage replenishment = new ReplenishmentPage(newBalance =>
             {
                 Balance = newBalance;
+                BalanceTitle = $"{Application.Current.Resources["Balance"]}: ${Balance:N2}";
                 OnPropertyChanged(nameof(Balance));
             });
             replenishment.ShowDialog();

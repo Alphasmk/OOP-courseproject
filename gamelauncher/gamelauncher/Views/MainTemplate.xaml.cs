@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,22 +25,15 @@ namespace gamelauncher.Views
     public partial class MainTemplate : Window
     {
         private readonly MainViewModel _viewModel;
+        private event Action UserNameChanged;
+        public Type LastReceivedType { get; private set; }
         public MainTemplate()
         {
             InitializeComponent();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             var navigation = new MVVM.Navigation(MainFrame);
-            _viewModel = new MainViewModel(navigation);
+            _viewModel = new MainViewModel(navigation, UserNameChanged);
             this.DataContext = _viewModel;
-            if (CurrentUser.Instance.UserName == null)
-            {
-                MenuButtonText7.Text = CurrentUser.Instance.Email.Split('@')[0];
-            }
-            else
-            {
-                MenuButtonText7.Text = CurrentUser.Instance.UserName;
-            }
-
             if (CurrentUser.IsAdmin)
             {
                 MenuBorder8.Visibility = Visibility.Visible;
@@ -52,26 +46,47 @@ namespace gamelauncher.Views
             navigation.PageNavigated += OnPageNavigated;
             navigation.NavigateTo(typeof(ShopPage), new Action<Game>(_viewModel.NavigateToGamePage));
             OnPageNavigated(typeof(ShopPage));
+            ThemeManager.ThemeLoaded += OnPageNavigated;
         }
 
         private void OnPageNavigated(Type sourcePageType)
         {
-            var menuBorders = new[] { MenuBorder1, MenuBorder2, MenuBorder3, MenuBorder4, MenuBorder5, MenuBorder8 };
+            var menuBorders = new[] { MenuBorder1, MenuBorder2, MenuBorder3, MenuBorder4, MenuBorder8 };
 
             foreach (var border in menuBorders)
             {
-                if (!(border.Background is SolidColorBrush brush))
+                SolidColorBrush brush;
+                if (ThemeManager.CurrentTheme == "Light")
+                {
+                    brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E27EFF"));
+                }
+                else
                 {
                     brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3E3E3E"));
-                    border.Background = brush;
                 }
+                border.Background = brush;
 
-                var animation = new ColorAnimation
+                ColorAnimation animation;
+
+                if (ThemeManager.CurrentTheme == "Light")
                 {
-                    To = (Color)ColorConverter.ConvertFromString("#3E3E3E"),
-                    Duration = TimeSpan.FromSeconds(0.3),
-                    EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
-                };
+                   animation = new ColorAnimation
+                    {
+                        To = (Color)ColorConverter.ConvertFromString("#E27EFF"),
+                        Duration = TimeSpan.FromSeconds(0.3),
+                        EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+                    };
+                }
+                else
+                {
+                    animation = new ColorAnimation
+                    {
+                        To = (Color)ColorConverter.ConvertFromString("#3E3E3E"),
+                        Duration = TimeSpan.FromSeconds(0.3),
+                        EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+                    };
+                }
+                
 
                 brush.BeginAnimation(SolidColorBrush.ColorProperty, animation);
 
@@ -101,9 +116,6 @@ namespace gamelauncher.Views
                     break;
                 case "Settings":
                     ApplySelection(MenuBorder4);
-                    break;
-                case "Info":
-                    ApplySelection(MenuBorder5);
                     break;
                 case "Admin":
                     ApplySelection(MenuBorder8);
@@ -379,35 +391,6 @@ namespace gamelauncher.Views
                 Duration = TimeSpan.FromMilliseconds(300),
                 EasingFunction = new SineEase()
             });
-            MenuBorder5.BeginAnimation(WidthProperty, new DoubleAnimation
-            {
-                From = 65,
-                To = 200,
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new SineEase()
-            });
-            MenuButton5Transform.BeginAnimation(TranslateTransform.XProperty, new DoubleAnimation
-            {
-                From = 0,
-                To = -5, // влево
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new SineEase()
-            });
-            MenuButton5.BeginAnimation(WidthProperty, new DoubleAnimation
-            {
-                From = 65,
-                To = 200,
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new SineEase()
-            });
-            MenuButtonText5.Visibility = Visibility.Visible;
-            MenuButtonText5.BeginAnimation(OpacityProperty, new DoubleAnimation
-            {
-                From = 0,
-                To = 1,
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new SineEase()
-            });
             MenuBorder6.BeginAnimation(WidthProperty, new DoubleAnimation
             {
                 From = 65,
@@ -614,35 +597,6 @@ namespace gamelauncher.Views
             });
             MenuButtonText4.Visibility = Visibility.Collapsed;
             MenuButton4.BeginAnimation(WidthProperty, new DoubleAnimation
-            {
-                From = 200,
-                To = 65,
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new SineEase()
-            });
-            MenuBorder5.BeginAnimation(WidthProperty, new DoubleAnimation
-            {
-                From = 200,
-                To = 65,
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new SineEase()
-            });
-            MenuButton5Transform.BeginAnimation(TranslateTransform.XProperty, new DoubleAnimation
-            {
-                From = -5,
-                To = 0, // влево
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new SineEase()
-            });
-            MenuButtonText5.BeginAnimation(OpacityProperty, new DoubleAnimation
-            {
-                From = 1,
-                To = 0,
-                Duration = TimeSpan.FromMilliseconds(300),
-                EasingFunction = new SineEase()
-            });
-            MenuButtonText5.Visibility = Visibility.Collapsed;
-            MenuButton5.BeginAnimation(WidthProperty, new DoubleAnimation
             {
                 From = 200,
                 To = 65,

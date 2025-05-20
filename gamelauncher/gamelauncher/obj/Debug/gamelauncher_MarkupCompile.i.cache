@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 H:\Уник\ООП\Курсач\gamelauncher\gamelauncher\App.xaml
-20-1608392614
+221658757814
 
-651519140435
+79-1099738928
 186360413983
-Resources\en-EN.xaml;Resources\MyStyles.xaml;Resources\ru-RU.xaml;Views\AddImagesPage.xaml;Views\AdminPanel.xaml;Views\AdminPanelGames.xaml;Views\AdminPanelUsers.xaml;Views\EditGame.xaml;Views\EditUser.xaml;Views\GamePage.xaml;Views\InfoPage.xaml;Views\LibraryPage.xaml;Views\LikedPage.xaml;Views\LoginPage.xaml;Views\MainTemplate.xaml;Views\RegisterError.xaml;Views\RegisterPage.xaml;Views\ReplenishmentPage.xaml;Views\SettingsPage.xaml;Views\ShopPage.xaml;
+Views\RestorePasswordPage.xaml;Views\SnakePage.xaml;Resources\en-EN.xaml;Resources\ru-RU.xaml;Views\AddGroup.xaml;Views\AddImagesPage.xaml;Views\AddToGroup.xaml;Views\AdminPanel.xaml;Views\AdminPanelGames.xaml;Views\AdminPanelUsers.xaml;Views\EditGame.xaml;Views\EditUser.xaml;Views\GamePage.xaml;Views\LibraryPage.xaml;Views\LikedPage.xaml;Views\LoginPage.xaml;Views\MainTemplate.xaml;Views\RegisterError.xaml;Views\RegisterPage.xaml;Views\ReplenishmentPage.xaml;Views\SettingsPage.xaml;Views\ShopPage.xaml;
 
 False
 

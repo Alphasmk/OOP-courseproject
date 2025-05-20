@@ -11,6 +11,7 @@ using System.Windows.Threading;
 using System.Collections.Generic;
 using gamelauncher.Views;
 using gamelauncher.MVVM;
+using System.ComponentModel;
 
 namespace gamelauncher
 {
@@ -27,19 +28,16 @@ namespace gamelauncher
             _cts = new CancellationTokenSource();
             _activeTimers = new List<DispatcherTimer>();
             _hasBackgroundThreads = false;
-
-            // Установка языка
-            if (!Current.Properties.Contains("AppLanguage"))
-            {
-                Current.Properties["AppLanguage"] = "ru-RU";
-            }
-            SetAppLanguage(Current.Properties["AppLanguage"].ToString());
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
+            ThemeManager.LoadTheme();
+            LanguageManager.LoadLanguage();
+            ThemeManager.SwitchTheme(ThemeManager.CurrentTheme);
+            LanguageManager.SwitchLanguage(LanguageManager.CurrentLanguage);
             if (CurrentUser.TryAutoLogin())
             {
                 new MainTemplate().Show();
@@ -48,16 +46,7 @@ namespace gamelauncher
             {
                 new LoginPage().Show();
             }
-        }
 
-        private void SetAppLanguage(string lang)
-        {
-            CultureInfo culture = new CultureInfo(lang);
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-            CultureInfo.DefaultThreadCurrentUICulture = culture;
-            FrameworkElement.LanguageProperty.OverrideMetadata(
-                typeof(FrameworkElement),
-                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(culture.IetfLanguageTag)));
         }
     }
 }

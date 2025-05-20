@@ -1,168 +1,120 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="LoginTitle" TargetType="TextBlock">
-        <Setter Property="Text" Value="Вход" />
-    </Style>
-    <Style x:Key="LoginEmailAddress" TargetType="TextBlock">
-        <Setter Property="Text" Value="Адрес электронной почты" />
-    </Style>
-    <Style x:Key="EmailError" TargetType="TextBlock">
-        <Setter Property="Text" Value="Неверный адрес почты" />
-    </Style>
-    <Style x:Key="LoginPassword" TargetType="TextBlock">
-        <Setter Property="Text" Value="Пароль" />
-    </Style>
-    <Style x:Key="ForgotPassword" TargetType="TextBlock">
-        <Setter Property="Text" Value="Забыли пароль?" />
-    </Style>
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="LoginTitle">Вход</system:String>
+    <system:String x:Key="LoginEmailAddress">Адрес электронной почты</system:String>
+    <system:String x:Key="EmailError">Неверный адрес почты</system:String>
+    <system:String x:Key="LoginPassword">Пароль</system:String>
+    <system:String x:Key="ForgotPassword">Забыли пароль?</system:String>
+    <system:String x:Key="RegisterQA">Еще нет учетной записи?</system:String>
+    <system:String x:Key="CreateAccountButton">Создать учетную запись</system:String>
+    <system:String x:Key="RegisterTitle">Зарегистрироваться</system:String>
+    <system:String x:Key="PasswordRepeat">Повторите пароль</system:String>
+    <system:String x:Key="ReturnButton">Вернуться</system:String>
+    <system:String x:Key="PasswordError">Плохой пароль</system:String>
+    <system:String x:Key="RepeatPasswordError">Пароли не совпадают</system:String>
+    <system:String x:Key="PasswordToolTip1">Ваш пароль должен:</system:String>
+    <system:String x:Key="PasswordToolTip2">• Содержать от 8 до 20 символов.</system:String>
+    <system:String x:Key="PasswordToolTip3">• Включать хотя бы одну строчную букву (a-z).</system:String>
+    <system:String x:Key="PasswordToolTip4">• Включать хотя бы одну заглавную букву (A-Z).</system:String>
+    <system:String x:Key="PasswordToolTip5">• Включать хотя бы одну цифру (0-9).</system:String>
+    <system:String x:Key="Shop">Магазин</system:String>
+    <system:String x:Key="Wishlist">Желаемое</system:String>
+    <system:String x:Key="Library">Библиотека</system:String>
+    <system:String x:Key="Settings">Настройки</system:String>
+    <system:String x:Key="Admin">Админ</system:String>
+    <system:String x:Key="Logout">Выйти</system:String>
+    <system:String x:Key="Free">Бесплатно</system:String>
+    <system:String x:Key="Balance">Баланс</system:String>
+    <system:String x:Key="Filters">Фильтры</system:String>
+    <system:String x:Key="Price">Цена</system:String>
+    <system:String x:Key="Genre">Жанры</system:String>
+    <system:String x:Key="Platform">Платформы</system:String>
+    <system:String x:Key="NothingFound">Ничего не найдено</system:String>
+    <system:String x:Key="Reset">Сбросить</system:String>
+    <system:String x:Key="YouDontHave">У вас еще нет игр в списке желаемого. Посетите магазин и добавьте их!</system:String>
+    <system:String x:Key="Image">Изображение</system:String>
+    <system:String x:Key="Title">Заголовок</system:String>
+    <system:String x:Key="Release Date">Дата выхода</system:String>
+    <system:String x:Key="Size">Размер</system:String>
+    <system:String x:Key="Actions">Действия</system:String>
+    <system:String x:Key="YouDontHaveGames">У вас еще нет игр в библиотеке. Посетите магазин и купите их!</system:String>
+    <system:String x:Key="Account">Аккаунт</system:String>
+    <system:String x:Key="ThemeAndLanguage">Смена языка и темы</system:String>
+    <system:String x:Key="PurchaseHistory">История покупок</system:String>
+    <system:String x:Key="UserName">Имя пользователя:</system:String>
+    <system:String x:Key="NewPass">Новый пароль:</system:String>
+    <system:String x:Key="RepeatNewPass">Повторите пароль:</system:String>
+    <system:String x:Key="Save">Сохранить</system:String>
+    <system:String x:Key="Games">Игры</system:String>
+    <system:String x:Key="Users">Пользователи</system:String>
+    <system:String x:Key="Active">Активна</system:String>
+    <system:String x:Key="Refresh">Обновить</system:String>
+    <system:String x:Key="ResetSelection">Сбросить выделение</system:String>
+    <system:String x:Key="DeleteSelected">Удалить выбранного</system:String>
+    <system:String x:Key="ChangeSelected">Изменить выбранного</system:String>
+    <system:String x:Key="CreateGame">Создать игру</system:String>
+    <system:String x:Key="Email">Почта</system:String>
+    <system:String x:Key="Username">Имя пользователя</system:String>
+    <system:String x:Key="Created">Создан</system:String>
+    <system:String x:Key="Blocked">Заблокирован</system:String>
+    <system:String x:Key="GroupCreating">Создание группы</system:String>
+    <system:String x:Key="EnterName">Введите название:</system:String>
+    <system:String x:Key="Create">Создать</system:String>
+    <system:String x:Key="Back">Назад</system:String>
+    <system:String x:Key="AddingImages">Добавление изображений</system:String>
+    <system:String x:Key="Add">Добавить</system:String>
+    <system:String x:Key="AddingToGroup">Добавление в группу</system:String>
+    <system:String x:Key="AddToGroup">Добавить в группу</system:String>
+    <system:String x:Key="Title:">Название:</system:String>
+    <system:String x:Key="Description:">Описание:</system:String>
+    <system:String x:Key="Price:">Цена:</system:String>
+    <system:String x:Key="Cover:">Обложка:</system:String>
+    <system:String x:Key="Genres:">Жанры:</system:String>
+    <system:String x:Key="Platforms:">Платформы:</system:String>
+    <system:String x:Key="Size:">Размер(ГБ):</system:String>
+    <system:String x:Key="Logo:">Логотип:</system:String>
+    <system:String x:Key="NotActive">Неактивна</system:String>
+    <system:String x:Key="Email:">Почта:</system:String>
+    <system:String x:Key="Username:">Имя пользователя:</system:String>
+    <system:String x:Key="Balance:">Баланс:</system:String>
+    <system:String x:Key="RemoveAdministrator">Убрать администратора</system:String>
+    <system:String x:Key="MakeAdministrator">Сделать администратором</system:String>
+    <system:String x:Key="Block">Заблокировать</system:String>
+    <system:String x:Key="Unblock">Разблокировать</system:String>
+    <system:String x:Key="Description">Описание</system:String>
+    <system:String x:Key="Release Date:">Дата выхода:</system:String>
+    <system:String x:Key="BuyNow">Купить сейчас</system:String>
+    <system:String x:Key="Bought">Уже в библиотеке</system:String>
+    <system:String x:Key="RemoveFromWishlist">Убрать из желаемого</system:String>
+    <system:String x:Key="AddToWishlist">В список желаемого</system:String>
+    <system:String x:Key="ReplenishBalance">Пополнение баланса</system:String>
+    <system:String x:Key="EnterSum">Введите сумму:</system:String>
+    <system:String x:Key="Replenish">Пополнить</system:String>
+    <system:String x:Key="Enter email:">Введите почту:</system:String>
+    <system:String x:Key="Enter code:">Введите код:</system:String>
+    <system:String x:Key="Password recovery">Восстановление пароля</system:String>
+    <system:String x:Key="Next">Далее</system:String>
+    <system:String x:Key="Recover">Восстановить</system:String>
+
+
+
+
     <Style x:Key="LoginButton" TargetType="Button">
         <Setter Property="Content" Value="Войти" />
-        <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border Padding="5" Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
     </Style>
-    <Style x:Key="RegisterQA" TargetType="TextBlock">
-        <Setter Property="Text" Value="Еще нет учетной записи?" />
-    </Style>
-    <Style x:Key="CreateAccountButton" TargetType="TextBlock">
-        <Setter Property="Text" Value="Создать учетную запись" />
-    </Style>
-    <Style x:Key="RegisterTitle" TargetType="TextBlock">
-        <Setter Property="Text" Value="Зарегистрироваться" />
-    </Style>
-    <Style x:Key="PasswordRepeat" TargetType="TextBlock">
-        <Setter Property="Text" Value="Повторите пароль" />
-    </Style>
+
     <Style x:Key="RegisterButton" TargetType="Button">
         <Setter Property="Content" Value="Зарегистрироваться" />
-        <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border Padding="5" Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
     </Style>
-    <Style x:Key="ReturnButton" TargetType="TextBlock">
-        <Setter Property="Text" Value="Вернуться" />
-    </Style>
+
     <Style x:Key="LanguageIMG" TargetType="Image">
         <Setter Property="Source" Value="/img/russia.png" />
     </Style>
-    <Style x:Key="PasswordError" TargetType="TextBlock">
-        <Setter Property="Text" Value="Плохой пароль" />
-    </Style>
-    <Style x:Key="RepeatPasswordError" TargetType="TextBlock">
-        <Setter Property="Text" Value="Пароли не совпадают" />
-    </Style>
-    <Style x:Key="PasswordToolTip1" TargetType="TextBlock">
-        <Setter Property="Text" Value="Ваш пароль должен:" />
-    </Style>
-    <Style x:Key="PasswordToolTip2" TargetType="TextBlock">
-        <Setter Property="Text" Value="• Содержать от 8 до 20 символов." />
-    </Style>
-    <Style x:Key="PasswordToolTip3" TargetType="TextBlock">
-        <Setter Property="Text" Value="• Включать хотя бы одну строчную букву (a-z)." />
-    </Style>
-    <Style x:Key="PasswordToolTip4" TargetType="TextBlock">
-        <Setter Property="Text" Value="• Включать хотя бы одну заглавную букву (A-Z)." />
-    </Style>
-    <Style x:Key="PasswordToolTip5" TargetType="TextBlock">
-        <Setter Property="Text" Value="• Включать хотя бы одну цифру (0-9)." />
-    </Style>
-    <Style x:Key="MenuBorderForButton" TargetType="Border">
-        <Setter Property="Background">
-            <Setter.Value>
-                <SolidColorBrush Color="#3E3E3E" />
-            </Setter.Value>
-        </Setter>
-        <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
-        <Setter Property="RenderTransform">
-            <Setter.Value>
-                <ScaleTransform ScaleX="1" ScaleY="1" />
-            </Setter.Value>
-        </Setter>
 
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Trigger.EnterActions>
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <!-- Анимация изменения цвета -->
-                            <ColorAnimation
-                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                            To="#B824E4"
-                            Duration="0:0:0.2" />
-
-                            <!-- Анимация увеличения -->
-                            <DoubleAnimation
-                            Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
-                            To="1.05"
-                            Duration="0:0:0.2" />
-                            <DoubleAnimation
-                            Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
-                            To="1.05"
-                            Duration="0:0:0.2" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </Trigger.EnterActions>
-
-                <Trigger.ExitActions>
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <!-- Возврат цвета -->
-                            <ColorAnimation
-                            Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
-                            To="#3E3E3E"
-                            Duration="0:0:0.2" />
-
-                            <!-- Возврат размера -->
-                            <DoubleAnimation
-                            Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleX)"
-                            To="1"
-                            Duration="0:0:0.2" />
-                            <DoubleAnimation
-                            Storyboard.TargetProperty="(RenderTransform).(ScaleTransform.ScaleY)"
-                            To="1"
-                            Duration="0:0:0.2" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </Trigger.ExitActions>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
-    <Style x:Key="MenuButton" TargetType="Button">
-        <Setter Property="OverridesDefaultStyle" Value="True" />
-        <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="BorderThickness" Value="0" />
-        <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border Padding="5" Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+    <Style x:Key="LanguageIMGDark" TargetType="Image">
+        <Setter Property="Source" Value="/img/russia_dark.png" />
     </Style>
 </ResourceDictionary>

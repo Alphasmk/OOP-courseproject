@@ -32,6 +32,17 @@ namespace gamelauncher.ViewModels
         private ObservableCollection<GenreViewModel> _selectedGenres;
         private ObservableCollection<PlatformViewModel> _allPlatforms;
         private ObservableCollection<PlatformViewModel> _selectedPlatforms;
+        private string _windowTitle;
+
+        public string WindowTitle
+        {
+            get => _windowTitle;
+            set
+            {
+                _windowTitle = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ObservableCollection<GenreViewModel> AllGenres
         {
@@ -198,6 +209,15 @@ namespace gamelauncher.ViewModels
                 LogoImagePath = game.LogoImagePath;
                 IsActive = game.IsActive;
                 LogoImagePath = game.LogoImagePath;
+            }
+
+            if(LanguageManager.CurrentLanguage == "ru-RU")
+            {
+                WindowTitle = "Изменение игры: " + Title;
+            }
+            else
+            {
+                WindowTitle = "Game change: " + Title;
             }
             SelectedGenres = new ObservableCollection<GenreViewModel>();
             SelectedPlatforms = new ObservableCollection<PlatformViewModel>();

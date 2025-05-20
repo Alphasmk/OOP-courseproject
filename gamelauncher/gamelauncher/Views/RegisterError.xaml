@@ -35,7 +35,7 @@
     <Grid>
         <Border
             Margin="8"
-            Background="#181818"
+            Background="{DynamicResource TopBarColor}"
             CornerRadius="15">
             <Border.Effect>
                 <DropShadowEffect
@@ -62,8 +62,9 @@
                             Width="220"
                             HorizontalAlignment="Center"
                             FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
-                            FontSize="17"
-                            Foreground="White"
+                            FontSize="18"
+                            Foreground="{DynamicResource MainFontColor}"
+                            TextAlignment="Center"
                             TextWrapping="Wrap" />
                     </StackPanel>
                 </StackPanel>

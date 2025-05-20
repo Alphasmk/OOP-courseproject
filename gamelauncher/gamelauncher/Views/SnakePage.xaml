@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="gamelauncher.Views.SnakePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:gamelauncher.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="SnakePage"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    d:DesignHeight="640"
+    d:DesignWidth="1060"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style x:Key="InvisibleButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <Grid Margin="150,0,0,0" Background="{DynamicResource DarkGrey}">
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Vertical">
+                <Border
+                    Padding="5"
+                    Background="{DynamicResource TopBarColor}"
+                    CornerRadius="20, 20, 0, 0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.7*" />
+                            <ColumnDefinition Width="0.7*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            Height="30"
+                            Margin="0,15,20,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                            FontSize="20"
+                            Foreground="{DynamicResource MainFontColor}"
+                            Text="{Binding RecordTitle}" />
+                        <TextBlock
+                            Grid.Column="1"
+                            Height="30"
+                            Margin="0,15,0,0"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="pack://application:,,,/fonts/Ubuntu-Medium.ttf #Ubuntu"
+                            FontSize="20"
+                            Foreground="{DynamicResource MainFontColor}"
+                            Text="{Binding CurrentScoreTitle}" />
+                        <Button
+                            Grid.Column="2"
+                            Height="40"
+                            Margin="0,0,30,0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Command="{Binding StartCommand}"
+                            Style="{StaticResource InvisibleButtonStyle}">
+                            <Image RenderOptions.BitmapScalingMode="HighQuality" Style="{DynamicResource StartSnakeIMG}" />
+                        </Button>
+                    </Grid>
+                </Border>
+                <Canvas
+                    x:Name="GameCanvas"
+                    Background="{DynamicResource TextBoxMainColor}"
+                    FocusVisualStyle="{x:Null}"
+                    Focusable="True" />
+                <Border
+                    Height="30"
+                    Background="{DynamicResource TopBarColor}"
+                    CornerRadius="0, 0, 20, 20" />
+            </StackPanel>
+        </Border>
+
+    </Grid>
+
+</Page>
